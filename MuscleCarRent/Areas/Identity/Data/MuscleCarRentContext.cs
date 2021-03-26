@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MuscleCarRent.Models;
 
 namespace MuscleCarRent.Data
 {
@@ -15,12 +16,33 @@ namespace MuscleCarRent.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        public DbSet<AccessType> AccessTypes { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<BankCard> BankCards { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<CarDriver> CarDrivers { get; set; }
+        public DbSet<CarEvent> CarEvents { get; set; }
+        public DbSet<CarFotoSet> CarFotoSets { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<PersonalPromotion> PersonalPromotions { get; set; }
+        public DbSet<Promotion> Promotions { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
+            //This method changes entities's names from plural to single form
+            modelBuilder.Entity<AccessType>().ToTable("AccessType");
+            modelBuilder.Entity<Account>().ToTable("Account");
+            modelBuilder.Entity<BankCard>().ToTable("BankCard");
+            modelBuilder.Entity<Car>().ToTable("Car");
+            modelBuilder.Entity<CarDriver>().ToTable("CarDriver");
+            modelBuilder.Entity<CarEvent>().ToTable("CarEvent");
+            modelBuilder.Entity<CarFotoSet>().ToTable("CarFotoSet");
+            modelBuilder.Entity<Driver>().ToTable("Driver");
+            modelBuilder.Entity<Order>().ToTable("Order");
+            modelBuilder.Entity<PersonalPromotion>().ToTable("PersonalPromotion");
+            modelBuilder.Entity<Promotion>().ToTable("Promotion");
+
         }
     }
 }

@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using MuscleCarRent.Data;
 
 namespace MuscleCarRent
 {
@@ -24,6 +26,12 @@ namespace MuscleCarRent
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            //Adding connection string
+            services.AddDbContext<MuscleCarRentContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("MuscleCarRentContextConnection")));
+
+            services.AddDatabaseDeveloperPageExceptionFilter();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

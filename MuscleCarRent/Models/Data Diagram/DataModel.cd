@@ -66,20 +66,20 @@
     <Position X="11.75" Y="2.75" Width="1.75" />
     <AssociationLine Name="Promotions" Type="MuscleCarRent.Models.Promotion" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="12.375" Y="5.521" />
+        <Point X="12.375" Y="5.329" />
         <Point X="12.375" Y="5.819" />
         <Point X="10.25" Y="5.819" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="PersonalPromotions" Type="MuscleCarRent.Models.PersonalPromotion" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="12.812" Y="5.521" />
+        <Point X="12.812" Y="5.329" />
         <Point X="12.812" Y="8.249" />
         <Point X="10.75" Y="8.249" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>CAEAAAAAACAAgAAAEAAARAAQAQAAAAACAQAAABAAKAA=</HashCode>
+      <HashCode>CAEAAAAAACAAAAAAEAAARAAQAQAAAAACAQAAABAAKAA=</HashCode>
       <FileName>Models\Account.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -149,7 +149,7 @@
     <Position X="0.5" Y="4.5" Width="1.5" />
     <InheritanceLine Type="MuscleCarRent.Models.Person" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="8.25" Y="1.988" />
+        <Point X="8.25" Y="2.18" />
         <Point X="8.25" Y="2.375" />
         <Point X="1.25" Y="2.375" />
         <Point X="1.25" Y="4.5" />
@@ -183,7 +183,7 @@
   <Class Name="MuscleCarRent.Models.Person">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAEAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Models\Person.cs</FileName>
     </TypeIdentifier>
   </Class>
