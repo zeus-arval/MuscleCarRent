@@ -9,5 +9,7 @@ namespace MuscleCarRent.Models
     {
         public bool IsAvailable { get; set; }
         public DateTime[] FreeDates { get; set; }
+        public CarDriver[]? CarDriver { get; set; }
+        public CarEvent[]? CarEvent { get; set; }
     }
 }

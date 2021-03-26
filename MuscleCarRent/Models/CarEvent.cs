@@ -22,5 +22,6 @@ namespace MuscleCarRent.Models
         public Event Event { get; set; }
         public bool NeedDriver { get; set; }
         public byte SurchargeForEvent { get; set; }
+        public Driver Driver { get; set; }
     }
 }

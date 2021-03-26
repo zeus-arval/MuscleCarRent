@@ -18,8 +18,8 @@ namespace MuscleCarRent.Models
         public string? DrivingLicense { get; set; }
         public bool? IsDrivingLicenseValid { get; set; }
 
+        public ICollection<Order> Orders { get; set; }
         public AccessType AccessType { get; set; }
-        public ICollection<Order>? Orders { get; set; }
         public BankCard? BankCard { get; set; }
         public ICollection<Promotion> Promotions { get; set; }
         public ICollection<PersonalPromotion> PersonalPromotions { get; set; }
