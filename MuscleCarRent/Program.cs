@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using MuscleCarRent.Areas.Identity.Data;
 using MuscleCarRent.Data;
 
 namespace MuscleCarRent
@@ -30,7 +31,7 @@ namespace MuscleCarRent
                 try
                 {
                     var context = services.GetRequiredService<MuscleCarRentContext>();
-                    context.Database.EnsureCreated();// If DB is changed, deleting DB, data model updating, and creating DB with new scheme
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {

@@ -20,10 +20,9 @@ namespace MuscleCarRent.Data
         public DbSet<Account> Accounts { get; set; }
         public DbSet<BankCard> BankCards { get; set; }
         public DbSet<Car> Cars { get; set; }
-        public DbSet<CarDriver> CarDrivers { get; set; }
-        public DbSet<CarEvent> CarEvents { get; set; }
-        public DbSet<CarFotoSet> CarFotoSets { get; set; }
+        public DbSet<CarType> CarTypes { get; set; }
         public DbSet<Driver> Drivers { get; set; }
+        public DbSet<Image> Images { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<PersonalPromotion> PersonalPromotions { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
@@ -35,10 +34,9 @@ namespace MuscleCarRent.Data
             modelBuilder.Entity<Account>().ToTable("Account");
             modelBuilder.Entity<BankCard>().ToTable("BankCard");
             modelBuilder.Entity<Car>().ToTable("Car");
-            modelBuilder.Entity<CarDriver>().ToTable("CarDriver");
-            modelBuilder.Entity<CarEvent>().ToTable("CarEvent");
-            modelBuilder.Entity<CarFotoSet>().ToTable("CarFotoSet");
+            modelBuilder.Entity<CarType>().ToTable("CarType");
             modelBuilder.Entity<Driver>().ToTable("Driver");
+            modelBuilder.Entity<Image>().ToTable("Image");
             modelBuilder.Entity<Order>().ToTable("Order");
             modelBuilder.Entity<PersonalPromotion>().ToTable("PersonalPromotion");
             modelBuilder.Entity<Promotion>().ToTable("Promotion");

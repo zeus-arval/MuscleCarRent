@@ -11,9 +11,11 @@ namespace MuscleCarRent.Models
         public DateTime OrderDate { get; set; }
         public DateTime RentDate { get; set; }
         public short TotalPrice { get; set; }
+        public byte HourAmmount { get; set; }
         public bool HasBankCard { get; set; }
 
-        public ICollection<Car> Cars { get; set; }
+
+        public Car Car { get; set; }
         public Account Account { get; set; }
     }
 }
