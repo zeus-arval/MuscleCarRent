@@ -8,6 +8,7 @@ namespace MuscleCarRent.Models
     public class BankCard
     {
         public int ID { get; set; }
+        public int AccountID { get; set; }
         public long CardNumber { get; set; }
         public string CardHolderFullName { get; set; }
         public DateTime ExpirationTime { get; set; }

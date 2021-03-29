@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using MuscleCarRent.Data;
+using MuscleCarRent.Areas.Identity.Data;
 using MuscleCarRent.Models;
 
 namespace MuscleCarRent.Areas.Identity.Data
@@ -16,7 +16,7 @@ namespace MuscleCarRent.Areas.Identity.Data
             context.Database.EnsureCreated(); //Creating database if it does not exists
 
             //Looking for any car
-            if (context.Cars.Any())
+            if (context.Cars.Any() && context.Drivers.Any())
             {
                 return; // DB exists and is seeded
             }
@@ -61,7 +61,7 @@ namespace MuscleCarRent.Areas.Identity.Data
                 }
             };
             
-            context.Cars.AddRange();
+            context.Cars.AddRange(cars);
             context.SaveChanges();
 
             var drivers = new Driver[]
@@ -78,7 +78,7 @@ namespace MuscleCarRent.Areas.Identity.Data
                 }
             };
 
-            context.Drivers.AddRange();
+            context.Drivers.AddRange(drivers);
             context.SaveChanges();
             
         }

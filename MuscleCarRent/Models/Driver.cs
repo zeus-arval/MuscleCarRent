@@ -8,7 +8,7 @@ namespace MuscleCarRent.Models
     public class Driver : Person
     {
         public bool IsAvailable { get; set; }
-        public ICollection<DateTime> BookedDates { get; set; }
+        public ICollection<OrderedDate> OrderedDates{ get; set; }
         public ICollection<Car>? Cars { get; set; }
 
     }

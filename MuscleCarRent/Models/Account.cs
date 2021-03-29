@@ -22,9 +22,5 @@ namespace MuscleCarRent.Models
         public ICollection<Order> Orders { get; set; }
         public AccessType AccessType { get; set; }
         public BankCard? BankCard { get; set; }
-        [InverseProperty(nameof(Promotion.Account))]
-        public ICollection<Promotion> Promotions { get; set; }
-        [InverseProperty(nameof(PersonalPromotion.Account))]
-        public ICollection<PersonalPromotion> PersonalPromotions { get; set; }
     }
 }

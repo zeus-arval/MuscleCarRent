@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MuscleCarRent.Data;
+using MuscleCarRent.Areas.Identity.Data;
 
 namespace MuscleCarRent
 {
@@ -29,7 +29,7 @@ namespace MuscleCarRent
 
             //Adding connection string
             services.AddDbContext<MuscleCarRentContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("MuscleCarRentContextConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("MuscleCarRentContext")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
         }

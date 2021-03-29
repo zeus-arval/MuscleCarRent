@@ -14,6 +14,7 @@ namespace MuscleCarRent.Models
 
     public class AccessType
     {
+        public int ID { get; set; }
         [InverseProperty(nameof(Account.AccessType))]
         public ICollection<Account> Accounts { get; set; }
         public AccessLevel AccessLevel { get; set; }

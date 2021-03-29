@@ -1,42 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="MuscleCarRent.Models.Car">
-    <Position X="5.25" Y="2.75" Width="1.75" />
+    <Position X="6" Y="2.75" Width="1.75" />
     <AssociationLine Name="Brand" Type="MuscleCarRent.Models.Brand" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.375" Y="6.93" />
-        <Point X="6.375" Y="8.205" />
+        <Point X="7.125" Y="6.93" />
+        <Point X="7.125" Y="8.205" />
         <Point X="5.438" Y="8.205" />
         <Point X="5.438" Y="8.75" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="BodyType" Type="MuscleCarRent.Models.BodyType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.375" Y="6.93" />
-        <Point X="6.375" Y="8.199" />
+        <Point X="7.125" Y="6.93" />
+        <Point X="7.125" Y="8.199" />
         <Point X="7.5" Y="8.199" />
         <Point X="7.5" Y="8.75" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="Promotions" Type="MuscleCarRent.Models.Promotion" FixedFromPoint="true">
+    <AssociationLine Name="Driver" Type="MuscleCarRent.Models.Driver" FixedToPoint="true">
       <Path>
-        <Point X="7" Y="5.89" />
-        <Point X="8.75" Y="5.89" />
+        <Point X="6" Y="4.812" />
+        <Point X="2" Y="4.812" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="PersonalPromotions" Type="MuscleCarRent.Models.PersonalPromotion" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="7" Y="6.5" />
-        <Point X="8.672" Y="6.5" />
-        <Point X="8.672" Y="8.021" />
-        <Point X="9.25" Y="8.021" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.016" Y="-0.284" />
+    <AssociationLine Name="OrderedDates" Type="MuscleCarRent.Models.OrderedDate">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.068" Y="0.123" Height="0.182" Width="1.079" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>DBFAAAAAQAgAwAAIAAAAAAACJAAAgBABBAgAgAAhIAA=</HashCode>
+      <HashCode>DBFAAAAAQAgAwAAIAAAAAAACJAAAgBABBAgAgAAhAAA=</HashCode>
       <FileName>Models\Car.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -45,11 +39,9 @@
       <Property Name="Driver" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="Orders" />
-      <Property Name="Promotions" />
-      <Property Name="CarTypes" />
       <Property Name="Images" />
-      <Property Name="PersonalPromotions" />
+      <Property Name="Orders" />
+      <Property Name="OrderedDates" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.Order">
@@ -59,8 +51,8 @@
       <FileName>Models\Order.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Account" />
       <Property Name="Car" />
+      <Property Name="Account" />
     </ShowAsAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.Account">
@@ -71,22 +63,8 @@
         <Point X="15" Y="5.188" />
       </Path>
     </AssociationLine>
-    <AssociationLine Name="Promotions" Type="MuscleCarRent.Models.Promotion" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="12.375" Y="5.329" />
-        <Point X="12.375" Y="6.319" />
-        <Point X="10.25" Y="6.319" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="PersonalPromotions" Type="MuscleCarRent.Models.PersonalPromotion" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="12.812" Y="5.329" />
-        <Point X="12.812" Y="8.249" />
-        <Point X="10.75" Y="8.249" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>CAEAAAAAACAAAAAAEAAARAAQAQAAAAACAQAAABAAKAA=</HashCode>
+      <HashCode>AAEAAAAAACAAAAAAEAAARAAQAQAAAAACAQAAABAACAA=</HashCode>
       <FileName>Models\Account.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -95,8 +73,6 @@
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Orders" />
-      <Property Name="Promotions" />
-      <Property Name="PersonalPromotions" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.AccessType">
@@ -113,7 +89,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AccessType.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -126,7 +102,7 @@
   <Class Name="MuscleCarRent.Models.BankCard">
     <Position X="15" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAgAAAAAAAAAAAAAAQAAAAIAACAAAAAEA=</HashCode>
+      <HashCode>IAAAAAAAAAAAgAAAAgAAAAAAAAAQAAAAIAACAAAAAEA=</HashCode>
       <FileName>Models\BankCard.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -134,35 +110,42 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.Promotion">
-    <Position X="8.75" Y="5.5" Width="1.5" />
+    <Position X="10.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAA=</HashCode>
       <FileName>Models\Promotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MuscleCarRent.Models.PersonalPromotion">
-    <Position X="9.25" Y="7.75" Width="1.5" />
+    <Position X="10.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\PersonalPromotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MuscleCarRent.Models.Driver">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <InheritanceLine Type="MuscleCarRent.Models.Person" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="8.25" Y="2.18" />
         <Point X="8.25" Y="2.375" />
         <Point X="1.25" Y="2.375" />
-        <Point X="1.25" Y="4.5" />
+        <Point X="1.25" Y="4.75" />
       </Path>
     </InheritanceLine>
+    <AssociationLine Name="Cars" Type="MuscleCarRent.Models.Car" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="5.062" />
+        <Point X="6" Y="5.062" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>BAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAA=</HashCode>
       <FileName>Models\Driver.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Cars" />
+      <Property Name="OrderedDates" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.Person">
@@ -183,17 +166,26 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.CarType">
-    <Position X="2.75" Y="5.25" Width="1.5" />
+    <Position X="8.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAECAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\CarType.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Car" />
+      <Property Name="RentType" />
     </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Property Name="RentTypes" />
-    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MuscleCarRent.Models.OrderedDate">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBACAAAAAAQAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderedDate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Car" />
+      <Property Name="Driver" />
+    </ShowAsAssociation>
   </Class>
   <Enum Name="MuscleCarRent.Models.BodyType">
     <Position X="6.75" Y="8.75" Width="1.5" />
@@ -217,7 +209,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="MuscleCarRent.Models.RentType">
-    <Position X="1.25" Y="7.75" Width="1.5" />
+    <Position X="8.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAAAAAICAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Models\CarType.cs</FileName>

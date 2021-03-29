@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MuscleCarRent.Models;
 
-namespace MuscleCarRent.Data
+namespace MuscleCarRent.Areas.Identity.Data
 {
-    public class MuscleCarRentContext : IdentityDbContext<IdentityUser>
+    public class MuscleCarRentContext : IdentityDbContext<IdentityUser> 
     {
         public MuscleCarRentContext(DbContextOptions<MuscleCarRentContext> options)
             : base(options)
@@ -40,7 +40,11 @@ namespace MuscleCarRent.Data
             modelBuilder.Entity<Order>().ToTable("Order");
             modelBuilder.Entity<PersonalPromotion>().ToTable("PersonalPromotion");
             modelBuilder.Entity<Promotion>().ToTable("Promotion");
-
+            modelBuilder.Ignore<IdentityUserLogin<string>>();
+            modelBuilder.Ignore<IdentityUserRole<string>>();
+            modelBuilder.Ignore<IdentityUserClaim<string>>();
+            modelBuilder.Ignore<IdentityUserToken<string>>();
+            modelBuilder.Ignore<IdentityUser<string>>();
         }
     }
 }

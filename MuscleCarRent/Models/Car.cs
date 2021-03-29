@@ -42,7 +42,7 @@ namespace MuscleCarRent.Models
         public string Engine { get; set; }
         public bool NeedDriver { get; set; }
         public short? Surcharge { get; set; }
-        public DateTime[]? OrderedDates { get; set; }
+        public ICollection<OrderedDate>? OrderedDates { get; set; }
         public int DriverID { get; set; }
 
         [InverseProperty(nameof(CarType.Car))]
@@ -55,12 +55,6 @@ namespace MuscleCarRent.Models
 
         [InverseProperty(nameof(Order.Car))]
         public ICollection<Order>? Orders { get; set; }
-
-        [InverseProperty(nameof(Promotion.Car))]
-        public ICollection<Promotion>? Promotions { get; set; }
-
-        [InverseProperty(nameof(PersonalPromotion.Car))]
-        public ICollection<PersonalPromotion>? PersonalPromotions { get; set; }
 
         public Driver Driver { get; set; }
     }
