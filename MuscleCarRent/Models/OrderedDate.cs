@@ -10,8 +10,8 @@ namespace MuscleCarRent.Models
         public int ID { get; set; }
         public DateTime OrderDate { get; set; }
         public int CarID { get; set; }
-        public int DriverID { get; set; }
+        //public int DriverID { get; set; }
         public Car Car { get; set; }
-        public Driver Driver { get; set; }
+      //// public Driver Driver { get; set; }
     }
 }

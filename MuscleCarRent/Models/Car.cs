@@ -45,8 +45,8 @@ namespace MuscleCarRent.Models
         public ICollection<OrderedDate>? OrderedDates { get; set; }
         public int DriverID { get; set; }
 
-        [InverseProperty(nameof(CarType.Car))]
-        public ICollection<CarType> CarTypes { get; set; }
+        public CarType CarType { get; set; }
+        public int CarTypeID { get; set; }
 
         [InverseProperty(nameof(Image.Car))]
         public ICollection<Image> Images { get; set; }

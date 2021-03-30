@@ -17,5 +17,21 @@ namespace MuscleCarRent.Models
 
         public Car Car { get; set; }
         public Account Account { get; set; }
+
+        public int CarID
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public int AccountID
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace MuscleCarRent.Models
     {
         public int ID { get; set; }
         public RentType RentType { get; set; }
-        public int CarID { get; set; }
-        public Car Car { get; set; }
+        public ICollection<Car> Cars { get; set; }
     }
 }
