@@ -3,48 +3,144 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MuscleCarRent</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MuscleCarRent</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <style>
+        body {
+            background-color: bisque
+        }
+
+        header {
+            background-color: black;
+           color: bisque;
+            font-family: cursive;
+            font-weight: bold;
+        }
+        p {
+            color: white;
+            font-family: cursive;
+        }
+        a{
+            color:white;
+            font-family:cursive;
+        }
+  
+        form{
+            color:bisque;
+            font-family:cursive;
+        }
+        footer {
+            background-color:black;
+            font-size:12px;
+
+            
+         
+        }
+        
+    
+        
+    </style>
+
+    <div id="home" class="container-avto">
+
+        <div class="color-nav">
+
+            
+                <header class="col-xs-12">
+
+                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom  ">
+                        <img src="https://inlnk.ru/q1xkn" alt="LOGO" width="70" height ="70">
+
+                        <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                            <ul class="navbar-nav flex-lg-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/Home">Home</a><span></span>
+                                </li>
+                                <li class=" nav-item">
+                                    <a class="nav-link text-light" asp-area=""asp-page="/Menu">Menu</a><span></span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/Rides">Rides</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/Contact">Contact</a>
+                                </li>
+                           </ul>
+                                <ul class=" nav navbar-nav navbar-right">
+                                <li class="nav-item ">
+                                    <a class="nav-link text-light " asp-area="" asp-page="/Profile">Profile</a>
+                                </li>
+
+                                <li class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                                    <form action="/action_page.php ">
+                                        <input type="text" placeholder=" " name="search">
+                                        <button type="button">Search</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                </header>
+
+
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
                 </div>
+
+                <footer class="col-xs-12 fixed-bottom">
+                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow  ">
+
+                        <div class="navbar-collapse collapse d-lg-inline-flex justify-content-betwee">
+                            <ul class="navbar-nav flex-lg-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/AboutUs">About Us</a><span></span>
+                                </li>
+                                <li class=" nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/Reviews">Reviews</a><span></span>
+                                </li>
+                                <li class=" nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/FAQ">FAQ</a><span></span>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img style="margin:10px; margin-left:70px;" src="https://www.mchenryvillage.com/images/instagram-icon.png" alt="Instagram Logo" width="50" height="50" class="instagram-icon ">
+                                    </a>
+
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img style="margin:10px;" src="data:image/png;base64,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" alt="Facebook Logo" width="50" height="50" class="facebook-icon">
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                            <ul class=" nav navbar-nav navbar-right">
+                                <li class="nav-item ">
+                                    <p>Muscle Car Rent</p>
+                                    <p>Tik Tok 228, Tallinn, Estonia</p>
+                                    <p>muscleCarRent@taltech.ee</p>
+                                    &copy; 2021 - MuscleCarRent
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+
+                </footer>
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
+
+                @await RenderSectionAsync("Scripts", required: false)
+              
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - MuscleCarRent - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
-    </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
