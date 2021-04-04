@@ -10,8 +10,6 @@ namespace MuscleCarRent.Data
     {
         public static void Initialize(MuscleCarRentDBContext context)
         {
-            context.Database.EnsureCreated();
-
             if (context.Cars.Any())
                 return;
 
