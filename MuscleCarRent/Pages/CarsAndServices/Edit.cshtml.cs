@@ -13,9 +13,9 @@ namespace MuscleCarRent.Pages.CarsAndServices
 {
     public class EditModel : PageModel
     {
-        private readonly MuscleCarRent.Data.MuscleCarDBContext _context;
+        private readonly MuscleCarRent.Data.MuscleCarRentDBContext _context;
 
-        public EditModel(MuscleCarRent.Data.MuscleCarDBContext context)
+        public EditModel(MuscleCarRent.Data.MuscleCarRentDBContext context)
         {
             _context = context;
         }

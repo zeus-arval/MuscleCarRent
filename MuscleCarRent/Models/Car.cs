@@ -49,7 +49,7 @@ namespace MuscleCarRent.Models
         public int CarTypeID { get; set; }
 
         [InverseProperty(nameof(Image.Car))]
-        public ICollection<Image> Images { get; set; }
+        public ICollection<Image>? Images { get; set; }
 
         public BodyType BodyType { get; set; }
 

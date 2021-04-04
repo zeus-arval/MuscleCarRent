@@ -12,9 +12,9 @@ namespace MuscleCarRent.Pages.CarsAndServices
 {
     public class IndexModel : PageModel
     {
-        private readonly MuscleCarRent.Data.MuscleCarDBContext _context;
+        private readonly MuscleCarRent.Data.MuscleCarRentDBContext _context;
 
-        public IndexModel(MuscleCarRent.Data.MuscleCarDBContext context)
+        public IndexModel(MuscleCarRent.Data.MuscleCarRentDBContext context)
         {
             _context = context;
         }

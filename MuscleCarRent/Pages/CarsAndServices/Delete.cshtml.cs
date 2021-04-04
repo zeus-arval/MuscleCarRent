@@ -12,9 +12,9 @@ namespace MuscleCarRent.Pages.CarsAndServices
 {
     public class DeleteModel : PageModel
     {
-        private readonly MuscleCarRent.Data.MuscleCarDBContext _context;
+        private readonly MuscleCarRent.Data.MuscleCarRentDBContext _context;
 
-        public DeleteModel(MuscleCarRent.Data.MuscleCarDBContext context)
+        public DeleteModel(MuscleCarRent.Data.MuscleCarRentDBContext context)
         {
             _context = context;
         }

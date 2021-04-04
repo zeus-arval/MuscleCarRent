@@ -12,9 +12,9 @@ namespace MuscleCarRent.Pages.CarsAndServices
 {
     public class DetailsModel : PageModel
     {
-        private readonly MuscleCarRent.Data.MuscleCarDBContext _context;
+        private readonly MuscleCarRent.Data.MuscleCarRentDBContext _context;
 
-        public DetailsModel(MuscleCarRent.Data.MuscleCarDBContext context)
+        public DetailsModel(MuscleCarRent.Data.MuscleCarRentDBContext context)
         {
             _context = context;
         }

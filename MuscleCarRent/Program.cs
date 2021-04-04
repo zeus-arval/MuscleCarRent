@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using MuscleCarRent.Areas.Identity.Data;
+using MuscleCarRent.Data;
 
 namespace MuscleCarRent
 {
@@ -29,7 +29,8 @@ namespace MuscleCarRent
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<MuscleCarRentContext>();
+                    var context = services.GetRequiredService<MuscleCarRentDBContext>();
+                    //context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

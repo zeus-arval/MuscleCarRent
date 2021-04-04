@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MuscleCarRent.Areas.Identity.Data;
+using MuscleCarRent.Data;
 
 [assembly: HostingStartup(typeof(MuscleCarRent.Areas.Identity.IdentityHostingStartup))]
 namespace MuscleCarRent.Areas.Identity
@@ -15,12 +15,12 @@ namespace MuscleCarRent.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<MuscleCarRentContext>(options =>
+                services.AddDbContext<MuscleCarRentDBContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("MuscleCarRentContext")));
+                        context.Configuration.GetConnectionString("MuscleCarRentDBContext")));
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<MuscleCarRentContext>();
+                    .AddEntityFrameworkStores<MuscleCarRentDBContext>();
             });
         }
     }
