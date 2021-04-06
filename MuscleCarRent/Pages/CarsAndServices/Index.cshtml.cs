@@ -20,11 +20,13 @@ namespace MuscleCarRent.Pages.CarsAndServices
         }
 
         public IList<Car> Car { get;set; }
+        public IList<Image> Image { get; set; }
 
         public async Task OnGetAsync()
         {
             Car = await _context.Cars
                 .Include(c => c.CarType)
+                .Include(c => c.Images)
                 .Include(c => c.Driver).ToListAsync();
         }
     }

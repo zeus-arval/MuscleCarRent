@@ -11,7 +11,7 @@
             <div class="form-group">
                 <label asp-for="Car.Brand" class="control-label"></label>
                 <select asp-for="Car.Brand" class="form-control" asp-items="@Html.GetEnumSelectList<Brand>()">
-                    <option value="">-- Select brand --</option>
+                    <option value="@null">-- Select brand --</option>
                 </select>
                 <span asp-validation-for="Car.Brand" class="text-danger"></span>
             </div>

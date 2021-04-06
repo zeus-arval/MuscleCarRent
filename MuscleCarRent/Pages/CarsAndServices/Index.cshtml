@@ -17,22 +17,13 @@
                 @Html.DisplayNameFor(model => model.Car[0].ShortDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].LongDescription)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Car[0].ProductionYear)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Car[0].IsPopular)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].IsFavourite)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Car[0].Power)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].Color)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Car[0].BasePrice)
@@ -47,19 +38,7 @@
                 @Html.DisplayNameFor(model => model.Car[0].Engine)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].NeedDriver)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].Surcharge)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarType)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Car[0].BodyType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].Driver)
             </th>
             <th></th>
         </tr>
@@ -77,22 +56,13 @@
                 @Html.DisplayFor(modelItem => item.ShortDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LongDescription)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.ProductionYear)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IsPopular)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsFavourite)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Power)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BasePrice)
@@ -107,19 +77,7 @@
                 @Html.DisplayFor(modelItem => item.Engine)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NeedDriver)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Surcharge)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarType.ID)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.BodyType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Driver.ID)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
