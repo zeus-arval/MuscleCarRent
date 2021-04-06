@@ -30,7 +30,6 @@ namespace MuscleCarRent
                 try
                 {
                     var context = services.GetRequiredService<MuscleCarRentDBContext>();
-                    //context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
