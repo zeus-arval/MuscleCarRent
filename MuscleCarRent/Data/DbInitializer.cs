@@ -18,12 +18,12 @@ namespace MuscleCarRent.Data
                 new Driver
                 {
                     FirstName = "Michael", LastName = "Vaggner", BirthDate = new DateTime(1992, 02, 12),
-                    IsAvailable = true, OrderedDates = null, Cars =  null
+                    IsAvailable = true, Cars =  null
                 },
                 new Driver
                 {
                     FirstName = "Rain", LastName = "Copper", BirthDate = new DateTime(1994, 12, 03),
-                     IsAvailable = true, OrderedDates = null, Cars =  null
+                     IsAvailable = true, Cars =  null
                 }
            };
 

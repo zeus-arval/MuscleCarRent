@@ -1,4 +1,5 @@
 ﻿@page
+@using Models
 @model MuscleCarRent.Pages.CarsAndServices.CreateModel
 
 <h4>Car</h4>
@@ -9,7 +10,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Car.Brand" class="control-label"></label>
-                <select asp-for="Car.Brand" class="form-control"></select>
+                <select asp-for="Car.Brand" class="form-control" asp-items="@Html.GetEnumSelectList<Brand>()">
+                    <option value="">-- Select brand --</option>
+                </select>
                 <span asp-validation-for="Car.Brand" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -84,15 +87,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Car.DriverID" class="control-label"></label>
-                <select asp-for="Car.DriverID" class ="form-control" asp-items="ViewBag.DriverID"></select>
+                <select asp-for="Car.DriverID" class="form-control" asp-items="ViewBag.DriverID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Car.CarTypeID" class="control-label"></label>
-                <select asp-for="Car.CarTypeID" class ="form-control" asp-items="ViewBag.CarTypeID"></select>
+                <select asp-for="Car.CarTypeID" class="form-control" asp-items="ViewBag.CarTypeID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Car.BodyType" class="control-label"></label>
-                <select asp-for="Car.BodyType" class="form-control"></select>
+                <select asp-for="Car.BodyType" class="form-control" asp-items="@Html.GetEnumSelectList<BodyType>()">
+                    <option>-- Select BodyType --</option>
+                </select>
                 <span asp-validation-for="Car.BodyType" class="text-danger"></span>
             </div>
             <div class="form-group">

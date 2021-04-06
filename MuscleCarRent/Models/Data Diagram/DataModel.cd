@@ -4,7 +4,7 @@
     <Position X="6" Y="2.75" Width="1.75" />
     <AssociationLine Name="Brand" Type="MuscleCarRent.Models.Brand" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.125" Y="7.122" />
+        <Point X="7.125" Y="6.93" />
         <Point X="7.125" Y="7.502" />
         <Point X="5.438" Y="7.502" />
         <Point X="5.438" Y="8" />
@@ -17,7 +17,7 @@
     </AssociationLine>
     <AssociationLine Name="BodyType" Type="MuscleCarRent.Models.BodyType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.125" Y="7.122" />
+        <Point X="7.125" Y="6.93" />
         <Point X="7.125" Y="7.477" />
         <Point X="7.5" Y="7.477" />
         <Point X="7.5" Y="8" />
@@ -30,8 +30,8 @@
     </AssociationLine>
     <AssociationLine Name="Driver" Type="MuscleCarRent.Models.Driver" FixedToPoint="true">
       <Path>
-        <Point X="6" Y="4.812" />
-        <Point X="2" Y="4.812" />
+        <Point X="6" Y="4.75" />
+        <Point X="2" Y="4.75" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -42,6 +42,7 @@
       <Property Name="Brand" />
       <Property Name="BodyType" />
       <Property Name="Driver" />
+      <Property Name="CarType" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="OrderedDates" />
@@ -137,33 +138,26 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.Driver">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <InheritanceLine Type="MuscleCarRent.Models.Person" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="8.25" Y="2.18" />
         <Point X="8.25" Y="2.375" />
         <Point X="1.25" Y="2.375" />
-        <Point X="1.25" Y="4.75" />
+        <Point X="1.25" Y="4.5" />
       </Path>
     </InheritanceLine>
-    <AssociationLine Name="OrderedDates" Type="MuscleCarRent.Models.OrderedDate" FixedFromPoint="true">
-      <Path>
-        <Point X="2" Y="5.812" />
-        <Point X="3.25" Y="5.812" />
-      </Path>
-    </AssociationLine>
     <AssociationLine Name="Cars" Type="MuscleCarRent.Models.Car" FixedFromPoint="true">
       <Path>
-        <Point X="2" Y="5.125" />
-        <Point X="6" Y="5.125" />
+        <Point X="2" Y="5.062" />
+        <Point X="6" Y="5.062" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
       <FileName>Models\Driver.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Property Name="OrderedDates" />
       <Property Name="Cars" />
     </ShowAsCollectionAssociation>
   </Class>
@@ -193,6 +187,9 @@
     <ShowAsAssociation>
       <Property Name="RentType" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cars" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="MuscleCarRent.Models.OrderedDate">
     <Position X="3.25" Y="5.25" Width="1.5" />
