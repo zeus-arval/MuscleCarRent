@@ -3,48 +3,140 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MuscleCarRent</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <style>
+        body {
+            background-color: #DEF2F1;
+        }
+
+        header {
+            background-color: #3AAFA9;
+            color: #17252A;
+            font-family: cursive;
+            font-weight: bold;
+        }
+
+        p {
+            color: #17252A;
+            font-family: cursive;
+        }
+
+        a {
+            color: #17252A;
+            font-family: cursive;
+        }
+
+        form {
+            color: bisque;
+            font-family: cursive;
+        }
+
+        footer {
+            background-color: #2B7A78;
+            font-size: 12px;
+            color: slategray;
+        }
+    </style>
+
+    <div id="home" class="container-avto">
+
+        <div class="color-nav">
+            <header class="col-xs-12">
+
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light   ">
+                    <img src="https://i.imgur.com/DxQeAoT.png" alt="LOGO" width="100" height="100">
+
+                    <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-lg-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-page="/Home">Home</a><span></span>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link " asp-area="" asp-page="/Menu">Menu</a><span></span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-page="/Rides">Rides</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-page="/Contact">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class=" nav navbar-nav navbar-right">
+                            <li class="nav-item ">
+                                <a class="nav-link " asp-area="" asp-page="/Profile">Profile</a>
+                            </li>
+
+                            <li class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                                <form action="/action_page.php ">
+                                    <input type="text" placeholder=" " name="search">
+                                    <button type="button">Search</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </header>
+
+
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MuscleCarRent</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - MuscleCarRent - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <footer class="col-xs-12 fixed-bottom">
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow  ">
+
+                    <div class="navbar-collapse collapse d-lg-inline-flex justify-content-betwee">
+                        <ul class="navbar-nav flex-lg-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-page="/AboutUs">About Us</a><span></span>
+                            </li>
+                            <li class=" nav-item">
+                                <a class="nav-link " asp-area="" asp-page="/Reviews">Reviews</a><span></span>
+                            </li>
+                            <li class=" nav-item">
+                                <a class="nav-link " asp-area="" asp-page="/FAQ">FAQ</a><span></span>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <img style="margin:10px; margin-left:70px;" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png" alt="Instagram Logo" width="50" height="50" class="instagram-icon ">
+                                </a>
+
+                            <li>
+                                <a href="#" target="_blank">
+                                    <img style="margin:10px;" src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19754.png" alt="Facebook Logo" width="50" height="50" class="instagram-icon ">
+                                </a>
+                            </li>
+
+
+                        </ul>
+                        <ul class=" nav navbar-nav navbar-right">
+                            <li class="nav-item ">
+                                <p>Muscle Car Rent</p>
+                                <p>Tik Tok 228, Tallinn, Estonia</p>
+                                <p>muscleCarRent@taltech.ee</p>
+                                &copy; 2021 - MuscleCarRent
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+
+            </footer>
+
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+
+            @await RenderSectionAsync("Scripts", required: false)
+
         </div>
-    </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
+    </div>
 </body>
 </html>
