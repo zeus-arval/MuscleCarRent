@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using MuscleCarRent.Data;
 using MuscleCarRent.Models;
 
-namespace MuscleCarRent.Pages.CarsAndServices
+namespace MuscleCarRent.Pages.Accounts
 {
     public class IndexModel : PageModel
     {
@@ -19,15 +19,11 @@ namespace MuscleCarRent.Pages.CarsAndServices
             _context = context;
         }
 
-        public IList<Car> Car { get;set; }
-        public IList<Image> Image { get; set; }
+        public IList<Account> Account { get;set; }
 
         public async Task OnGetAsync()
         {
-            Car = await _context.Cars
-                .Include(c => c.CarType)
-                .Include(c => c.Images)
-                .Include(c => c.Driver).ToListAsync();
+            Account = await _context.Accounts.ToListAsync();
         }
     }
 }

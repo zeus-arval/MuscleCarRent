@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Data\" />
+    <Folder Include="Areas\" />
   </ItemGroup>
 
 </Project>
