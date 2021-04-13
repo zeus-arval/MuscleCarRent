@@ -51,6 +51,7 @@ namespace MuscleCarRent.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
@@ -63,19 +64,23 @@ namespace MuscleCarRent.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PersonalPhoto")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ID");
 
@@ -134,13 +139,17 @@ namespace MuscleCarRent.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Color")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("DriverID")
                         .HasColumnType("int");
 
                     b.Property<string>("Engine")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("IsFavourite")
                         .HasColumnType("bit");
@@ -149,10 +158,14 @@ namespace MuscleCarRent.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("LongDescription")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("Model")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("NeedDriver")
                         .HasColumnType("bit");
@@ -170,7 +183,9 @@ namespace MuscleCarRent.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ShortDescription")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<short?>("Surcharge")
                         .HasColumnType("smallint");
@@ -290,17 +305,12 @@ namespace MuscleCarRent.Migrations
                     b.Property<int>("CarID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DriverID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
                     b.HasIndex("CarID");
-
-                    b.HasIndex("DriverID");
 
                     b.ToTable("OrderedDates");
                 });
@@ -408,10 +418,6 @@ namespace MuscleCarRent.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MuscleCarRent.Models.Driver", null)
-                        .WithMany("OrderedDates")
-                        .HasForeignKey("DriverID");
-
                     b.Navigation("Car");
                 });
 
@@ -462,8 +468,6 @@ namespace MuscleCarRent.Migrations
             modelBuilder.Entity("MuscleCarRent.Models.Driver", b =>
                 {
                     b.Navigation("Cars");
-
-                    b.Navigation("OrderedDates");
                 });
 #pragma warning restore 612, 618
         }
