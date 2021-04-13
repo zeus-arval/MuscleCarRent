@@ -16,7 +16,6 @@ namespace MuscleCarRent.Models
         public string Username { get; set; }
         
         [Required]
-        [RegularExpression("^[A-Za-z0-9_]{8,50}", ErrorMessage = "Password must incluce at least 1 capital letter, 1 normal letter and 1 number")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         
