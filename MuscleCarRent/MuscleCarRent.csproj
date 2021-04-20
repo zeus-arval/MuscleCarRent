@@ -20,4 +20,8 @@
     <Folder Include="Areas\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pages\Pages.csproj" />
+  </ItemGroup>
+
 </Project>
