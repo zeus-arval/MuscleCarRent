@@ -1,74 +1,20 @@
 ﻿@page
+@using MuscleCarRent.Pages.Extensions
 @model MuscleCarRent.Pages.Accounts.DetailsModel
 
 @{
+    Layout = "Shared/_Details";
     ViewData["Title"] = "Details";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Page"] = "Accounts";
+    ViewData["ItemId"] = Model.Account.ID;
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Account</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.Username)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.Username)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.Password)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.Password)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.PhoneNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.PhoneNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.RegistrationDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.RegistrationDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.IsDrivingLicenseValid)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.IsDrivingLicenseValid)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Account.BirthDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.BirthDate)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Account.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+@Html.Show(model => model.Account.Username)
+@Html.Show(model => model.Account.Password)
+@Html.Show(model => model.Account.Email)
+@Html.Show(model => model.Account.PhoneNumber)
+@Html.Show(model => model.Account.RegistrationDate)
+@Html.Show(model => model.Account.IsDrivingLicenseValid)
+@Html.Show(model => model.Account.FirstName)
+@Html.Show(model => model.Account.LastName)
+@Html.Show(model => model.Account.BirthDate)
