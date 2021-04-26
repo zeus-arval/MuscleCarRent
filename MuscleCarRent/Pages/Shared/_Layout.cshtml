@@ -10,33 +10,33 @@
 <body>
     <style>
         body {
-            background-color: #DEF2F1;
+            background-color: #DCDCDC ;
         }
 
         header {
-            background-color: #3AAFA9;
+            background-color: #A9A9A9 ;
             color: #17252A;
-            font-family: cursive;
-            font-weight: bold;
+            font-family: Verdana;
+            
         }
 
         p {
-            color: #17252A;
-            font-family: cursive;
+            color: #3D3D3D;
+            font-family: Verdana;
         }
 
         a {
-            color: #17252A;
-            font-family: cursive;
+            color: #A9A9A9;
+            font-family: Verdana;
         }
 
         form {
             color: bisque;
-            font-family: cursive;
+            font-family: Verdana;
         }
 
         footer {
-            background-color: #2B7A78;
+            background-color: #A9A9A9;
             font-size: 12px;
             color: slategray;
         }
@@ -61,41 +61,55 @@
             <header class="col-xs-12">
 
                 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light   ">
-                    <img src="~/images/Logo.png" alt="LOGO" width="100" height="100">
+                   
+                        <img src="~/images/Logo.png" alt="LOGO" width="100" height="100">
+                 
+                        <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between ">
 
-                    <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
-                        <ul class="navbar-nav flex-lg-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/Index">Home</a><span></span>
-                            </li>
-                            <li class=" nav-item ">
-                                <a class="nav-link " asp-area="" asp-page="/Menu">Menu</a><span></span>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/Rides">Rides</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/Contact">Contact</a>
-                            </li>
-                        </ul>
-                        <ul class=" nav navbar-nav navbar-right">
-                            <li class="nav-item ">
-                                <a class="nav-link " asp-area="" asp-page="/Profile">Profile</a>
-                            </li>
-
-                            <li class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                                <form action="/action_page.php ">
-                                    <input type="text" placeholder=" " name="search">
-                                    <button type="button">Search</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
+                            <ul class=" nav navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link " asp-area="" asp-page="/Home">HOME</a><span></span>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="nav-link" data-toggle="dropdown" href="#">
+                                        MENU
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">PROMOTIONS</a></li>
+                                        <li><a href="#">ABOUT US</a></li>
+                                        <li><a href="#">GALLERY</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="nav-link" data-toggle="dropdown" href="#">
+                                        RIDES
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">RENT</a></li>
+                                        <li><a href="#">FOTOSET</a></li>
+                                        <li><a href="#">FOR RENT</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " asp-area="" asp-page="/Contact">CONTACT</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link " asp-area="" asp-page="/Profile">PROFILE</a>
+                                </li>
+                                <div class="search-container">
+                                    <form action="/action_page.php">
+                                        <input type="text" placeholder="" name="search">
+                                        <button type="submit"><img src="~/images/Search.png" alt="LOGO" width="25" height="25"></button>
+                                    </form>
+                                </div>
+                            </ul>
+                        </div>
                 </nav>
+                    
 
             </header>
-
-
             <div class="container">
                 <main role="main" class="pb-3">
                     @RenderBody()
@@ -108,26 +122,14 @@
                     <div class="navbar-collapse collapse d-lg-inline-flex justify-content-betwee">
                         <ul class="navbar-nav flex-lg-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/AboutUs">About Us</a><span></span>
+                                <a class="nav-link " asp-area="" asp-page="/AboutUs">ABOUT US</a><span></span>
                             </li>
                             <li class=" nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/Reviews">Reviews</a><span></span>
+                                <a class="nav-link " asp-area="" asp-page="/Reviews">REVIEWS</a><span></span>
                             </li>
                             <li class=" nav-item">
                                 <a class="nav-link " asp-area="" asp-page="/FAQ">FAQ</a><span></span>
                             </li>
-                            <li>
-                                <a href="#" target="_blank">
-                                    <img style="margin:10px; margin-left:70px;" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png" alt="Instagram Logo" width="50" height="50" class="instagram-icon ">
-                                </a>
-
-                            <li>
-                                <a href="#" target="_blank">
-                                    <img style="margin:10px;" src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19754.png" alt="Facebook Logo" width="50" height="50" class="instagram-icon ">
-                                </a>
-                            </li>
-
-
                         </ul>
                         <ul class=" nav navbar-nav navbar-right">
                             <li class="nav-item ">
