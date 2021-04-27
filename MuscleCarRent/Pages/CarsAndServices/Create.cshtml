@@ -52,7 +52,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Car.Color" class="control-label"></label>
-                <input asp-for="Car.Color" class="form-control" />
+                <select asp-for="Car.Color" class="form-control" asp-items="@Html.GetEnumSelectList<Color>()">
+                    <option value="@null">-- Select color --</option>
+                </select>
                 <span asp-validation-for="Car.Color" class="text-danger"></span>
             </div>
             <div class="form-group">
