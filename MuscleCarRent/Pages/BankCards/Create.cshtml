@@ -1,0 +1,53 @@
+﻿@page
+@model MuscleCarRent.Pages.BankCards.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BankCard</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BankCard.AccountID" class="control-label"></label>
+                <select asp-for="BankCard.AccountID" class ="form-control" asp-items="ViewBag.AccountID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankCard.CardNumber" class="control-label"></label>
+                <input asp-for="BankCard.CardNumber" class="form-control" />
+                <span asp-validation-for="BankCard.CardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankCard.CardHolderFullName" class="control-label"></label>
+                <input asp-for="BankCard.CardHolderFullName" class="form-control" />
+                <span asp-validation-for="BankCard.CardHolderFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankCard.ExpirationTime" class="control-label"></label>
+                <input asp-for="BankCard.ExpirationTime" class="form-control" />
+                <span asp-validation-for="BankCard.ExpirationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankCard.CVV" class="control-label"></label>
+                <input asp-for="BankCard.CVV" class="form-control" />
+                <span asp-validation-for="BankCard.CVV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
