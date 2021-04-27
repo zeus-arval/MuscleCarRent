@@ -24,6 +24,6 @@
 @Html.Show(model => model.Car.Engine)
 @Html.Show(model => model.Car.NeedDriver)
 @Html.Show(model => model.Car.Surcharge)
-@Html.Show(model => model.Car.CarType, model => model.Car.CarType)
+@Html.Show(model => model.Car.CarType, model => model.Car.CarType.RentType)
 @Html.Show(model => model.Car.BodyType)
-@Html.Show(model => model.Car.Driver, model => model.Car.DriverID)
+@Html.Show(model => model.Car.Driver, model => model.Car.Driver.FirstName)
