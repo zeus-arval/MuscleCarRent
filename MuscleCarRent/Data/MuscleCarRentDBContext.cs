@@ -30,6 +30,7 @@ namespace MuscleCarRent.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AccessType>().ToTable("AccessType");
+            
             modelBuilder.Entity<Account>().ToTable("Account");
             modelBuilder.Entity<BankCard>().ToTable("BankCard");
             modelBuilder.Entity<Car>().ToTable("Car");
@@ -39,11 +40,6 @@ namespace MuscleCarRent.Data
             modelBuilder.Entity<Order>().ToTable("Order");
             modelBuilder.Entity<PersonalPromotion>().ToTable("PersonalPromotion");
             modelBuilder.Entity<Promotion>().ToTable("Promotion");
-            modelBuilder.Ignore<IdentityUserLogin<string>>();
-            modelBuilder.Ignore<IdentityUserRole<string>>();
-            modelBuilder.Ignore<IdentityUserClaim<string>>();
-            modelBuilder.Ignore<IdentityUserToken<string>>();
-            modelBuilder.Ignore<IdentityUser<string>>();
         }
     }
 }

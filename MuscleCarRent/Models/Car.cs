@@ -25,6 +25,17 @@ namespace MuscleCarRent.Models
         CoupeUtility
     }
 
+    public enum Color
+    {
+        White,
+        Black,
+        Grey,
+        Green,
+        Blue,
+        Yellow,
+        Red
+    }
+
     public class Car
     {
         public int ID { get; set; }
@@ -34,7 +45,7 @@ namespace MuscleCarRent.Models
         
         [Required]
         [StringLength(50)]
-        [RegularExpression(@"^[A-Za-z0-9]{2,50}", ErrorMessage = "Model's name has to contain letters")]
+        [RegularExpression(@"^[A-Za-z 0-9]{2,50}", ErrorMessage = "Model's name has to contain letters")]
         public string Model { get; set; }
         
         [Required]
@@ -48,7 +59,7 @@ namespace MuscleCarRent.Models
         public string LongDescription { get; set; }
         
         [Required]
-        [RegularExpression(@"^[0-9]{4}", ErrorMessage = "Year must contain numbers")]
+        [RegularExpression(@"^(?:19|20)\d\d$", ErrorMessage = "Incorrect year")]
         [Display(Name = "Production year")]
         public int ProductionYear { get; set; }
 
@@ -59,20 +70,19 @@ namespace MuscleCarRent.Models
         public bool IsFavourite { get; set; }
 
         [Required]
+        [RegularExpression(@"^[150-999]{3}")]
         public short Power { get; set; }
         
         [Required]
-        [StringLength(20)]
-        [RegularExpression("[a-zA-Z]{1,20}", ErrorMessage = "Name of color must be a word")]
-        public string Color { get; set; }
+        public Color Color { get; set; }
 
         [Required]
-        [RegularExpression("[0-9]{2,5}", ErrorMessage = "Price must be a number")]
+        [DataType(DataType.Currency)]
         [Display(Name = "Base price")]
         public short BasePrice { get; set; }
 
         [Required]
-        [RegularExpression("[0-9]{2,3}", ErrorMessage = "Price must be a number")]
+        [DataType(DataType.Currency)]
         [Display(Name = "Price per hour")]
         public byte PricePerHour { get; set; }
 
@@ -87,7 +97,7 @@ namespace MuscleCarRent.Models
         [Display(Name = "Needs driver")]
         public bool NeedDriver { get; set; }
 
-        [RegularExpression("[0-9]{2,3}", ErrorMessage = "Surcharge must be a number")]
+        [DataType(DataType.Currency)]
         public short? Surcharge { get; set; }
         
         public ICollection<OrderedDate>? OrderedDates { get; set; }
