@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MuscleCarRent.Models;
+using MuscleCarRentProject.Data;
 
 namespace MuscleCarRent.Data
 {
@@ -24,7 +24,6 @@ namespace MuscleCarRent.Data
         public DbSet<Image> Images { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderedDate> OrderedDates { get; set; }
-        public DbSet<PersonalPromotion> PersonalPromotions { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,7 +37,6 @@ namespace MuscleCarRent.Data
             modelBuilder.Entity<Driver>().ToTable("Driver");
             modelBuilder.Entity<Image>().ToTable("Image");
             modelBuilder.Entity<Order>().ToTable("Order");
-            modelBuilder.Entity<PersonalPromotion>().ToTable("PersonalPromotion");
             modelBuilder.Entity<Promotion>().ToTable("Promotion");
         }
     }
