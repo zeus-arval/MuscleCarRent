@@ -7,60 +7,59 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
-<body>
+<body >
     <style>
-        body {
-            background-color: #DCDCDC ;
-        }
-
         header {
             background-color: #A9A9A9 ;
             color: #17252A;
             font-family: Verdana;
             
         }
-
         p {
             color: #3D3D3D;
             font-family: Verdana;
         }
 
-        a {
-            color: #A9A9A9;
-            font-family: Verdana;
-        }
-
-        form {
-            color: bisque;
-            font-family: Verdana;
-        }
-
         footer {
+          
             background-color: #A9A9A9;
             font-size: 12px;
             color: slategray;
-        }
-
-        label.control-label {
-            color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 8.5rem; /* Footer height */
         }
 
         label.form-check-label{
             color: black;
         }
-
-        table {
-            border: 2px solid lightgrey;
+        #page-container {
+            position: relative;
+            min-height: 100vh;
         }
-
+        #content-wrap {
+            padding-bottom: 8.5rem; /* Footer height */
+        }
+        .open .nav-link {
+            color: #fff;
+            background-color:transparent;
+        }
+        .dropdown-menu li a {
+            color: #000 !important;
+        }
+        .dropdown-menu {
+            background-color: #A9A9A9;
+            opacity: 0.7;
+        }
     </style>
 
-    <div id="home" class="container-avto">
+    <div id="page-container" class="container-avto" >
 
-        <div class="color-nav">
+          <div id="content-wrap">
             <header class="col-xs-12">
 
-                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light   ">
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light ">
                    
                         <img src="~/images/Logo.png" alt="LOGO" width="100" height="100">
                  
@@ -70,15 +69,15 @@
                                 <li class="nav-item">
                                     <a class="nav-link " asp-area="" asp-page="/Index">HOME</a><span></span>
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown ">
                                     <a class="nav-link" data-toggle="dropdown" href="#">
                                         MENU
                                         <span class="caret"></span>
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">PROMOTIONS</a></li>
-                                        <li><a href="#">ABOUT US</a></li>
-                                        <li><a href="#">GALLERY</a></li>
+                                    <ul class="dropdown-menu ">
+                                        <li><a href="#">Promotion</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Gallery</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -87,9 +86,9 @@
                                         <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">RENT</a></li>
-                                        <li><a href="#">FOTOSET</a></li>
-                                        <li><a href="#">FOR RENT</a></li>
+                                        <li><a href="#">Rent</a></li>
+                                        <li><a href="#">Fotoset</a></li>
+                                        <li><a href="#">For rent</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -115,11 +114,10 @@
                     @RenderBody()
                 </main>
             </div>
+          </div>
 
-            <footer class="col-xs-12">
-                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow  ">
 
-                    <div class="navbar-collapse collapse d-lg-inline-flex justify-content-betwee">
+                    <div class="navbar-collapse collapse d-lg-inline-flex justify-content-betwee ">
                         <ul class="navbar-nav flex-lg-grow-1">
                             <li class="nav-item">
                                 <a class="nav-link " asp-area="" asp-page="/AboutUs">ABOUT US</a><span></span>
@@ -131,17 +129,16 @@
                                 <a class="nav-link " asp-area="" asp-page="/FAQ">FAQ</a><span></span>
                             </li>
                         </ul>
-                        <ul class=" nav navbar-nav navbar-right">
-                            <li class="nav-item ">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class=" nav-item">
                                 <p>Muscle Car Rent</p>
                                 <p>Tik Tok 228, Tallinn, Estonia</p>
                                 <p>muscleCarRent@taltech.ee</p>
                                 &copy; 2021 - MuscleCarRent
                             </li>
-
                         </ul>
                     </div>
-                </nav>
+                 
 
             </footer>
 
@@ -152,6 +149,6 @@
             @await RenderSectionAsync("Scripts", required: false)
 
         </div>
-    </div>
+  
 </body>
 </html>
