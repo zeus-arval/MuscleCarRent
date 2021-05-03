@@ -56,7 +56,7 @@
 
     <div id="page-container" class="container-avto" >
 
-          <div id="content-wrap">
+        <div id="content-wrap">
             <header class="col-xs-12">
 
                 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light ">
@@ -108,47 +108,45 @@
                 </nav>
                     
 
-            </header>
-            <div class="container">
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
-          </div>
-
-
-                    <div class="navbar-collapse collapse d-lg-inline-flex justify-content-betwee ">
-                        <ul class="navbar-nav flex-lg-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/AboutUs">ABOUT US</a><span></span>
-                            </li>
-                            <li class=" nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/Reviews">REVIEWS</a><span></span>
-                            </li>
-                            <li class=" nav-item">
-                                <a class="nav-link " asp-area="" asp-page="/FAQ">FAQ</a><span></span>
-                            </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class=" nav-item">
-                                <p>Muscle Car Rent</p>
-                                <p>Tik Tok 228, Tallinn, Estonia</p>
-                                <p>muscleCarRent@taltech.ee</p>
-                                &copy; 2021 - MuscleCarRent
-                            </li>
-                        </ul>
-                    </div>
-                 
-
-            </footer>
-
-            <script src="~/lib/jquery/dist/jquery.min.js"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="~/js/site.js" asp-append-version="true"></script>
-
-            @await RenderSectionAsync("Scripts", required: false)
-
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
+        </div>
+
+        <footer>
+            <div class="navbar-collapse collapse d-lg-inline-flex justify-content-betwee ">
+                <ul class="navbar-nav flex-lg-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-page="/AboutUs">ABOUT US</a><span></span>
+                    </li>
+                    <li class=" nav-item">
+                        <a class="nav-link " asp-area="" asp-page="/Reviews">REVIEWS</a><span></span>
+                    </li>
+                    <li class=" nav-item">
+                        <a class="nav-link " asp-area="" asp-page="/FAQ">FAQ</a><span></span>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class=" nav-item">
+                        <p>Muscle Car Rent</p>
+                        <p>Tik Tok 228, Tallinn, Estonia</p>
+                        <p>muscleCarRent@taltech.ee</p>
+                        &copy; 2021 - MuscleCarRent
+                    </li>
+                </ul>
+            </div
+        </footer>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+        @await RenderSectionAsync("Scripts", required: false)
+
+    </div>
   
 </body>
 </html>
