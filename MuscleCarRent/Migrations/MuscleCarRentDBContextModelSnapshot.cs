@@ -138,10 +138,8 @@ namespace MuscleCarRent.Migrations
                     b.Property<int>("CarTypeID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<int>("Color")
+                        .HasColumnType("int");
 
                     b.Property<int>("DriverID")
                         .HasColumnType("int");

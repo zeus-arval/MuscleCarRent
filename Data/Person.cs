@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace MuscleCarRent.Models
+namespace MuscleCarRentProject.Data
 {
     public class Person
     {

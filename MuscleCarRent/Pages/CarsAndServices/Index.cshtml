@@ -32,7 +32,7 @@
                 @Html.DisplayNameFor(model => model.Car[0].PricePerHour)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].NumberOfSeats)
+                @Html.DisplayNameFor(model => model.Car[0].Images)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Car[0].Engine)
@@ -71,7 +71,7 @@
                 @Html.DisplayFor(modelItem => item.PricePerHour)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NumberOfSeats)
+                @Html.DisplayFor(modelItem => item.Images.ToArray()[(Model.Car.IndexOf(item) + 4) % 4].ImagePath)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Engine)

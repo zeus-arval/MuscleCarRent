@@ -1,4 +1,4 @@
-﻿using MuscleCarRent.Models;
+﻿using MuscleCarRentProject.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,28 +46,23 @@ namespace MuscleCarRent.Data
             {
                 new Car
                 {
-                    Model = "Galaxie 500 Sunliner", Brand = Brand.Ford, NumberOfSeats = 4, Power = 352, Engine = "V8 6.4",
-                    BodyType = BodyType.FullSize, ProductionYear = 1961, Color = "Black", BasePrice = 100, PricePerHour = 20, CarTypeID = 1, 
-                    DriverID = 1, IsFavourite = false, IsPopular = false, NeedDriver = false, Surcharge = 0, Driver = null,
-                    ShortDescription = "Black exterior, white convertible top, red and white interior.",
-                    LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition " +
-                                      "is automatic with 3 speeds."
+                    Brand = Brand.Plymouth, Model = "GTX", ShortDescription = "Black exterior, white convertible top, red and white interior.", 
+                    LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
+                    ProductionYear = 1967, IsPopular = false, IsFavourite = false, Power = 425, Color = Color.Blue, BasePrice = 110, PricePerHour = 23, NumberOfSeats = 4, Engine = "426ci V8 HEMI",
+                    NeedDriver = false, Surcharge = 0, DriverID = 2, CarTypeID = 1, BodyType = BodyType.PonyCar
                 },
                 new Car
                 {
-                    Model = "GTX", Brand = Brand.Plymouth, NumberOfSeats = 4, Power = 425, Engine = "426ci V8 HEMI Engine",
-                    BodyType = BodyType.PonyCar, ProductionYear = 1967, Color = "Blue", BasePrice = 110, PricePerHour = 23, CarTypeID = 1,
-                    DriverID = 2, IsFavourite = false, IsPopular = false, NeedDriver = false, Surcharge = 0, Driver = null,
-                    ShortDescription = "Bright blue metallic exterior, black interior.",
-                    LongDescription = "Excellent car with blue metallic exterior and black interior. 426ci V8 HEMI engine coupled with 3 speed automatic " +
-                                      "transmition will give you a hot ride"
-                }
+                    Brand = Brand.Ford, Model = "Galaxie 500 Sunliner",  ShortDescription = "Black exterior, white convertible top, red and white interior.",
+                    LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
+                    ProductionYear = 1961, IsPopular = false, IsFavourite = false, Power = 352, Color = Color.Black, BasePrice = 100, PricePerHour = 20, NumberOfSeats = 4, Engine = "V8 6.4",
+                    NeedDriver = false, Surcharge = 0, DriverID = 1, CarTypeID = 1, BodyType = BodyType.FullSize
+                },
             };
             context.Cars.AddRange(cars);
             context.SaveChanges();
 
             string basePath = @"~\wwwroot\images\";
-
             var images = new Image[]
             {
                 new Image { CarID = 1, ImagePath = basePath + "FordGalaxie1" },
@@ -85,6 +80,20 @@ namespace MuscleCarRent.Data
                 new Image { CarID = 2, ImagePath = basePath + "GTX6" }
             };
             context.Images.AddRange(images);
+            context.SaveChanges();
+
+            var accounts = new Account[]
+            {
+                new Account
+                {
+                    BirthDate = new DateTime(1998,03,18), Email = "eragonart@gmail.com", FirstName = "Arturius", LastName = "Valden", Password = "As8fas46g", PhoneNumber = "+3725786421", RegistrationDate = new DateTime(2021, 04, 24), Username = "ArturiusValden" 
+                },
+                new Account
+                {
+                    BirthDate = new DateTime(1999,01,24), Email = "eduardbudr@gmail.com", FirstName = "Eduard", LastName = "Budr", Password = "ho2A5asd456", PhoneNumber = "+3725586269", RegistrationDate = new DateTime(2021, 04, 23), Username = "Eduardo"
+                }
+            };
+            context.Accounts.AddRange(accounts);
             context.SaveChanges();
         }
     }

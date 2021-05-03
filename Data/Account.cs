@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Threading.Tasks;
 
-namespace MuscleCarRent.Models
+namespace MuscleCarRentProject.Data
 {
     public class Account : Person
     {
