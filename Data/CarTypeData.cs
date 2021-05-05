@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Core;
 
 namespace MuscleCarRentProject.Data
 {
@@ -9,9 +10,8 @@ namespace MuscleCarRentProject.Data
         Fotoset,
         ForEvent
     }
-    public sealed class CarTypeData
+    public sealed class CarTypeData : UniqueItem
     {
-        public int ID { get; set; }
         public RentType RentType { get; set; }
         public ICollection<CarData> Cars { get; set; }
     }

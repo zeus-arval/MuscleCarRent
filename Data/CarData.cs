@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Data.Common;
+using MuscleCarRentProject.Core;
 
 namespace MuscleCarRentProject.Data
 {
@@ -31,10 +33,8 @@ namespace MuscleCarRentProject.Data
         Red
     }
 
-    public sealed class CarData
+    public sealed class CarData : BaseData
     {
-        public int ID { get; set; }
-        
         [Required]
         public Brand Brand { get; set; }
         

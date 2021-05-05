@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Data.Common;
 
 namespace MuscleCarRentProject.Data
 {
-    public sealed class ImageData
+    public sealed class ImageData : BaseData
     {
-        public int ID { get; set; }
         [Display(Name = "Image path")]
         public string ImagePath { get; set; }
 

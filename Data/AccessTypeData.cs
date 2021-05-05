@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using Core;
 
 namespace MuscleCarRentProject.Data
 {
@@ -10,9 +11,8 @@ namespace MuscleCarRentProject.Data
         User
     }
 
-    public sealed class AccessTypeData
+    public sealed class AccessTypeData : UniqueItem
     {
-        public int ID { get; set; }
         [InverseProperty(nameof(AccountData.AccessType))]
         public ICollection<AccountData> Accounts { get; set; }
         public AccessLevel AccessLevel { get; set; }

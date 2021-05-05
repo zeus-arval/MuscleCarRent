@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Data.Common;
 
 namespace MuscleCarRentProject.Data
 {
-    public sealed class OrderedDateData
+    public sealed class OrderedDateData : BaseData
     {
-        public int ID { get; set; }
         [Display(Name = "Order date")]
         public DateTime OrderDate { get; set; }
         public int CarID { get; set; }
