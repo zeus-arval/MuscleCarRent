@@ -9,7 +9,7 @@ namespace MuscleCarRentProject.Data
         SocialPromotion
     }
 
-    public class Promotion : Order
+    public sealed class Promotion : Order
     {
         public int Discount { get; set; }
         [Display(Name = "Valid until")]

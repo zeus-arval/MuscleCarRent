@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MuscleCarRentProject.Data
 {
-    public class Account : Person
+    public sealed class Account : Person
     {
         [Required]
         [MaxLength(50)]

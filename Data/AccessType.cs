@@ -10,7 +10,7 @@ namespace MuscleCarRentProject.Data
         User
     }
 
-    public class AccessType
+    public sealed class AccessType
     {
         public int ID { get; set; }
         [InverseProperty(nameof(Account.AccessType))]

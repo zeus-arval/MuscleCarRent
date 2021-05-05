@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MuscleCarRentProject.Data
 {
-    public class BankCard
+    public sealed class BankCard
     {
         public int ID { get; set; }
         public int AccountID { get; set; }

@@ -31,7 +31,7 @@ namespace MuscleCarRentProject.Data
         Red
     }
 
-    public class Car
+    public sealed class Car
     {
         public int ID { get; set; }
         

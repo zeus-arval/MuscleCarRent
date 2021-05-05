@@ -45,6 +45,14 @@
   </Class>
   <Class Name="MuscleCarRentProject.Data.Car">
     <Position X="5" Y="4" Width="1.5" />
+    <AssociationLine Name="Brand" Type="MuscleCarRentProject.Data.Brand" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.688" Y="7.988" />
+        <Point X="5.688" Y="8.99" />
+        <Point X="7.344" Y="8.99" />
+        <Point X="7.344" Y="9.75" />
+      </Path>
+    </AssociationLine>
     <AssociationLine Name="Color" Type="MuscleCarRentProject.Data.Color" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="5.688" Y="7.988" />
@@ -52,14 +60,6 @@
         <Point X="4.522" Y="8.97" />
         <Point X="4.522" Y="10.754" />
         <Point X="3.5" Y="10.754" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Brand" Type="MuscleCarRentProject.Data.Brand" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5.688" Y="7.988" />
-        <Point X="5.688" Y="8.99" />
-        <Point X="7.344" Y="8.99" />
-        <Point X="7.344" Y="9.75" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="BodyType" Type="MuscleCarRentProject.Data.BodyType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -75,15 +75,15 @@
       <FileName>Car.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="CarType" />
-      <Property Name="Driver" />
-      <Property Name="Color" />
       <Property Name="Brand" />
+      <Property Name="Color" />
+      <Property Name="CarType" />
       <Property Name="BodyType" />
+      <Property Name="Driver" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="Images" />
       <Property Name="OrderedDates" />
+      <Property Name="Images" />
       <Property Name="Orders" />
     </ShowAsCollectionAssociation>
   </Class>

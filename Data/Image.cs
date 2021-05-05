@@ -2,7 +2,7 @@
 
 namespace MuscleCarRentProject.Data
 {
-    public class Image
+    public sealed class Image
     {
         public int ID { get; set; }
         [Display(Name = "Image path")]

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MuscleCarRentProject.Data
 {
-    public class OrderedDate
+    public sealed class OrderedDate
     {
         public int ID { get; set; }
         [Display(Name = "Order date")]
