@@ -22,14 +22,14 @@ namespace MuscleCarRent.Pages.Drivers
         [BindProperty]
         public DriverData Driver { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Driver = await _context.Drivers.FirstOrDefaultAsync(m => m.ID == id);
+            Driver = await _context.Drivers.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Driver == null)
             {
@@ -38,7 +38,7 @@ namespace MuscleCarRent.Pages.Drivers
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(string? id)
         {
             if (id == null)
             {

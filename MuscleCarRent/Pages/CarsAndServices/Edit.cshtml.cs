@@ -32,7 +32,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
 
             Car = await _context.Cars
                 .Include(c => c.CarType)
-                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Car == null)
             {
@@ -60,7 +60,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CarExists(Car.ID))
+                if (!CarExists(Car.Id))
                 {
                     return NotFound();
                 }
@@ -73,9 +73,9 @@ namespace MuscleCarRent.Pages.CarsAndServices
             return RedirectToPage("./Index");
         }
 
-        private bool CarExists(int id)
+        private bool CarExists(string id)
         {
-            return _context.Cars.Any(e => e.ID == id);
+            return _context.Cars.Any(e => e.Id == id);
         }
     }
 }
