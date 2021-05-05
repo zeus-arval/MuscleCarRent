@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.Accounts
             _context = context;
         }
 
-        public IList<Account> Account { get;set; }
+        public IList<AccountData> Account { get;set; }
 
         public async Task OnGetAsync()
         {

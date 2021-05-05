@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MuscleCarRentProject.Data
 {
-    public class Order
+    public class OrderData
     {
         public int ID { get; set; }
         [Display(Name = "Order date")]
@@ -18,8 +18,8 @@ namespace MuscleCarRentProject.Data
         public bool HasBankCard { get; set; }
 
 
-        public Car Car { get; set; }
-        public Account Account { get; set; }
+        public CarData Car { get; set; }
+        public AccountData Account { get; set; }
 
         public int CarID
         {

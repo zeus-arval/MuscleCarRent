@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
             _context = context;
         }
 
-        public Car Car { get; set; }
+        public CarData Car { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

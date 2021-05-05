@@ -26,7 +26,7 @@ namespace MuscleCarRent.Pages.BankCards
         }
 
         [BindProperty]
-        public BankCard BankCard { get; set; }
+        public BankCardData BankCard { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

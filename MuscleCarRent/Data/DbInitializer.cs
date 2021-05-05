@@ -13,14 +13,14 @@ namespace MuscleCarRent.Data
             if (context.Cars.Any())
                 return;
 
-            var drivers = new Driver[]
+            var drivers = new DriverData[]
            {
-                new Driver
+                new DriverData
                 {
                     FirstName = "Michael", LastName = "Vaggner", BirthDate = new DateTime(1992, 02, 12),
                     IsAvailable = true, Cars =  null
                 },
-                new Driver
+                new DriverData
                 {
                     FirstName = "Rain", LastName = "Copper", BirthDate = new DateTime(1994, 12, 03),
                      IsAvailable = true, Cars =  null
@@ -31,27 +31,27 @@ namespace MuscleCarRent.Data
             context.SaveChanges();
 
 
-            var carTypes = new CarType[]
+            var carTypes = new CarTypeData[]
             {
-                new CarType{ RentType = (RentType)0},
-                new CarType{ RentType = (RentType)1},
-                new CarType{ RentType = (RentType)2},
-                new CarType{ RentType = (RentType)3},
+                new CarTypeData{ RentType = (RentType)0},
+                new CarTypeData{ RentType = (RentType)1},
+                new CarTypeData{ RentType = (RentType)2},
+                new CarTypeData{ RentType = (RentType)3},
             };
 
             context.CarTypes.AddRange(carTypes);
             context.SaveChanges();
 
-            var cars = new Car[]
+            var cars = new CarData[]
             {
-                new Car
+                new CarData
                 {
                     Brand = Brand.Plymouth, Model = "GTX", ShortDescription = "Black exterior, white convertible top, red and white interior.", 
                     LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
                     ProductionYear = 1967, IsPopular = false, IsFavourite = false, Power = 425, Color = Color.Blue, BasePrice = 110, PricePerHour = 23, NumberOfSeats = 4, Engine = "426ci V8 HEMI",
                     NeedDriver = false, Surcharge = 0, DriverID = 2, CarTypeID = 1, BodyType = BodyType.PonyCar
                 },
-                new Car
+                new CarData
                 {
                     Brand = Brand.Ford, Model = "Galaxie 500 Sunliner",  ShortDescription = "Black exterior, white convertible top, red and white interior.",
                     LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
@@ -63,32 +63,32 @@ namespace MuscleCarRent.Data
             context.SaveChanges();
 
             string basePath = @"~\wwwroot\images\";
-            var images = new Image[]
+            var images = new ImageData[]
             {
-                new Image { CarID = 1, ImagePath = basePath + "FordGalaxie1" },
-                new Image { CarID = 1, ImagePath = basePath + "FordGalaxie2" },
-                new Image { CarID = 1, ImagePath = basePath + "FordGalaxie3" },
-                new Image { CarID = 1, ImagePath = basePath + "FordGalaxie4" },
-                new Image { CarID = 1, ImagePath = basePath + "FordGalaxie5" },
-                new Image { CarID = 1, ImagePath = basePath + "FordGalaxie6" },
+                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie1" },
+                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie2" },
+                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie3" },
+                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie4" },
+                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie5" },
+                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie6" },
 
-                new Image { CarID = 2, ImagePath = basePath + "GTX1" },
-                new Image { CarID = 2, ImagePath = basePath + "GTX2" },
-                new Image { CarID = 2, ImagePath = basePath + "GTX3" },
-                new Image { CarID = 2, ImagePath = basePath + "GTX4" },
-                new Image { CarID = 2, ImagePath = basePath + "GTX5" },
-                new Image { CarID = 2, ImagePath = basePath + "GTX6" }
+                new ImageData { CarID = 2, ImagePath = basePath + "GTX1" },
+                new ImageData { CarID = 2, ImagePath = basePath + "GTX2" },
+                new ImageData { CarID = 2, ImagePath = basePath + "GTX3" },
+                new ImageData { CarID = 2, ImagePath = basePath + "GTX4" },
+                new ImageData { CarID = 2, ImagePath = basePath + "GTX5" },
+                new ImageData { CarID = 2, ImagePath = basePath + "GTX6" }
             };
             context.Images.AddRange(images);
             context.SaveChanges();
 
-            var accounts = new Account[]
+            var accounts = new AccountData[]
             {
-                new Account
+                new AccountData
                 {
                     BirthDate = new DateTime(1998,03,18), Email = "eragonart@gmail.com", FirstName = "Arturius", LastName = "Valden", Password = "As8fas46g", PhoneNumber = "+3725786421", RegistrationDate = new DateTime(2021, 04, 24), Username = "ArturiusValden" 
                 },
-                new Account
+                new AccountData
                 {
                     BirthDate = new DateTime(1999,01,24), Email = "eduardbudr@gmail.com", FirstName = "Eduard", LastName = "Budr", Password = "ho2A5asd456", PhoneNumber = "+3725586269", RegistrationDate = new DateTime(2021, 04, 23), Username = "Eduardo"
                 }

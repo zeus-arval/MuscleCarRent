@@ -19,8 +19,8 @@ namespace MuscleCarRent.Pages.CarsAndServices
             _context = context;
         }
 
-        public IList<Car> Car { get;set; }
-        public IList<Image> Image { get; set; }
+        public IList<CarData> Car { get;set; }
+        public IList<ImageData> Image { get; set; }
 
         public async Task OnGetAsync()
         {

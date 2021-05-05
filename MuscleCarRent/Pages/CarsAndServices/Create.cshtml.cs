@@ -21,13 +21,13 @@ namespace MuscleCarRent.Pages.CarsAndServices
 
         public IActionResult OnGet()
         {
-        ViewData["CarTypeID"] = new SelectList(_context.Set<CarType>(), "ID", "ID");
-        ViewData["DriverID"] = new SelectList(_context.Set<Driver>(), "ID", "ID");
+        ViewData["CarTypeID"] = new SelectList(_context.Set<CarTypeData>(), "ID", "ID");
+        ViewData["DriverID"] = new SelectList(_context.Set<DriverData>(), "ID", "ID");
             return Page();
         }
 
         [BindProperty]
-        public Car Car { get; set; }
+        public CarData Car { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

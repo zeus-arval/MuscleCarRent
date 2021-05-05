@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.Promotions
             _context = context;
         }
 
-        public Promotion Promotion { get; set; }
+        public PromotionData Promotion { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

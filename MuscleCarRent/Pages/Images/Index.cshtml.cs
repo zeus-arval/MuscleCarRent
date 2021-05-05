@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.Images
             _context = context;
         }
 
-        public IList<Image> Image { get;set; }
+        public IList<ImageData> Image { get;set; }
 
         public async Task OnGetAsync()
         {

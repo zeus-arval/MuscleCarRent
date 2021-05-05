@@ -20,7 +20,7 @@ namespace MuscleCarRent.Pages.OrderDates
         }
 
         [BindProperty]
-        public OrderedDate OrderedDate { get; set; }
+        public OrderedDateData OrderedDate { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

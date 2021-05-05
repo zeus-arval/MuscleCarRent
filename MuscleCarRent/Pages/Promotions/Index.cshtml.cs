@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.Promotions
             _context = context;
         }
 
-        public IList<Promotion> Promotion { get;set; }
+        public IList<PromotionData> Promotion { get;set; }
 
         public async Task OnGetAsync()
         {

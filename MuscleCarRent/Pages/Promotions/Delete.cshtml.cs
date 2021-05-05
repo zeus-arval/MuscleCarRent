@@ -20,7 +20,7 @@ namespace MuscleCarRent.Pages.Promotions
         }
 
         [BindProperty]
-        public Promotion Promotion { get; set; }
+        public PromotionData Promotion { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

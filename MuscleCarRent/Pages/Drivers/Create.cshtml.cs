@@ -25,7 +25,7 @@ namespace MuscleCarRent.Pages.Drivers
         }
 
         [BindProperty]
-        public Driver Driver { get; set; }
+        public DriverData Driver { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

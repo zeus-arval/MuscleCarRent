@@ -26,7 +26,7 @@ namespace MuscleCarRent.Pages.OrderDates
         }
 
         [BindProperty]
-        public OrderedDate OrderedDate { get; set; }
+        public OrderedDateData OrderedDate { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

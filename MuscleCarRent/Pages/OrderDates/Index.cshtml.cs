@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.OrderDates
             _context = context;
         }
 
-        public IList<OrderedDate> OrderedDate { get;set; }
+        public IList<OrderedDateData> OrderedDate { get;set; }
 
         public async Task OnGetAsync()
         {

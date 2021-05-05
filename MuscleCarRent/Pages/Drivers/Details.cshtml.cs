@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.Drivers
             _context = context;
         }
 
-        public Driver Driver { get; set; }
+        public DriverData Driver { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

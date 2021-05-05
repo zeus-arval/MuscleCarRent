@@ -20,7 +20,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
         }
 
         [BindProperty]
-        public Car Car { get; set; }
+        public CarData Car { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

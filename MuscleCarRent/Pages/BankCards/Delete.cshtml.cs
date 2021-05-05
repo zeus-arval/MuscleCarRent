@@ -20,7 +20,7 @@ namespace MuscleCarRent.Pages.BankCards
         }
 
         [BindProperty]
-        public BankCard BankCard { get; set; }
+        public BankCardData BankCard { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

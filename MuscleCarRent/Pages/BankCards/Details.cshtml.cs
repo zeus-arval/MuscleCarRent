@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.BankCards
             _context = context;
         }
 
-        public BankCard BankCard { get; set; }
+        public BankCardData BankCard { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

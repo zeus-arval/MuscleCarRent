@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MuscleCarRentProject.Data
 {
-    public sealed class BankCard
+    public sealed class BankCardData
     {
         public int ID { get; set; }
         public int AccountID { get; set; }
@@ -14,6 +14,6 @@ namespace MuscleCarRentProject.Data
         [Display(Name = "Expiration time")]
         public DateTime ExpirationTime { get; set; }
         public short CVV { get; set; }
-        public Account Account { get; set; }
+        public AccountData Account { get; set; }
     }
 }

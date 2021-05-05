@@ -21,7 +21,7 @@ namespace MuscleCarRent.Pages.Orders
         }
 
         [BindProperty]
-        public Order Order { get; set; }
+        public OrderData Order { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

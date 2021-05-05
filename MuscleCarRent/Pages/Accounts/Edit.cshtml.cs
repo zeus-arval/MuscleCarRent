@@ -21,7 +21,7 @@ namespace MuscleCarRent.Pages.Accounts
         }
 
         [BindProperty]
-        public Account Account { get; set; }
+        public AccountData Account { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

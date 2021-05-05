@@ -31,7 +31,7 @@ namespace MuscleCarRentProject.Data
         Red
     }
 
-    public sealed class Car
+    public sealed class CarData
     {
         public int ID { get; set; }
         
@@ -95,28 +95,28 @@ namespace MuscleCarRentProject.Data
         [DataType(DataType.Currency)]
         public short? Surcharge { get; set; }
         
-        public ICollection<OrderedDate>? OrderedDates { get; set; }
+        public ICollection<OrderedDateData>? OrderedDates { get; set; }
 
         [Required]
         [Display(Name = "Driver ID")]
         public int DriverID { get; set; }
 
-        public CarType CarType { get; set; }
+        public CarTypeData CarType { get; set; }
 
         [Display(Name = "Car Type")]
         public int CarTypeID { get; set; }
 
-        [InverseProperty(nameof(Image.Car))]
-        public ICollection<Image>? Images { get; set; }
+        [InverseProperty(nameof(ImageData.Car))]
+        public ICollection<ImageData>? Images { get; set; }
 
         [Required]
         [Display(Name = "Body type")]
         public BodyType BodyType { get; set; }
 
-        [InverseProperty(nameof(Order.Car))]
-        public ICollection<Order>? Orders { get; set; }
+        [InverseProperty(nameof(OrderData.Car))]
+        public ICollection<OrderData>? Orders { get; set; }
 
-        public Driver Driver { get; set; }
+        public DriverData Driver { get; set; }
     }
 
 }

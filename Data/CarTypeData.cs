@@ -9,10 +9,10 @@ namespace MuscleCarRentProject.Data
         Fotoset,
         ForEvent
     }
-    public sealed class CarType
+    public sealed class CarTypeData
     {
         public int ID { get; set; }
         public RentType RentType { get; set; }
-        public ICollection<Car> Cars { get; set; }
+        public ICollection<CarData> Cars { get; set; }
     }
 }

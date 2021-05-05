@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Pages\Pages.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data Diagram\" />
+  </ItemGroup>
+
 </Project>

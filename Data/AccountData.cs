@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MuscleCarRentProject.Data
 {
-    public sealed class Account : Person
+    public sealed class AccountData : PersonData
     {
         [Required]
         [MaxLength(50)]
@@ -36,10 +36,10 @@ namespace MuscleCarRentProject.Data
         [Display(Name = "Is DL valid")]
         public bool? IsDrivingLicenseValid { get; set; } = false;
 
-        [InverseProperty(nameof(Order.Account))]
+        [InverseProperty(nameof(OrderData.Account))]
 
-        public ICollection<Order> Orders { get; set; }
-        public AccessType AccessType { get; set; }
-        public BankCard? BankCard { get; set; }
+        public ICollection<OrderData> Orders { get; set; }
+        public AccessTypeData AccessType { get; set; }
+        public BankCardData? BankCard { get; set; }
     }
 }

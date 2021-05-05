@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.BankCards
             _context = context;
         }
 
-        public IList<BankCard> BankCard { get;set; }
+        public IList<BankCardData> BankCard { get;set; }
 
         public async Task OnGetAsync()
         {

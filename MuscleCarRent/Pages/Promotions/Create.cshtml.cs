@@ -27,7 +27,7 @@ namespace MuscleCarRent.Pages.Promotions
         }
 
         [BindProperty]
-        public Promotion Promotion { get; set; }
+        public PromotionData Promotion { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

@@ -15,29 +15,29 @@ namespace MuscleCarRent.Data
         {
         }
 
-        public DbSet<AccessType> AccessTypes { get; set; }
-        public DbSet<Account> Accounts { get; set; }
-        public DbSet<BankCard> BankCards { get; set; }
-        public DbSet<Car> Cars{ get; set; }
-        public DbSet<CarType> CarTypes { get; set; }
-        public DbSet<Driver> Drivers { get; set; }
-        public DbSet<Image> Images { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderedDate> OrderedDates { get; set; }
-        public DbSet<Promotion> Promotions { get; set; }
+        public DbSet<AccessTypeData> AccessTypes { get; set; }
+        public DbSet<AccountData> Accounts { get; set; }
+        public DbSet<BankCardData> BankCards { get; set; }
+        public DbSet<CarData> Cars{ get; set; }
+        public DbSet<CarTypeData> CarTypes { get; set; }
+        public DbSet<DriverData> Drivers { get; set; }
+        public DbSet<ImageData> Images { get; set; }
+        public DbSet<OrderData> Orders { get; set; }
+        public DbSet<OrderedDateData> OrderedDates { get; set; }
+        public DbSet<PromotionData> Promotions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AccessType>().ToTable("AccessType");
+            modelBuilder.Entity<AccessTypeData>().ToTable("AccessType");
             
-            modelBuilder.Entity<Account>().ToTable("Account");
-            modelBuilder.Entity<BankCard>().ToTable("BankCard");
-            modelBuilder.Entity<Car>().ToTable("Car");
-            modelBuilder.Entity<CarType>().ToTable("CarType");
-            modelBuilder.Entity<Driver>().ToTable("Driver");
-            modelBuilder.Entity<Image>().ToTable("Image");
-            modelBuilder.Entity<Order>().ToTable("Order");
-            modelBuilder.Entity<Promotion>().ToTable("Promotion");
+            modelBuilder.Entity<AccountData>().ToTable("Account");
+            modelBuilder.Entity<BankCardData>().ToTable("BankCard");
+            modelBuilder.Entity<CarData>().ToTable("Car");
+            modelBuilder.Entity<CarTypeData>().ToTable("CarType");
+            modelBuilder.Entity<DriverData>().ToTable("Driver");
+            modelBuilder.Entity<ImageData>().ToTable("Image");
+            modelBuilder.Entity<OrderData>().ToTable("Order");
+            modelBuilder.Entity<PromotionData>().ToTable("Promotion");
         }
     }
 }

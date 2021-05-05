@@ -19,7 +19,7 @@ namespace MuscleCarRent.Pages.Orders
             _context = context;
         }
 
-        public IList<Order> Order { get;set; }
+        public IList<OrderData> Order { get;set; }
 
         public async Task OnGetAsync()
         {

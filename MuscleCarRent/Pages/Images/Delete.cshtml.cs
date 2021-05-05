@@ -20,7 +20,7 @@ namespace MuscleCarRent.Pages.Images
         }
 
         [BindProperty]
-        public Image Image { get; set; }
+        public ImageData Image { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
