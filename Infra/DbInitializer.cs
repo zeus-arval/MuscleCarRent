@@ -1,8 +1,9 @@
-﻿using MuscleCarRentProject.Data;
+﻿using Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MuscleCarRentProject.Data;
 
 namespace MuscleCarRent.Data
 {

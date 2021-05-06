@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MuscleCarRent.Migrations
+namespace Infra.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class initalMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

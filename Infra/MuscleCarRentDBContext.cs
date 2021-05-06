@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MuscleCarRentProject.Data;
 
 namespace MuscleCarRent.Data
@@ -14,7 +9,7 @@ namespace MuscleCarRent.Data
             : base(options)
         {
         }
-
+        
         public DbSet<AccessTypeData> AccessTypes { get; set; }
         public DbSet<AccountData> Accounts { get; set; }
         public DbSet<BankCardData> BankCards { get; set; }
@@ -28,8 +23,8 @@ namespace MuscleCarRent.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<AccessTypeData>().ToTable("AccessType");
-            
             modelBuilder.Entity<AccountData>().ToTable("Account");
             modelBuilder.Entity<BankCardData>()
                 .HasOne(a => a.Account)
