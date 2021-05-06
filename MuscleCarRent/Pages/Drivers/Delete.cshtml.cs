@@ -29,7 +29,7 @@ namespace MuscleCarRent.Pages.Drivers
                 return NotFound();
             }
 
-            Driver = await _context.Drivers.FirstOrDefaultAsync(m => m.Id == id);
+            Driver = await _context.Drivers.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Driver == null)
             {

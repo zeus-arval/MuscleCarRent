@@ -10,8 +10,8 @@ using MuscleCarRent.Data;
 namespace MuscleCarRent.Migrations
 {
     [DbContext(typeof(MuscleCarRentDBContext))]
-    [Migration("20210504191041_NewMigration")]
-    partial class NewMigration
+    [Migration("20210505122726_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,12 +21,10 @@ namespace MuscleCarRent.Migrations
                 .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.AccessType", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.AccessTypeData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessLevel")
                         .HasColumnType("int");
@@ -36,15 +34,16 @@ namespace MuscleCarRent.Migrations
                     b.ToTable("AccessType");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Account", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.AccountData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("AccessTypeID")
-                        .HasColumnType("int");
+                    b.Property<string>("AccessTypeID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("BankCardID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -79,6 +78,11 @@ namespace MuscleCarRent.Migrations
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -88,18 +92,20 @@ namespace MuscleCarRent.Migrations
 
                     b.HasIndex("AccessTypeID");
 
+                    b.HasIndex("BankCardID")
+                        .IsUnique()
+                        .HasFilter("[BankCardID] IS NOT NULL");
+
                     b.ToTable("Account");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.BankCard", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.BankCardData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("AccountID")
-                        .HasColumnType("int");
+                    b.Property<string>("AccountID")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<short>("CVV")
                         .HasColumnType("smallint");
@@ -113,20 +119,20 @@ namespace MuscleCarRent.Migrations
                     b.Property<DateTime>("ExpirationTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("ID");
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
-                    b.HasIndex("AccountID")
-                        .IsUnique();
+                    b.HasKey("ID");
 
                     b.ToTable("BankCard");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Car", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.CarData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<short>("BasePrice")
                         .HasColumnType("smallint");
@@ -140,11 +146,17 @@ namespace MuscleCarRent.Migrations
                     b.Property<int>("CarTypeID")
                         .HasColumnType("int");
 
+                    b.Property<string>("CarTypeID1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("Color")
                         .HasColumnType("int");
 
                     b.Property<int>("DriverID")
                         .HasColumnType("int");
+
+                    b.Property<string>("DriverID1")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Engine")
                         .IsRequired()
@@ -182,6 +194,11 @@ namespace MuscleCarRent.Migrations
                     b.Property<int>("ProductionYear")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<string>("ShortDescription")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -192,19 +209,17 @@ namespace MuscleCarRent.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CarTypeID");
+                    b.HasIndex("CarTypeID1");
 
-                    b.HasIndex("DriverID");
+                    b.HasIndex("DriverID1");
 
                     b.ToTable("Car");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.CarType", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.CarTypeData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("RentType")
                         .HasColumnType("int");
@@ -214,12 +229,10 @@ namespace MuscleCarRent.Migrations
                     b.ToTable("CarType");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Driver", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.DriverData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -233,43 +246,58 @@ namespace MuscleCarRent.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.HasKey("ID");
 
                     b.ToTable("Driver");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Image", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.ImageData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CarID")
                         .HasColumnType("int");
+
+                    b.Property<string>("CarID1")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("CarID");
+                    b.HasIndex("CarID1");
 
                     b.ToTable("Image");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Order", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.OrderData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccountID")
                         .HasColumnType("int");
 
+                    b.Property<string>("AccountID1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("CarID")
                         .HasColumnType("int");
+
+                    b.Property<string>("CarID1")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("HasBankCard")
                         .HasColumnType("bit");
@@ -283,41 +311,52 @@ namespace MuscleCarRent.Migrations
                     b.Property<DateTime>("RentDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<short>("TotalPrice")
                         .HasColumnType("smallint");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("AccountID");
+                    b.HasIndex("AccountID1");
 
-                    b.HasIndex("CarID");
+                    b.HasIndex("CarID1");
 
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.OrderedDate", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.OrderedDateData", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CarID")
                         .HasColumnType("int");
 
+                    b.Property<string>("CarID1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("CarID");
+                    b.HasIndex("CarID1");
 
                     b.ToTable("OrderedDates");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Promotion", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.PromotionData", b =>
                 {
-                    b.HasBaseType("MuscleCarRentProject.Data.Order");
+                    b.HasBaseType("MuscleCarRentProject.Data.OrderData");
 
                     b.Property<int>("Discount")
                         .HasColumnType("int");
@@ -334,108 +373,94 @@ namespace MuscleCarRent.Migrations
                     b.ToTable("Promotion");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Account", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.AccountData", b =>
                 {
-                    b.HasOne("MuscleCarRentProject.Data.AccessType", "AccessType")
+                    b.HasOne("MuscleCarRentProject.Data.AccessTypeData", "AccessType")
                         .WithMany("Accounts")
                         .HasForeignKey("AccessTypeID");
 
+                    b.HasOne("MuscleCarRentProject.Data.BankCardData", "BankCard")
+                        .WithOne("Account")
+                        .HasForeignKey("MuscleCarRentProject.Data.AccountData", "BankCardID");
+
                     b.Navigation("AccessType");
+
+                    b.Navigation("BankCard");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.BankCard", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.CarData", b =>
                 {
-                    b.HasOne("MuscleCarRentProject.Data.Account", "Account")
-                        .WithOne("BankCard")
-                        .HasForeignKey("MuscleCarRentProject.Data.BankCard", "AccountID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-                });
-
-            modelBuilder.Entity("MuscleCarRentProject.Data.Car", b =>
-                {
-                    b.HasOne("MuscleCarRentProject.Data.CarType", "CarType")
+                    b.HasOne("MuscleCarRentProject.Data.CarTypeData", "CarType")
                         .WithMany("Cars")
-                        .HasForeignKey("CarTypeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CarTypeID1");
 
-                    b.HasOne("MuscleCarRentProject.Data.Driver", "Driver")
+                    b.HasOne("MuscleCarRentProject.Data.DriverData", "Driver")
                         .WithMany("Cars")
-                        .HasForeignKey("DriverID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DriverID1");
 
                     b.Navigation("CarType");
 
                     b.Navigation("Driver");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Image", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.ImageData", b =>
                 {
-                    b.HasOne("MuscleCarRentProject.Data.Car", "Car")
+                    b.HasOne("MuscleCarRentProject.Data.CarData", "Car")
                         .WithMany("Images")
-                        .HasForeignKey("CarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CarID1");
 
                     b.Navigation("Car");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Order", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.OrderData", b =>
                 {
-                    b.HasOne("MuscleCarRentProject.Data.Account", "Account")
+                    b.HasOne("MuscleCarRentProject.Data.AccountData", "Account")
                         .WithMany("Orders")
-                        .HasForeignKey("AccountID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AccountID1");
 
-                    b.HasOne("MuscleCarRentProject.Data.Car", "Car")
+                    b.HasOne("MuscleCarRentProject.Data.CarData", "Car")
                         .WithMany("Orders")
-                        .HasForeignKey("CarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CarID1");
 
                     b.Navigation("Account");
 
                     b.Navigation("Car");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.OrderedDate", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.OrderedDateData", b =>
                 {
-                    b.HasOne("MuscleCarRentProject.Data.Car", "Car")
+                    b.HasOne("MuscleCarRentProject.Data.CarData", "Car")
                         .WithMany("OrderedDates")
-                        .HasForeignKey("CarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CarID1");
 
                     b.Navigation("Car");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Promotion", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.PromotionData", b =>
                 {
-                    b.HasOne("MuscleCarRentProject.Data.Order", null)
+                    b.HasOne("MuscleCarRentProject.Data.OrderData", null)
                         .WithOne()
-                        .HasForeignKey("MuscleCarRentProject.Data.Promotion", "ID")
+                        .HasForeignKey("MuscleCarRentProject.Data.PromotionData", "ID")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.AccessType", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.AccessTypeData", b =>
                 {
                     b.Navigation("Accounts");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Account", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.AccountData", b =>
                 {
-                    b.Navigation("BankCard");
-
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Car", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.BankCardData", b =>
+                {
+                    b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("MuscleCarRentProject.Data.CarData", b =>
                 {
                     b.Navigation("Images");
 
@@ -444,12 +469,12 @@ namespace MuscleCarRent.Migrations
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.CarType", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.CarTypeData", b =>
                 {
                     b.Navigation("Cars");
                 });
 
-            modelBuilder.Entity("MuscleCarRentProject.Data.Driver", b =>
+            modelBuilder.Entity("MuscleCarRentProject.Data.DriverData", b =>
                 {
                     b.Navigation("Cars");
                 });

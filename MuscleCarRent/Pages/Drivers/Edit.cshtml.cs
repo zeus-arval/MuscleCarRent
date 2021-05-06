@@ -23,7 +23,7 @@ namespace MuscleCarRent.Pages.Drivers
         [BindProperty]
         public DriverData Driver { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -69,7 +69,7 @@ namespace MuscleCarRent.Pages.Drivers
             return RedirectToPage("./Index");
         }
 
-        private bool DriverExists(int id)
+        private bool DriverExists(string id)
         {
             return _context.Drivers.Any(e => e.ID == id);
         }

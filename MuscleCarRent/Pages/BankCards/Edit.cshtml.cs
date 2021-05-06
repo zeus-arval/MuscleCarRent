@@ -23,7 +23,7 @@ namespace MuscleCarRent.Pages.BankCards
         [BindProperty]
         public BankCardData BankCard { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -71,7 +71,7 @@ namespace MuscleCarRent.Pages.BankCards
             return RedirectToPage("./Index");
         }
 
-        private bool BankCardExists(int id)
+        private bool BankCardExists(string id)
         {
             return _context.BankCards.Any(e => e.ID == id);
         }

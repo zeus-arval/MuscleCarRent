@@ -22,14 +22,14 @@ namespace MuscleCarRent.Pages.Accounts
         [BindProperty]
         public AccountData Account { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Account = await _context.Accounts.FirstOrDefaultAsync(m => m.Id == id.ToString());
+            Account = await _context.Accounts.FirstOrDefaultAsync(m => m.ID == id.ToString());
 
             if (Account == null)
             {
@@ -38,7 +38,7 @@ namespace MuscleCarRent.Pages.Accounts
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(string id)
         {
             if (id == null)
             {

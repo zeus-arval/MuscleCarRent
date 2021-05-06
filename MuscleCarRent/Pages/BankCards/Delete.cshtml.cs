@@ -22,7 +22,7 @@ namespace MuscleCarRent.Pages.BankCards
         [BindProperty]
         public BankCardData BankCard { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -39,7 +39,7 @@ namespace MuscleCarRent.Pages.BankCards
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(string id)
         {
             if (id == null)
             {

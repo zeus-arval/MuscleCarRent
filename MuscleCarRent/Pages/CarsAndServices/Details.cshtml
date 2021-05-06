@@ -9,6 +9,7 @@
     ViewData["ItemId"] = Model.Car.ID;
 }
 
+@Html.Show(model => model.Car.ID)
 @Html.Show(model => model.Car.Brand)
 @Html.Show(model => model.Car.Model)
 @Html.Show(model => model.Car.ShortDescription)

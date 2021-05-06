@@ -21,7 +21,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
 
         public CarData Car { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -30,7 +30,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
 
             Car = await _context.Cars
                 .Include(c => c.CarType)
-                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.Id == id.ToString());
+                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.ID == id.ToString());
 
             if (Car == null)
             {

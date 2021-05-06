@@ -63,7 +63,7 @@ namespace MuscleCarRent.Data
             context.SaveChanges();
 
             string basePath = @"~\wwwroot\images\";
-            var images = new ImageData[]
+            /*var images = new ImageData[]
             {
                 new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie1" },
                 new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie2" },
@@ -81,7 +81,7 @@ namespace MuscleCarRent.Data
             };
             context.Images.AddRange(images);
             context.SaveChanges();
-
+            */
             var accounts = new AccountData[]
             {
                 new AccountData

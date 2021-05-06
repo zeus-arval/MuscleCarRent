@@ -28,7 +28,7 @@ namespace MuscleCarRent.Pages.Accounts
                 return NotFound();
             }
 
-            Account = await _context.Accounts.FirstOrDefaultAsync(m => m.Id == id.ToString());
+            Account = await _context.Accounts.FirstOrDefaultAsync(m => m.ID == id.ToString());
 
             if (Account == null)
             {

@@ -23,7 +23,7 @@ namespace MuscleCarRent.Pages.Orders
         [BindProperty]
         public OrderData Order { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -73,7 +73,7 @@ namespace MuscleCarRent.Pages.Orders
             return RedirectToPage("./Index");
         }
 
-        private bool OrderExists(int id)
+        private bool OrderExists(string id)
         {
             return _context.Orders.Any(e => e.ID == id);
         }

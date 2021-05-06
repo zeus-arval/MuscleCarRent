@@ -22,7 +22,7 @@ namespace MuscleCarRent.Pages.Orders
         [BindProperty]
         public OrderData Order { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -40,7 +40,7 @@ namespace MuscleCarRent.Pages.Orders
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(string id)
         {
             if (id == null)
             {

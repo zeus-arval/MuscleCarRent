@@ -23,7 +23,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
         [BindProperty]
         public CarData Car { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -32,7 +32,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
 
             Car = await _context.Cars
                 .Include(c => c.CarType)
-                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Car == null)
             {
@@ -60,7 +60,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CarExists(Car.Id))
+                if (!CarExists(Car.ID))
                 {
                     return NotFound();
                 }
@@ -75,7 +75,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
 
         private bool CarExists(string id)
         {
-            return _context.Cars.Any(e => e.Id == id);
+            return _context.Cars.Any(e => e.ID == id);
         }
     }
 }

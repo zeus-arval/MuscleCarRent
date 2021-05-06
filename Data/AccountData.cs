@@ -35,7 +35,7 @@ namespace MuscleCarRentProject.Data
         public string? DrivingLicense { get; set; }
         [Display(Name = "Is DL valid")]
         public bool? IsDrivingLicenseValid { get; set; } = false;
-
+        public string BankCardID { get; set; }
         [InverseProperty(nameof(OrderData.Account))]
 
         public ICollection<OrderData> Orders { get; set; }

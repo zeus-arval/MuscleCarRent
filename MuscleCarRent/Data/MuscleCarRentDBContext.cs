@@ -31,6 +31,10 @@ namespace MuscleCarRent.Data
             modelBuilder.Entity<AccessTypeData>().ToTable("AccessType");
             
             modelBuilder.Entity<AccountData>().ToTable("Account");
+            modelBuilder.Entity<BankCardData>()
+                .HasOne(a => a.Account)
+                .WithOne(b => b.BankCard)
+                .HasForeignKey<AccountData>(a => a.BankCardID);
             modelBuilder.Entity<BankCardData>().ToTable("BankCard");
             modelBuilder.Entity<CarData>().ToTable("Car");
             modelBuilder.Entity<CarTypeData>().ToTable("CarType");

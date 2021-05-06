@@ -21,7 +21,7 @@ namespace MuscleCarRent.Pages.Promotions
 
         public PromotionData Promotion { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Data.Common;
 
 namespace MuscleCarRentProject.Data
 {
-    public sealed class BankCardData
+    public sealed class BankCardData : BaseData
     {
-        public int ID { get; set; }
-        public int AccountID { get; set; }
+        public string AccountID { get; set; }
         [Display(Name = "Card number")]
         public long CardNumber { get; set; }
         [Display(Name = "Card holder full name")]

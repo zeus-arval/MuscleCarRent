@@ -21,7 +21,7 @@ namespace MuscleCarRent.Pages.OrderDates
 
         public OrderedDateData OrderedDate { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {

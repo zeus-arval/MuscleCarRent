@@ -107,7 +107,7 @@ namespace MuscleCarRentProject.Data
         public int CarTypeID { get; set; }
 
         [InverseProperty(nameof(ImageData.Car))]
-        public ICollection<ImageData>? Images { get; set; }
+        public IList<ImageData>? Images { get; set; }
 
         [Required]
         [Display(Name = "Body type")]

@@ -23,7 +23,7 @@ namespace MuscleCarRent.Pages.Accounts
         [BindProperty]
         public AccountData Account { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -69,7 +69,7 @@ namespace MuscleCarRent.Pages.Accounts
             return RedirectToPage("./Index");
         }
 
-        private bool AccountExists(int id)
+        private bool AccountExists(string id)
         {
             return _context.Accounts.Any(e => e.ID == id);
         }

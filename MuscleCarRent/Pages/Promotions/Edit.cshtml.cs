@@ -23,7 +23,7 @@ namespace MuscleCarRent.Pages.Promotions
         [BindProperty]
         public PromotionData Promotion { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -73,7 +73,7 @@ namespace MuscleCarRent.Pages.Promotions
             return RedirectToPage("./Index");
         }
 
-        private bool PromotionExists(int id)
+        private bool PromotionExists(string id)
         {
             return _context.Promotions.Any(e => e.ID == id);
         }

@@ -23,7 +23,7 @@ namespace MuscleCarRent.Pages.OrderDates
         [BindProperty]
         public OrderedDateData OrderedDate { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
             {
@@ -71,7 +71,7 @@ namespace MuscleCarRent.Pages.OrderDates
             return RedirectToPage("./Index");
         }
 
-        private bool OrderedDateExists(int id)
+        private bool OrderedDateExists(string id)
         {
             return _context.OrderedDates.Any(e => e.ID == id);
         }

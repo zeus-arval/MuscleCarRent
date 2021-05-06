@@ -3,7 +3,7 @@
   <Class Name="MuscleCarRentProject.Data.AccountData">
     <Position X="10.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAACAAAAAAEQAARAAQAQAAAAACAAAAABAACAA=</HashCode>
+      <HashCode>AAMAAAAAACAAAAAAEQAARAAQAQAAAAACAAAAABAACAA=</HashCode>
       <FileName>AccountData.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

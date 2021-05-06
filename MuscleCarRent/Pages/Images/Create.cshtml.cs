@@ -21,7 +21,7 @@ namespace MuscleCarRent.Pages.Images
 
         public IActionResult OnGet()
         {
-        ViewData["CarID"] = new SelectList(_context.Cars, "ID", "Color");
+            ViewData["CarID"] = new SelectList(_context.Cars, "ID", "ID");
             return Page();
         }
 

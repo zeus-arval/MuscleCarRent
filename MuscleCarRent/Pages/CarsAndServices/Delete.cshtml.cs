@@ -31,7 +31,7 @@ namespace MuscleCarRent.Pages.CarsAndServices
 
             Car = await _context.Cars
                 .Include(c => c.CarType)
-                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.Id == id.ToString());
+                .Include(c => c.Driver).FirstOrDefaultAsync(m => m.ID == id.ToString());
 
             if (Car == null)
             {
