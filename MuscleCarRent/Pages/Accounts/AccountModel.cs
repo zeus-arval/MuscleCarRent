@@ -36,5 +36,8 @@ namespace MuscleCarRent.Pages.Accounts
 
             return RedirectToPage("./Index");
         }
+
+        public override string PageTitle { get; }
+        public override string CurrentSort { get; }
     }
 }
