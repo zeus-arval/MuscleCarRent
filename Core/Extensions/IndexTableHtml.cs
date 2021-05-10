@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Formatters.Internal;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Core.Extensions
+namespace MuscleCarRentProject.Core.Extensions
 {
     public static class IndexTableHtml
     {

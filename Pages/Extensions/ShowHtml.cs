@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace MuscleCarRent.Pages.Extensions
+namespace MuscleCarRentProject.Pages.Extensions
 {
     public static class ShowHtml
     { 

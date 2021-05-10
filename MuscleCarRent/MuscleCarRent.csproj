@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MuscleCarRentProject.Core</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

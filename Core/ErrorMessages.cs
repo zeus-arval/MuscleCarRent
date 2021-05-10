@@ -8,7 +8,7 @@ namespace Core
 {
     public static class ErrorMessages
     {
-        public static string ConcurencyOnDelete =>
+        public static string ConcurrencyOnDelete =>
             "The record you attempted to delete "
             + "was modified by another user after you selected delete. "
             + "The delete operation was canceled and the current values in the "
