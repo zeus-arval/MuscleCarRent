@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MuscleCarRent.Data;
 using MuscleCarRentProject.Data;
-using Pages.Common;
+using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRent.Pages.Accounts
 {

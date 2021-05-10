@@ -16,7 +16,7 @@ namespace MuscleCarRentProject.Pages.Common
         public string ErrorMessage { get; protected set; }
         public abstract string PageTitle { get; }
         public virtual string PageUrl => PageTitle;
-        [BindProperty] public IEntityData item { get; set; }
+        [BindProperty] public IEntityData Item { get; set; }
         public virtual string SortOrder { get; set; }
         public abstract string CurrentSort { get; }
         public virtual string CurrentFilter { get; set; }

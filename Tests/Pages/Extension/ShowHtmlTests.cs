@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MuscleCarRent.Pages.Extensions;
+using MuscleCarRentProject.Pages.Extensions;
 
 namespace Tests.Pages.Extension
 {
