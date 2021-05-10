@@ -47,14 +47,14 @@ namespace MuscleCarRent.Data
             {
                 new CarData
                 {
-                    Brand = Brand.Plymouth, Model = "GTX", ShortDescription = "Black exterior, white convertible top, red and white interior.", 
+                    Brand = BrandEnum.Plymouth, Model = "GTX", ShortDescription = "Black exterior, white convertible top, red and white interior.", 
                     LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
                     ProductionYear = 1967, IsPopular = false, IsFavourite = false, Power = 425, Color = Color.Blue, BasePrice = 110, PricePerHour = 23, NumberOfSeats = 4, Engine = "426ci V8 HEMI",
                     NeedDriver = false, Surcharge = 0, DriverID = 2, CarTypeID = 1, BodyType = BodyType.PonyCar
                 },
                 new CarData
                 {
-                    Brand = Brand.Ford, Model = "Galaxie 500 Sunliner",  ShortDescription = "Black exterior, white convertible top, red and white interior.",
+                    Brand = BrandEnum.Ford, Model = "Galaxie 500 Sunliner",  ShortDescription = "Black exterior, white convertible top, red and white interior.",
                     LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
                     ProductionYear = 1961, IsPopular = false, IsFavourite = false, Power = 352, Color = Color.Black, BasePrice = 100, PricePerHour = 20, NumberOfSeats = 4, Engine = "V8 6.4",
                     NeedDriver = false, Surcharge = 0, DriverID = 1, CarTypeID = 1, BodyType = BodyType.FullSize

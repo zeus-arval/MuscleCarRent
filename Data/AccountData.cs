@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using MuscleCarRentProject.Data.Common;
 
 namespace MuscleCarRentProject.Data
 {
-    public sealed class AccountData : PersonData
+    public sealed class AccountData : NamedData
     {
         [Required]
         [MaxLength(50)]

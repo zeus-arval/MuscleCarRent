@@ -6,37 +6,10 @@ using MuscleCarRentProject.Core;
 
 namespace MuscleCarRentProject.Data
 {
-    public enum Brand
-    {
-        Dodge,
-        Ford,
-        Plymouth
-    }
-
-    public enum BodyType
-    {
-        FullSize,
-        PonyCar,
-        Luxury,
-        Sport,
-        CoupeUtility
-    }
-
-    public enum Color
-    {
-        White,
-        Black,
-        Grey,
-        Green,
-        Blue,
-        Yellow,
-        Red
-    }
-
     public sealed class CarData : BaseData
     {
         [Required]
-        public Brand Brand { get; set; }
+        public BrandEnum Brand { get; set; }
         
         [Required]
         [StringLength(50)]

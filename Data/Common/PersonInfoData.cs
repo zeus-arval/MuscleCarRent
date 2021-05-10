@@ -13,6 +13,6 @@ namespace MuscleCarRentProject.Data.Common
         [Display(Name = "Last Name")]
         [StringLength(50)]
         public string LastName { get; set; }
-        [DataType(DataType.Date)]public DateTime BirthDay { get; set; }
+        [DataType(DataType.Date)]public DateTime Birthday { get; set; }
     }
 }

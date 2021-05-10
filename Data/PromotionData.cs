@@ -3,11 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MuscleCarRentProject.Data
 {
-    public enum PromotionType
-    {
-        PersonalPromotion,
-        SocialPromotion
-    }
 
     public sealed class PromotionData : OrderData
     {
