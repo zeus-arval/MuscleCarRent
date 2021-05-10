@@ -21,9 +21,9 @@ namespace Aids
 
         public static string Name(Expression ex) => ex switch
         {
-            MemberExpression member => Name(member),
-            MethodCallExpression method => Name(method),
-            UnaryExpression operand => Name(operand),
+            MemberExpression member => name(member),
+            MethodCallExpression method => name(method),
+            UnaryExpression operand => name(operand),
             _ => String.Empty
         };
 
