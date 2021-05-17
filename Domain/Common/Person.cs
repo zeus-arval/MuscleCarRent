@@ -1,8 +1,9 @@
 ﻿using System;
+using MuscleCarRentProject.Domain.Common;
 using MuscleCarRentProject.Core;
 using MuscleCarRentProject.Data.Common;
 
-namespace Domain.Common
+namespace MuscleCarRentProject.Domain.Common
 {
     public interface IPersonEntity : IBaseEntity
     {

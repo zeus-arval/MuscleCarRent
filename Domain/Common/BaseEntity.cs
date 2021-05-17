@@ -10,7 +10,7 @@ using MuscleCarRentProject.Core;
 using MuscleCarRentProject.Domain.Common;
 using MuscleCarRentProject.Domain.Repos;
 
-namespace Domain.Common
+namespace MuscleCarRentProject.Domain.Common
 {
     public abstract class BaseEntity<TData> :IBaseEntity
     where TData : class, IEntityData, new()

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using MuscleCarRent.Data;
 using MuscleCarRentProject.Core;
 using MuscleCarRentProject.Domain.Repos;
@@ -17,7 +13,7 @@ namespace MuscleCarRentProject.Pages.Common
     {
         protected ViewPage(IRepo<TEntity> r, MuscleCarRentDBContext context = null) : base(r, context){}
 
-        public async virtual Task<IActionResult> OnGetIndexAsync(string sortOrder,
+        public virtual async Task<IActionResult> OnGetIndexAsync(string sortOrder,
             string currentFilter, string searchString, int? pageIndex)
         {
             (PageIndex, SearchString, CurrentFilter, SortOrder) = (pageIndex, searchString, currentFilter, sortOrder);
