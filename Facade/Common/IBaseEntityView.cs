@@ -1,6 +1,6 @@
 ﻿using MuscleCarRentProject.Core;
 
-namespace Facade
+namespace MuscleCarRentProject.Facade.Common
 {
     public interface IBaseEntityView : IEntityData
     {

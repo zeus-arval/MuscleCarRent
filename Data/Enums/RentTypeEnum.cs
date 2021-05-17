@@ -1,6 +1,6 @@
 ﻿namespace MuscleCarRentProject.Data
 {
-    public enum RentType
+    public enum RentTypeEnum
     {
         Rent,
         WithDriver,

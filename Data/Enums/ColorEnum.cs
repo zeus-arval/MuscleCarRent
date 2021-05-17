@@ -1,6 +1,6 @@
 ﻿namespace MuscleCarRentProject.Data
 {
-    public enum Color
+    public enum ColorEnum
     {
         White = 0,
         Black = 1,
@@ -8,6 +8,7 @@
         Green = 3,
         Blue = 4,
         Yellow = 5,
-        Red = 6
+        Red = 6,
+        Other = 99
     }
 }

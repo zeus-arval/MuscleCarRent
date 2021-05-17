@@ -5,8 +5,9 @@ using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Aids;
 
-namespace Aids
+namespace MuscleCarRentProject.Aids
 {
     public static class GetMember
     {
