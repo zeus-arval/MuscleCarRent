@@ -5,5 +5,6 @@
         Dodge = 0,
         Ford = 1,
         Plymouth = 2,
+        Other = 99
     }
 }

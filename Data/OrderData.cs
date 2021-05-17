@@ -17,11 +17,10 @@ namespace MuscleCarRentProject.Data
         [Display(Name = "Has bank card")]
         public bool HasBankCard { get; set; }
 
-
         public CarData Car { get; set; }
         public AccountData Account { get; set; }
 
-        public int CarID
+        public string CarID
         {
             get => default;
             set
@@ -29,7 +28,7 @@ namespace MuscleCarRentProject.Data
             }
         }
 
-        public int AccountID
+        public string AccountID
         {
             get => default;
             set

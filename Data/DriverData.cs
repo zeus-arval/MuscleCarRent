@@ -4,7 +4,7 @@ using MuscleCarRentProject.Data.Common;
 
 namespace MuscleCarRentProject.Data
 {
-    public sealed class DriverData : NamedData
+    public sealed class DriverData : PersonInfoData
     {
         [Display(Name = "Is available")]
         public bool IsAvailable { get; set; }

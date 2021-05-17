@@ -45,29 +45,15 @@
   </Class>
   <Class Name="MuscleCarRentProject.Data.CarData">
     <Position X="5" Y="4" Width="1.5" />
-    <AssociationLine Name="Brand" Type="MuscleCarRentProject.Data.BrandEnum" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5.688" Y="8.117" />
-        <Point X="5.688" Y="8.99" />
-        <Point X="7.344" Y="8.99" />
-        <Point X="7.344" Y="9.75" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="BodyType" Type="MuscleCarRentProject.Data.BodyType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5.688" Y="8.117" />
-        <Point X="5.688" Y="9.75" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>BBFAAAAAQAgAQAAIAAAAAAACJAEAgBAJBAgAgAAhAAA=</HashCode>
+      <HashCode>BBFAAAAAQAgAQAAIAAAAAAACBAEAgBANBAgAgAAhAAA=</HashCode>
       <FileName>CarData.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Brand" />
       <Property Name="CarType" />
-      <Property Name="BodyType" />
       <Property Name="Driver" />
+      <Property Name="BodyTypeEnum" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="OrderedDates" />
@@ -78,11 +64,11 @@
   <Class Name="MuscleCarRentProject.Data.CarTypeData">
     <Position X="0.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CarTypeData.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="RentType" />
+      <Property Name="RentTypeEnum" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Cars" />
@@ -125,7 +111,7 @@
       <Path>
         <Point X="2.25" Y="4.338" />
         <Point X="2.374" Y="4.338" />
-        <Point X="5" Y="4.369" />
+        <Point X="5" Y="4.353" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -139,49 +125,46 @@
   <Class Name="MuscleCarRentProject.Data.PromotionData">
     <Position X="7.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAAIAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAACAAAAAAAAgAAAIAAAAA=</HashCode>
       <FileName>PromotionData.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PromotionType" />
-    </ShowAsAssociation>
   </Class>
   <Enum Name="MuscleCarRentProject.Data.BrandEnum">
     <Position X="7.25" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAgAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAgAAAAA=</HashCode>
       <FileName>BrandEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="MuscleCarRentProject.Data.BodyType">
+  <Enum Name="MuscleCarRentProject.Data.BodyTypeEnum">
     <Position X="5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgCAAAAAAAAAAAAAAAAAAAAAQAIAAAAACAAAAAAAA=</HashCode>
+      <HashCode>BAAgCAAAAAAAAAAAAAAAAAAAAAQAIAAAAACAAAAAAAA=</HashCode>
       <FileName>BodyTypeEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="MuscleCarRentProject.Data.ColorEnum">
     <Position X="2" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAGAABAAAAAAgAAAAAAAAAABAAAAAAAAAAAADAAAAA=</HashCode>
+      <HashCode>BAAGAABAAAAAAgAAAAAAAAAABAAAAAAAAAAAADAAAAA=</HashCode>
       <FileName>ColorEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="MuscleCarRentProject.Data.RentType">
+  <Enum Name="MuscleCarRentProject.Data.RentTypeEnum">
     <Position X="0.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAAAAAICAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>RentTypeEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="MuscleCarRentProject.Data.PromotionType">
+  <Enum Name="MuscleCarRentProject.Data.PromotionTypeEnum">
     <Position X="10.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PromotionTypeEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="MuscleCarRentProject.Data.AccessLevel">
+  <Enum Name="MuscleCarRentProject.Data.AccessLevelEnum">
     <Position X="13.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>

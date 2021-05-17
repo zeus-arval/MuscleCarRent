@@ -8,6 +8,6 @@ namespace MuscleCarRentProject.Data
     {
         [InverseProperty(nameof(AccountData.AccessType))]
         public ICollection<AccountData> Accounts { get; set; }
-        public AccessLevel AccessLevel { get; set; }
+        public AccessLevelEnum AccessLevel { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace MuscleCarRentProject.Domain.Common
     where TData : class, IEntityData, new()
     {
         protected readonly TData data;
-
+        protected string unspec = "Unspecified";
         protected BaseEntity() :this(null){}
         protected BaseEntity(TData d) => data = d;
         public TData Data => Copy.Members(data, new TData()) ?? new TData();

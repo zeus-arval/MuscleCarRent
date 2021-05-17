@@ -8,9 +8,7 @@ namespace MuscleCarRentProject.Data
     {
         [Display(Name = "Order date")]
         public DateTime OrderDate { get; set; }
-        public int CarID { get; set; }
-        //public int DriverID { get; set; }
+        public string CarID { get; set; }
         public CarData Car { get; set; }
-      //// public Driver Driver { get; set; }
     }
 }

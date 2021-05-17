@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using Core;
+using Data.Common;
 
 namespace MuscleCarRentProject.Data
 {
 
-    public sealed class CarTypeData : UniqueItem
+    public sealed class CarTypeData : BaseData
     {
-        public RentType RentType { get; set; }
+        public RentTypeEnum RentTypeEnum { get; set; }
         public ICollection<CarData> Cars { get; set; }
     }
 }

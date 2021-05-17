@@ -92,7 +92,7 @@ namespace MuscleCarRentProject.Facade
 
         [Required]
         [Display(Name = "Body type")]
-        public BodyType BodyType { get; set; }
+        public BodyTypeEnum BodyTypeEnum { get; set; }
 
         [InverseProperty(nameof(OrderData.Car))]
         public ICollection<OrderData>? Orders { get; set; }

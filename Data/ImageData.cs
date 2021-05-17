@@ -9,6 +9,6 @@ namespace MuscleCarRentProject.Data
         public string ImagePath { get; set; }
 
         public CarData Car { get; set; }
-        public int CarID { get; set; }
+        public string CarID { get; set; }
     }
 }

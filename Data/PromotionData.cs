@@ -12,6 +12,6 @@ namespace MuscleCarRentProject.Data
         [Display(Name = "Is available")]
         public bool IsAvailable { get; set; }
         [Display(Name = "Promotion type")]
-        public PromotionType PromotionType { get; set; }
+        public PromotionTypeEnum PromotionTypeEnum { get; set; }
     }
 }

@@ -38,8 +38,8 @@ namespace MuscleCarRentProject.Pages.Common
 
         [BindProperty] public new TView Item
         {
-            get => (TView)base.item;
-            set => base.item = value;
+            get => (TView)base.Item;
+            set => base.Item = value;
         }
         protected internal bool IsNull(object o) => o is null;
         protected internal string SetConcurrencyMsg(bool isError) => isError ? ErrorMessages.ConcurrencyOnDelete : null;
@@ -50,7 +50,7 @@ namespace MuscleCarRentProject.Pages.Common
 
         internal async Task<TView> GetItem(string id, bool concurrencyError = false)
         {
-            var item = await repo.Get(id);
+            var item = await repo.GetAsync(id);
             await GetRelatedItems(item);
             ErrorMessage = SetConcurrencyMsg(concurrencyError);
             return ToViewModel(item);

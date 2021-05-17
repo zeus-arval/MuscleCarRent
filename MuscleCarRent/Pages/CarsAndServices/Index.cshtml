@@ -39,7 +39,7 @@
                 @Html.DisplayNameFor(model => model.Car[0].Engine)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Car[0].BodyType)
+                @Html.DisplayNameFor(model => model.Car[0].BodyTypeEnum)
             </th>
             <th></th>
         </tr>
@@ -79,7 +79,7 @@
             @Html.DisplayFor(modelItem => item.Engine)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BodyType)
+            @Html.DisplayFor(modelItem => item.BodyTypeEnum)
         </td>
         <td>
             <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a>

@@ -8,6 +8,7 @@
         Green = 3,
         Blue = 4,
         Yellow = 5,
-        Red = 6
+        Red = 6,
+        Other = 99
     }
 }

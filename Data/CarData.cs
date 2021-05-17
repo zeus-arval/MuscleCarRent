@@ -24,11 +24,11 @@ namespace MuscleCarRentProject.Data
         public bool NeedDriver { get; set; }
         public short? Surcharge { get; set; }
         public ICollection<OrderedDateData>? OrderedDates { get; set; }
-        public int DriverID { get; set; }
+        public string DriverID { get; set; }
         public CarTypeData CarType { get; set; }
-        public int CarTypeID { get; set; }
-        public IList<ImageData>? Images { get; set; }
-        public BodyType BodyType { get; set; }
+        public string CarTypeID { get; set; }
+        public ICollection<ImageData>? Images { get; set; }
+        public BodyTypeEnum BodyTypeEnum { get; set; }
         public ICollection<OrderData>? Orders { get; set; }
         public DriverData Driver { get; set; }
     }

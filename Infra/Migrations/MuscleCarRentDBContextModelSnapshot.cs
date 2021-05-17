@@ -135,7 +135,7 @@ namespace Infra.Migrations
                     b.Property<short>("BasePrice")
                         .HasColumnType("smallint");
 
-                    b.Property<int>("BodyType")
+                    b.Property<int>("BodyTypeEnum")
                         .HasColumnType("int");
 
                     b.Property<int>("Brand")
@@ -219,7 +219,7 @@ namespace Infra.Migrations
                     b.Property<string>("ID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("RentType")
+                    b.Property<int>("RentTypeEnum")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -362,7 +362,7 @@ namespace Infra.Migrations
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PromotionType")
+                    b.Property<int>("PromotionTypeEnum")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ValidUntil")

@@ -96,11 +96,11 @@
                 <select asp-for="Car.CarTypeID" class="form-control" asp-items="ViewBag.CarTypeID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Car.BodyType" class="control-label"></label>
-                <select asp-for="Car.BodyType" class="form-control" asp-items="@Html.GetEnumSelectList<BodyType>()">
-                    <option>-- Select BodyType --</option>
+                <label asp-for="Car.BodyTypeEnum" class="control-label"></label>
+                <select asp-for="Car.BodyTypeEnum" class="form-control" asp-items="@Html.GetEnumSelectList<BodyTypeEnum>()">
+                    <option>-- Select BodyTypeEnum --</option>
                 </select>
-                <span asp-validation-for="Car.BodyType" class="text-danger"></span>
+                <span asp-validation-for="Car.BodyTypeEnum" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

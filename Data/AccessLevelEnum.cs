@@ -1,6 +1,6 @@
 ﻿namespace MuscleCarRentProject.Data
 {
-    public enum AccessLevel
+    public enum AccessLevelEnum
     {
         Admin,
         User
