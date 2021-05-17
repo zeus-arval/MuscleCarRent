@@ -47,7 +47,7 @@
     <Position X="5" Y="4" Width="1.5" />
     <AssociationLine Name="Brand" Type="MuscleCarRentProject.Data.BrandEnum" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.688" Y="7.925" />
+        <Point X="5.688" Y="8.117" />
         <Point X="5.688" Y="8.99" />
         <Point X="7.344" Y="8.99" />
         <Point X="7.344" Y="9.75" />
@@ -55,17 +55,8 @@
     </AssociationLine>
     <AssociationLine Name="BodyType" Type="MuscleCarRentProject.Data.BodyType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.688" Y="7.925" />
+        <Point X="5.688" Y="8.117" />
         <Point X="5.688" Y="9.75" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Color" Type="MuscleCarRentProject.Data.Color" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5.688" Y="7.925" />
-        <Point X="5.688" Y="8.97" />
-        <Point X="4.522" Y="8.97" />
-        <Point X="4.522" Y="10.754" />
-        <Point X="3.5" Y="10.754" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -73,11 +64,10 @@
       <FileName>CarData.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="CarType" />
-      <Property Name="Driver" />
       <Property Name="Brand" />
+      <Property Name="CarType" />
       <Property Name="BodyType" />
-      <Property Name="Color" />
+      <Property Name="Driver" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="OrderedDates" />
@@ -135,7 +125,7 @@
       <Path>
         <Point X="2.25" Y="4.338" />
         <Point X="2.374" Y="4.338" />
-        <Point X="5" Y="4.352" />
+        <Point X="5" Y="4.369" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -170,7 +160,7 @@
       <FileName>BodyTypeEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="MuscleCarRentProject.Data.Color">
+  <Enum Name="MuscleCarRentProject.Data.ColorEnum">
     <Position X="2" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAGAABAAAAAAgAAAAAAAAAABAAAAAAAAAAAADAAAAA=</HashCode>
@@ -195,7 +185,7 @@
     <Position X="13.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data Diagram\AccessLevelEnum.cs</FileName>
+      <FileName>AccessLevelEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
