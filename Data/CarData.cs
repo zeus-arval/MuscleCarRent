@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Data.Common;
-using MuscleCarRentProject.Core;
+﻿using Data.Common;
 
 namespace MuscleCarRentProject.Data
 {
@@ -23,14 +19,8 @@ namespace MuscleCarRentProject.Data
         public string Engine { get; set; }
         public bool NeedDriver { get; set; }
         public short? Surcharge { get; set; }
-        public ICollection<OrderedDateData>? OrderedDates { get; set; }
         public string DriverID { get; set; }
-        public CarTypeData CarType { get; set; }
         public string CarTypeID { get; set; }
-        public ICollection<ImageData>? Images { get; set; }
         public BodyTypeEnum BodyTypeEnum { get; set; }
-        public ICollection<OrderData>? Orders { get; set; }
-        public DriverData Driver { get; set; }
     }
-
 }
