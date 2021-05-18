@@ -50,7 +50,7 @@ namespace MuscleCarRentProject.Pages.Common
 
         internal async Task<TView> GetItem(string id, bool concurrencyError = false)
         {
-            var item = await repo.GetAsync(id);
+            var item = await repo.Get(id);
             await GetRelatedItems(item);
             ErrorMessage = SetConcurrencyMsg(concurrencyError);
             return ToViewModel(item);

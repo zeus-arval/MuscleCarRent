@@ -16,7 +16,7 @@ namespace Domain
 
         public OrderedDate(OrderedDateData o) : base(o)
         {
-            car = getLazy<Car, ICarRepo>(c => c?.Get(CarID));
+            car = getLazy<Car, ICarsRepo>(c => c?.GetByID(CarID));
         }
 
         public DateTime OrderDate => Data?.OrderDate ?? default;

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MuscleCarRentProject.Domain;
 using MuscleCarRentProject.Domain.Repos;
 
-namespace Domain.Repos
+namespace MuscleCarRentProject.Domain.Repos
 {
-    public interface IDriverRepo : IRepo<Driver>
+    public interface ICarsRepo : IRepo<Car>
     {
-        List<Driver> GetByCar(string id);
+        List<Car> GetByCarTypeID(string ID);
     }
 }

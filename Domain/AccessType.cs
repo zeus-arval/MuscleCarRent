@@ -15,7 +15,7 @@ namespace Domain
 
         public AccessType(AccessTypeData a) : base(a)
         {
-            accounts = getLazy<Account, IAccountRepo>(a => a.GetByAccessTypeID(ID));
+            accounts = getLazy<Account, IAccountsRepo>(a => a.GetByAccessTypeID(ID));
         }
 
         public AccessLevelEnum AccessLevel => Data?.AccessLevel ?? AccessLevelEnum.User;
