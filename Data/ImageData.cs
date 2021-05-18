@@ -5,8 +5,7 @@ namespace MuscleCarRentProject.Data
 {
     public sealed class ImageData : BaseData
     {
-        public IFormFile Photo { get; set; }
-        public string PhotoAsString { get; set; }
+        public byte[] Image { get; set; }
         public string CarID { get; set; }
     }
 }

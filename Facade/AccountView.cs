@@ -37,5 +37,6 @@ namespace Facade
         [Display(Name = "Is DL valid")]
         public bool? IsDrivingLicenseValid { get; set; } = false;
         public string BankCardID { get; set; }
+        public string BankCardNumber { get; set; }
     }
 }

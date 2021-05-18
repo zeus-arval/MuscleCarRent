@@ -98,7 +98,7 @@
             <div class="form-group">
                 <label asp-for="Car.BodyTypeEnum" class="control-label"></label>
                 <select asp-for="Car.BodyTypeEnum" class="form-control" asp-items="@Html.GetEnumSelectList<BodyTypeEnum>()">
-                    <option>-- Select BodyTypeEnum --</option>
+                    <option>-- Select BodyType --</option>
                 </select>
                 <span asp-validation-for="Car.BodyTypeEnum" class="text-danger"></span>
             </div>

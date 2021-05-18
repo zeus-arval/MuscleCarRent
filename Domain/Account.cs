@@ -8,7 +8,7 @@ using MuscleCarRentProject.Domain.Common;
 
 namespace Domain.Repos
 {
-    public class Account : BaseEntity<AccountData>
+    public class Account : Person<AccountData>
     {
         public Account() : this(null){}
 
@@ -16,6 +16,7 @@ namespace Domain.Repos
         {
             bankCard = getLazy<BankCard, IBankCardsRepo>(b => b.GetByID(ID));
             orders = getLazy<Order, IOrdersRepo>(o => o?.GetByAccountID(ID));
+            accessType = getLazy<AccessType, IAccessTypesRepo>(a => a?.GetByID(ID));
         }
         public string Username => Data?.Username ?? unspec;
         public string Password => Data?.Username ?? unspec;
@@ -30,5 +31,7 @@ namespace Domain.Repos
         public Lazy<ICollection<Order>> orders { get; }
         public BankCard BankcCard => bankCard.Value;
         public Lazy<BankCard> bankCard { get; }
+        public AccessType AccessType => accessType.Value;
+        public Lazy<AccessType> accessType { get; }
     }
 }

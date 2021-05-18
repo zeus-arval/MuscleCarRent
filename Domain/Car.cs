@@ -44,7 +44,7 @@ namespace MuscleCarRentProject.Domain
         internal Lazy<CarType> carType { get; }
         public ICollection<Image> Images => images.Value;
         internal Lazy<ICollection<Image>> images { get; }
-        public BodyTypeEnum BodyType => Data?.BodyTypeEnum ?? BodyTypeEnum.Other;
+        public BodyTypeEnum BodyType => Data?.BodyType ?? BodyTypeEnum.Other;
         public ICollection<OrderedDate> OrderedDates => orderedDates.Value;
         public Lazy<ICollection<OrderedDate>> orderedDates { get; }
         public ICollection<Order> Orders => orders.Value;

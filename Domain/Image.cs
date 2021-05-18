@@ -15,7 +15,7 @@ namespace Domain
             car = getLazy<Car, ICarsRepo>(c => c.GetByID(ID));
         }
 
-        public string ImagePath => Data?.ImagePath ?? unspec;
+        public string ImagePath => Data?.Image ?? unspec;
         public string CarID => Data?.CarID ?? unspec;
         public Car Car => car.Value;
         internal Lazy<Car> car { get; }

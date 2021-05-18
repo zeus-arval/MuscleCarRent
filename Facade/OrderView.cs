@@ -20,7 +20,11 @@ namespace Facade
         public bool HasBankCard { get; set; } = false;
         [Required]
         public string CarID { get; set; }
+        [Display(Name = "Car")]
+        public string CarModel { get; set;  }
         [Required]
         public string AccountID { get; set; }
+        [Display(Name = "Account Name")]
+        public string AccountName { get; set; }
     }
 }

@@ -21,6 +21,6 @@ namespace MuscleCarRentProject.Data
         public short? Surcharge { get; set; }
         public string DriverID { get; set; }
         public string CarTypeID { get; set; }
-        public BodyTypeEnum BodyTypeEnum { get; set; }
+        public BodyTypeEnum BodyType { get; set; }
     }
 }

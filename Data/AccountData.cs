@@ -16,6 +16,7 @@ namespace MuscleCarRentProject.Data
         public string PersonalPhoto { get; set; }
         public string DrivingLicense { get; set; }
         public bool? IsDrivingLicenseValid { get; set; } = false;
+        public string AccessTypeID { get; set; }
         public string BankCardID { get; set; }
     }
 }

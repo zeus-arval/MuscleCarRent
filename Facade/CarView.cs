@@ -37,11 +37,15 @@ namespace MuscleCarRentProject.Facade
         [DataType(DataType.Currency)]
         public short? Surcharge { get; set; }
         [Required]
-        [Display(Name = "Driver ID")]
+        [Display(Name = "Driver")]
         public int DriverID { get; set; }
+        [Display(Name = "Driver")]
+        public string DriverName { get; set; }
         [Display(Name = "Car Type")]
         public int CarTypeID { get; set; }
+        [Display(Name = "Car type")]
+        public string CarTypeName { get; set; }
         [Required] [Display(Name = "Body type")]
-        public BodyTypeEnum BodyTypeEnum { get; set; }
+        public BodyTypeEnum BodyType { get; set; }
     }
 }
