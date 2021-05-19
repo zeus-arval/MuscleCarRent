@@ -1,20 +1,8 @@
 ﻿@page
-@using MuscleCarRent.Pages.Extensions
-@model MuscleCarRent.Pages.Accounts.DetailsModel
+@model MuscleCarRentProject.Pages.AccountsPage
 
 @{
     Layout = "Shared/_Details";
-    ViewData["Title"] = "Details";
-    ViewData["Page"] = "Accounts";
-    ViewData["ItemId"] = Model.Account.ID;
 }
 
-@Html.Show(model => model.Account.Username)
-@Html.Show(model => model.Account.Password)
-@Html.Show(model => model.Account.Email)
-@Html.Show(model => model.Account.PhoneNumber)
-@Html.Show(model => model.Account.RegistrationDate)
-@Html.Show(model => model.Account.IsDrivingLicenseValid)
-@Html.Show(model => model.Account.FirstName)
-@Html.Show(model => model.Account.LastName)
-@Html.Show(model => model.Account.BirthDate)
+<partial name="_ShowAccount"/>

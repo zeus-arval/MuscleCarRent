@@ -9,7 +9,7 @@ namespace MuscleCarRentProject.Data.Common
     {
         [Display(Name = "First Name")] [StringLength(50)] public string FirstName { get; set; }
         [Display(Name = "Last Name")] [StringLength(50)] public string LastName { get; set; }
-        public string FullName { get => $"{FirstName}, {LastName}"; }
+        public byte[] Photo { get; set; }
         [DataType(DataType.Date)] public DateTime Birthday { get; set; }
     }
 }

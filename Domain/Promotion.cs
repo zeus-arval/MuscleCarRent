@@ -12,8 +12,8 @@ namespace Domain
         public Promotion() : this(null){}
         public Promotion(PromotionData p) : base(p)
         {
-            car = getLazy<Car, ICarsRepo>(c => c.GetByID(ID));
-            account = getLazy<Account, IAccountsRepo>(a => a.GetByID(ID));
+            car = getLazy<Car, ICarsRepo>(c => c.Get(ID));
+            account = getLazy<Account, IAccountsRepo>(a => a.Get(ID));
         }
         public DateTime ValidUntil => Data?.ValidUntil ?? default;
         public DateTime OrderDate => Data?.OrderDate ?? default;

@@ -18,18 +18,18 @@ namespace Infra.Common
     {
         private string sortOrder;
         protected OrderedRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s){}
-        public override string SortOrder
+        public virtual string SortOrder
         {
             get => getSortOrder();
             set => sortOrder = value;
         }
-        public override string CurrentSort => sortOrder;
+        public virtual string CurrentSort => sortOrder;
         protected internal virtual string getSortOrder()
             => sortOrder?.Contains("_desc") ?? true ? removeDesc(sortOrder) : addDesc(sortOrder);
         protected internal virtual string addDesc(string s) => $"{s}_desc";
         protected internal virtual string removeDesc(string s)
             => s?.Replace("_desc", string.Empty) ?? string.Empty;
-        protected internal override IQueryable<TData> createSQL() => addSorting(base.createSQL());
+        protected internal override IQueryable<TData> createSql() => addSorting(base.createSql());
         protected internal IQueryable<TData> addSorting(IQueryable<TData> query)
         {
             var expression = createExpression();

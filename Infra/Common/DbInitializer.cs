@@ -16,15 +16,15 @@ namespace MuscleCarRent.Data
 
             var drivers = new DriverData[]
            {
-                new DriverData
+                new()
                 {
-                    FirstName = "Michael", LastName = "Vaggner", BirthDate = new DateTime(1992, 02, 12),
-                    IsAvailable = true, Cars =  null
+                    FirstName = "Michael", LastName = "Vaggner", Birthday = new DateTime(1992, 02, 12),
+                    IsAvailable = true
                 },
-                new DriverData
+                new()
                 {
-                    FirstName = "Rain", LastName = "Copper", BirthDate = new DateTime(1994, 12, 03),
-                     IsAvailable = true, Cars =  null
+                    FirstName = "Rain", LastName = "Copper", Birthday = new DateTime(1994, 12, 03),
+                     IsAvailable = true
                 }
            };
 
@@ -49,15 +49,15 @@ namespace MuscleCarRent.Data
                 {
                     Brand = BrandEnum.Plymouth, Model = "GTX", ShortDescription = "Black exterior, white convertible top, red and white interior.", 
                     LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
-                    ProductionYear = 1967, IsPopular = false, IsFavourite = false, Power = 425, Color = Color.Blue, BasePrice = 110, PricePerHour = 23, NumberOfSeats = 4, Engine = "426ci V8 HEMI",
-                    NeedDriver = false, Surcharge = 0, DriverID = 2, CarTypeID = 1, BodyTypeEnum = BodyTypeEnum.PonyCar
+                    ProductionYear = 1967, IsPopular = false, IsFavourite = false, Power = 425, Color = ColorEnum.Blue, BasePrice = 110, PricePerHour = 23, NumberOfSeats = 4, Engine = "426ci V8 HEMI",
+                    NeedDriver = false, Surcharge = 0, BodyType = BodyTypeEnum.PonyCar
                 },
                 new CarData
                 {
                     Brand = BrandEnum.Ford, Model = "Galaxie 500 Sunliner",  ShortDescription = "Black exterior, white convertible top, red and white interior.",
                     LongDescription = "Black beast with white convertible top and chrome accents. Red and white interior can surprise you. Transmition is automatic with 3 speeds.",
-                    ProductionYear = 1961, IsPopular = false, IsFavourite = false, Power = 352, Color = Color.Black, BasePrice = 100, PricePerHour = 20, NumberOfSeats = 4, Engine = "V8 6.4",
-                    NeedDriver = false, Surcharge = 0, DriverID = 1, CarTypeID = 1, BodyTypeEnum = BodyTypeEnum.FullSize
+                    ProductionYear = 1961, IsPopular = false, IsFavourite = false, Power = 352, Color = ColorEnum.Black, BasePrice = 100, PricePerHour = 20, NumberOfSeats = 4, Engine = "V8 6.4",
+                    NeedDriver = false, Surcharge = 0, BodyType = BodyTypeEnum.FullSize
                 },
             };
             context.Cars.AddRange(cars);
@@ -85,13 +85,13 @@ namespace MuscleCarRent.Data
             */
             var accounts = new AccountData[]
             {
-                new AccountData
+                new()
                 {
-                    BirthDate = new DateTime(1998,03,18), Email = "eragonart@gmail.com", FirstName = "Arturius", LastName = "Valden", Password = "As8fas46g", PhoneNumber = "+3725786421", RegistrationDate = new DateTime(2021, 04, 24), Username = "ArturiusValden" 
+                    Birthday = new DateTime(1998,03,18), Email = "eragonart@gmail.com", FirstName = "Arturius", LastName = "Valden", Password = "As8fas46g", PhoneNumber = "+3725786421", RegistrationDate = new DateTime(2021, 04, 24), Username = "ArturiusValden" 
                 },
-                new AccountData
+                new()
                 {
-                    BirthDate = new DateTime(1999,01,24), Email = "eduardbudr@gmail.com", FirstName = "Eduard", LastName = "Budr", Password = "ho2A5asd456", PhoneNumber = "+3725586269", RegistrationDate = new DateTime(2021, 04, 23), Username = "Eduardo"
+                    Birthday = new DateTime(1999,01,24), Email = "eduardbudr@gmail.com", FirstName = "Eduard", LastName = "Budr", Password = "ho2A5asd456", PhoneNumber = "+3725586269", RegistrationDate = new DateTime(2021, 04, 23), Username = "Eduardo"
                 }
             };
             context.Accounts.AddRange(accounts);

@@ -24,8 +24,8 @@ namespace Infra
         {
             if (SearchString is null) return query;
             return query.Where(
-               x => x.FullName.Contains(SearchString) ||
-                    x.ID.Contains(SearchString));
+               x => x.FirstName.Contains(SearchString) ||
+                    x.LastName.Contains(SearchString));
         }
     }
 }

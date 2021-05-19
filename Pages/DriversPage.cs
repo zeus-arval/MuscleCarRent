@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+using Domain.Repos;
 using Facade;
 using Infra;
 using MuscleCarRent.Data;
@@ -14,16 +16,20 @@ using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
 {
-    public class DriverPage : BasePage<Driver, DriverView>
+    public class DriversPage : ViewPage<Driver, DriverView>
     {
         public override string PageTitle => "Drivers";
-        public DriverPage(MuscleCarRentDBContext c) : this(new DriverRepo(c), c){}
-        public DriverPage(IRepo<Driver> r, MuscleCarRentDBContext c = null) : base(r, c) { }
+        public DriversPage(MuscleCarRentDBContext c) : this(new DriverRepo(c), c){}
+        public DriversPage(IRepo<Driver> r, MuscleCarRentDBContext c = null) : base(r, c) { }
 
-        protected internal override Driver toEntity(DriverView e)
+        protected internal override Driver toEntity(DriverView v)
         {
-            if (IsNull(e)) return null;
-            var d = Copy.Members(e, new DriverData());
+            if (IsNull(v)) return null;
+            var d = Copy.Members(v, new DriverData());
+            if (string.IsNullOrEmpty(v.Photo?.FileName)) return new Driver(d);
+            var stream = new MemoryStream();
+            v.Photo?.CopyTo(stream);
+            if (stream.Length < 2097152) d.Photo = stream.ToArray();
             return new Driver(d);
         }
         protected internal override DriverView ToViewModel(Driver e)

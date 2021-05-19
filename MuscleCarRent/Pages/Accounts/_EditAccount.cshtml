@@ -1,0 +1,17 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@using Core.Extensions
+@model MuscleCarRentProject.Pages.AccountsPage
+
+@Html.Editor(model => model.Item.PersonalPhoto)
+@Html.Editor(model => model.Item.Username)
+@Html.Editor(model => model.Item.FirstName)
+@Html.Editor(model => model.Item.LastName)
+@Html.Editor(model => model.Item.Email)
+@Html.Editor(model => model.Item.PhoneNumber)
+@Html.Editor(model => model.Item.BankCardNumber)
+@Html.Editor(model => model.Item.DrivingLicense)
+@Html.Editor(model => model.Item.Password)
+@Html.Editor(model => model.Item.RegistrationDate)
+@Html.Editor(model => model.Item.Photo)
+@Html.Select(model => model.Item.AccessTypeID,
+    Model.AccessTypes, "-- Select AccessType --")

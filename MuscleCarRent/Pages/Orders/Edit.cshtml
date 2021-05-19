@@ -1,65 +1,7 @@
 ﻿@page
-@model MuscleCarRent.Pages.Orders.EditModel
-
+@model MuscleCarRentProject.Pages.AccountsPage
 @{
-    ViewData["Title"] = "Edit";
+    Layout = "Shared/_Edit";
 }
+<partial name="_EditAccount" />
 
-<h1>Edit</h1>
-
-<h4>Order</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Order.ID" />
-            <div class="form-group">
-                <label asp-for="Order.OrderDate" class="control-label"></label>
-                <input asp-for="Order.OrderDate" class="form-control" />
-                <span asp-validation-for="Order.OrderDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Order.RentDate" class="control-label"></label>
-                <input asp-for="Order.RentDate" class="form-control" />
-                <span asp-validation-for="Order.RentDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Order.TotalPrice" class="control-label"></label>
-                <input asp-for="Order.TotalPrice" class="form-control" />
-                <span asp-validation-for="Order.TotalPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Order.HourAmmount" class="control-label"></label>
-                <input asp-for="Order.HourAmmount" class="form-control" />
-                <span asp-validation-for="Order.HourAmmount" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Order.HasBankCard" /> @Html.DisplayNameFor(model => model.Order.HasBankCard)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Order.CarID" class="control-label"></label>
-                <select asp-for="Order.CarID" class="form-control" asp-items="ViewBag.CarID"></select>
-                <span asp-validation-for="Order.CarID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Order.AccountID" class="control-label"></label>
-                <select asp-for="Order.AccountID" class="form-control" asp-items="ViewBag.AccountID"></select>
-                <span asp-validation-for="Order.AccountID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -45,26 +45,26 @@ namespace MuscleCarRentProject.Pages.Common
         protected internal string SetConcurrencyMsg(bool isError) => isError ? ErrorMessages.ConcurrencyOnDelete : null;
         protected internal virtual void DoOnCreate(){}
         protected internal abstract TView ToViewModel(TEntity e);
-        protected internal abstract TEntity toEntity(TView e);
+        protected internal abstract TEntity toEntity(TView v);
         protected internal virtual async Task GetRelatedItems(TEntity item) => await Task.CompletedTask;
 
         internal async Task<TView> GetItem(string id, bool concurrencyError = false)
         {
-            var item = await repo.Get(id);
+            var item = await repo.GetAsync(id);
             await GetRelatedItems(item);
             ErrorMessage = SetConcurrencyMsg(concurrencyError);
             return ToViewModel(item);
         }
 
         internal async Task<bool> Remove()
-            => !IsNull(repo) && await repo.Delete(toEntity(Item));
+            => !IsNull(repo) && await repo.DeleteAsync(toEntity(Item));
         internal async Task<bool> Add()
-            => !IsNull(repo) && await repo.Add(toEntity(Item));
+            => !IsNull(repo) && await repo.AddAsync(toEntity(Item));
         internal async Task<bool> Update()
-            => !IsNull(repo) && await repo.Update(toEntity(Item));
+            => !IsNull(repo) && await repo.UpdateAsync(toEntity(Item));
 
         internal async Task<TEntity> Find(string id)
-            => !IsNull(id) ? null : IsNull(repo) ? null : await repo.Get(id);
+            => !IsNull(id) ? null : IsNull(repo) ? null : await repo.GetAsync(id);
 
         internal async Task<bool> Save(params Func<Task<bool>>[] actions)
         {
@@ -107,8 +107,8 @@ namespace MuscleCarRentProject.Pages.Common
             DoBeforeDelete(Item);
             if (await Save(Remove)) return IndexPage();
             if (repo?.EntityInDb is null) return IndexPage();
-            return RedirectToPage("./Delete",
-                new {id, concurrencyError = true, handler = "Delete"});
+            return RedirectToPage("./DeleteAsync",
+                new {id, concurrencyError = true, handler = "DeleteAsync"});
         }
 
         public virtual async Task<IActionResult> OnPostEditAsync(string id, string[] selectedArray = null)

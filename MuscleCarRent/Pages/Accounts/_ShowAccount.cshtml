@@ -1,0 +1,15 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.AccountsPage
+
+@Html.ShowImage(model => model.Item.PhotoAsString)
+@Html.Show(model => model.Item.ID)
+@Html.Show(model => model.Item.FullName)
+@Html.Show(model => model.Item.Username)
+@Html.Show(model => model.Item.Email)
+@Html.Show(model => model.Item.PhoneNumber)
+@Html.Show(model => model.Item.BankCardNumber)
+@Html.Show(model => model.Item.Password)
+@Html.Show(model => model.Item.DrivingLicense)
+@Html.Show(model => model.Item.RegistrationDate)
+@Html.Show(model => model.Item.AccessTypeName)
+@Html.Show(model => model.Item.RowVersion)

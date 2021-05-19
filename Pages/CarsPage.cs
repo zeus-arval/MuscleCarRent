@@ -33,14 +33,13 @@ namespace MuscleCarRentProject.Pages
             view.DriverName = c.Driver?.FullName;
             return view;
         }
-
-        protected internal override Car toEntity(CarView d)
+        protected internal override Car toEntity(CarView v)
         {
-            var car = Copy.Members(d, new CarData());
+            var car = Copy.Members(v, new CarData());
             return new Car(car);
         }
         public SelectList Drivers
-            => new(context.Drivers.OrderBy(x => x.FullName).AsNoTracking(),
+            => new(context.Drivers.OrderBy(x => x.FirstName).AsNoTracking(),
                 "id", "Name", Item?.DriverID);
         public SelectList CarTypes
             => new(context.CarTypes.OrderBy(x => x.RentTypeEnum).AsNoTracking(),

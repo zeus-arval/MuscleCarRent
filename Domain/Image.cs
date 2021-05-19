@@ -12,10 +12,9 @@ namespace Domain
 
         public Image(ImageData i) : base(i)
         {
-            car = getLazy<Car, ICarsRepo>(c => c.GetByID(ID));
+            car = getLazy<Car, ICarsRepo>(c => c.Get(ID));
         }
-
-        public string ImagePath => Data?.Image ?? unspec;
+        
         public string CarID => Data?.CarID ?? unspec;
         public Car Car => car.Value;
         internal Lazy<Car> car { get; }

@@ -15,11 +15,11 @@ using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
 {
-    public class OrderedDatePage : ViewPage<OrderedDate, OrderedDateView>
+    public class OrderedDatesPage : ViewPage<OrderedDate, OrderedDateView>
     {
         public override string PageTitle => "Ordered dates";
-        public OrderedDatePage(MuscleCarRentDBContext c) : this(new OrderedDateRepo(c), c){}
-        protected internal OrderedDatePage(IOrderedDatesRepo r, MuscleCarRentDBContext c) : base(r, c) {}
+        public OrderedDatesPage(MuscleCarRentDBContext c) : this(new OrderedDateRepo(c), c){}
+        protected internal OrderedDatesPage(IOrderedDatesRepo r, MuscleCarRentDBContext c) : base(r, c) {}
         protected internal override OrderedDateView ToViewModel(OrderedDate e)
         {
             if (IsNull(e)) return null;
@@ -27,9 +27,9 @@ namespace MuscleCarRentProject.Pages
             view.CarModel = e.Car?.Model;
             return view;
         }
-        protected internal override OrderedDate toEntity(OrderedDateView e)
+        protected internal override OrderedDate toEntity(OrderedDateView v)
         {
-            var d = Copy.Members(e, new OrderedDateData());
+            var d = Copy.Members(v, new OrderedDateData());
             return new OrderedDate(d);
         }
     }

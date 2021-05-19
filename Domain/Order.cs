@@ -11,8 +11,8 @@ namespace Domain.Repos
         public Order() : this(null){}
         public Order(OrderData o) : base(o)
         {
-            car = getLazy<Car, ICarsRepo>(c => c.GetByID(ID));
-            account = getLazy<Account, IAccountsRepo>(a => a.GetByID(ID));
+            car = getLazy<Car, ICarsRepo>(c => c.Get(ID));
+            account = getLazy<Account, IAccountsRepo>(a => a.Get(ID));
         }
         public DateTime OrderDate => Data?.OrderDate ?? default;
         public DateTime RentDate => Data?.RentDate ?? default;

@@ -15,11 +15,11 @@ using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
 {
-    public class ImagePage : ViewPage<Image, ImageView>
+    public class ImagesPage : ViewPage<Image, ImageView>
     {
         public override string PageTitle => "Images";
-        public ImagePage(MuscleCarRentDBContext c) : this(new ImageRepo(c), c){}
-        protected internal ImagePage(IImagesRepo r , MuscleCarRentDBContext c = null) : base(r, c) {}
+        public ImagesPage(MuscleCarRentDBContext c) : this(new ImageRepo(c), c){}
+        protected internal ImagesPage(IImagesRepo r , MuscleCarRentDBContext c = null) : base(r, c) {}
 
         protected internal override ImageView ToViewModel(Image e)
         {
@@ -30,13 +30,13 @@ namespace MuscleCarRentProject.Pages
             return v;
         }
 
-        protected internal override Image toEntity(ImageView e)
+        protected internal override Image toEntity(ImageView v)
         {
-            if (IsNull(e)) return null;
+            if (IsNull(v)) return null;
             var d = Copy.Members(ViewData, new ImageData());
-            if (string.IsNullOrEmpty(e.Photo?.FileName)) return new Image(d);
+            if (string.IsNullOrEmpty(v.Photo?.FileName)) return new Image(d);
             var stream = new MemoryStream();
-            e.Photo?.CopyTo(stream);
+            v.Photo?.CopyTo(stream);
             if (stream.Length < 2097152) d.Image = stream.ToArray();
             return new Image(d);
         }

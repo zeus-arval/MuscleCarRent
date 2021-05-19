@@ -15,7 +15,7 @@ namespace Domain
 
         public BankCard(BankCardData b) : base(b)
         {
-            account = getLazy<Account, IAccountsRepo>(a => a.GetByID(ID));
+            account = getLazy<Account, IAccountsRepo>(a => a.Get(ID));
         }
         public long CardNumber => Data?.CardNumber ?? default;
         public string CardHolderFullName => Data?.CardHolderFullName ?? unspec;

@@ -14,8 +14,8 @@ namespace MuscleCarRentProject.Domain
 
         public Car(CarData d) : base(d)
         {
-            driver = getLazy<Driver, IDriversRepo>(x => x?.GetByID(DriverID));
-            carType = getLazy<CarType, ICarTypesRepo>(x => x?.GetByID(CarTypeID));
+            driver = getLazy<Driver, IDriversRepo>(x => x?.Get(DriverID));
+            carType = getLazy<CarType, ICarTypesRepo>(x => x?.Get(CarTypeID));
             images = getLazy<Image, IImagesRepo>(i => i.GetByCarID(ID));
             orderedDates = getLazy<OrderedDate, IOrderedDatesRepo>(o => o?.GetByCarID(ID));
             orders = getLazy<Order, IOrdersRepo>(o => o?.GetByCarID(ID));

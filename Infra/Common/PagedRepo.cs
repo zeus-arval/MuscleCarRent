@@ -21,10 +21,10 @@ namespace Infra.Common
             set => pageIndex = value ?? 1;
         }
 
-        public override int TotalPages => getTotalPages(PageSize);
-        public override bool HasNextPage => pageIndex < TotalPages;
-        public override bool HasPreviousPage => pageIndex > 1;
-        public override int PageSize { get; set; } = DefaultPageSize;
+        public virtual int TotalPages => getTotalPages(PageSize);
+        public virtual bool HasNextPage => pageIndex < TotalPages;
+        public virtual bool HasPreviousPage => pageIndex > 1;
+        public virtual int PageSize { get; set; } = DefaultPageSize;
 
         internal int getTotalPages(in int pageSize)
         {
@@ -35,8 +35,8 @@ namespace Infra.Common
 
         internal static int countTotalPages(int count, in int pageSize)
             => (int) Math.Ceiling(count / (double) pageSize);
-        internal int getItemsCount() => base.createSQL().Count();
-        protected internal override IQueryable<TData> createSQL() => addSkipAndTake(base.createSQL());
+        internal int getItemsCount() => base.createSql().Count();
+        protected internal override IQueryable<TData> createSql() => addSkipAndTake(base.createSql());
 
         internal virtual IQueryable<TData> addSkipAndTake(IQueryable<TData> query)
         {

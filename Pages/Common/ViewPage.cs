@@ -17,7 +17,7 @@ namespace MuscleCarRentProject.Pages.Common
             string currentFilter, string searchString, int? pageIndex)
         {
             (PageIndex, SearchString, CurrentFilter, SortOrder) = (pageIndex, searchString, currentFilter, sortOrder);
-            Items = (await repo.Get()).Select(ToViewModel).ToList();
+            Items = (await repo.GetAsync()).Select(ToViewModel).ToList();
             return Page();
         }
     }

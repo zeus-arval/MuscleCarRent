@@ -5,10 +5,10 @@ namespace MuscleCarRent.Data
 {
     public class MuscleCarRentDBContext : DbContext
     {
+        public MuscleCarRentDBContext() 
+            : this(new DbContextOptionsBuilder<MuscleCarRentDBContext>().Options) { }
         public MuscleCarRentDBContext (DbContextOptions<MuscleCarRentDBContext> options)
-            : base(options)
-        {
-        }
+            : base(options) { }
         
         public DbSet<AccessTypeData> AccessTypes { get; set; }
         public DbSet<AccountData> Accounts { get; set; }
@@ -26,10 +26,6 @@ namespace MuscleCarRent.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<AccessTypeData>().ToTable("AccessType");
             modelBuilder.Entity<AccountData>().ToTable("Account");
-            modelBuilder.Entity<BankCardData>()
-                .HasOne(a => a.Account)
-                .WithOne(b => b.BankCard)
-                .HasForeignKey<AccountData>(a => a.BankCardID);
             modelBuilder.Entity<BankCardData>().ToTable("BankCard");
             modelBuilder.Entity<CarData>().ToTable("Car");
             modelBuilder.Entity<CarTypeData>().ToTable("CarType");

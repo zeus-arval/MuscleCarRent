@@ -14,18 +14,19 @@ using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
 {
-    public class PromotionPage : ViewPage<Promotion, PromotionData>
+    public class PromotionsPage : ViewPage<Promotion, PromotionView>
     {
         public override string PageTitle => "Promotions";
-        public PromotionPage(MuscleCarRentDBContext c) : this(new PromotionRepo(c), c){}
-        protected internal PromotionPage(IRepo<Promotion> r, MuscleCarRentDBContext c) : base(r, c){}
+        public PromotionsPage(MuscleCarRentDBContext c) : this(new PromotionRepo(c), c){}
+        protected internal PromotionsPage(IRepo<Promotion> r, MuscleCarRentDBContext c) : base(r, c){}
 
-        protected internal override Promotion toEntity(PromotionData e)
+        protected internal override Promotion toEntity(PromotionView v)
         {
-            if (IsNull(e)) return null;
-            var d = Copy.Members(e, new PromotionData());
+            if (IsNull(v)) return null;
+            var d = Copy.Members(v, new PromotionData());
             return new Promotion(d);
         }
+
         protected internal override PromotionView ToViewModel(Promotion e)
         {
             if (IsNull(e)) return null;

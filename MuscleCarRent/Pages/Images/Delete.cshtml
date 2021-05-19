@@ -2,10 +2,10 @@
 @model MuscleCarRent.Pages.Images.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "DeleteAsync";
 }
 
-<h1>Delete</h1>
+<h1>DeleteAsync</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -28,7 +28,7 @@
     
     <form method="post">
         <input type="hidden" asp-for="Image.ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value="DeleteAsync" class="btn btn-danger" /> |
         <a asp-page="./Index">Back to List</a>
     </form>
 </div>

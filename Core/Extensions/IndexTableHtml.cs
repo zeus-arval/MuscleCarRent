@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Formatters.Internal;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MuscleCarRentProject.Aids;
 
@@ -14,7 +10,6 @@ namespace MuscleCarRentProject.Core.Extensions
     public static class IndexTableHtml
     {
         internal static int defaultHeight = 50;
-
         public static IHtmlContent RowButtons<TModel>(
             this IHtmlHelper<TModel> _, string pageUrl, string itemId,
             params string[] labels)
@@ -28,7 +23,6 @@ namespace MuscleCarRentProject.Core.Extensions
             );
             return new HtmlContentBuilder(s);
         }
-
         public static IHtmlContent RowData<TModel, TResult>(
             this IHtmlHelper<TModel> h,
             Expression<Func<TModel, TResult>> data)
@@ -36,7 +30,6 @@ namespace MuscleCarRentProject.Core.Extensions
             var s = TableData(h.DisplayFor(data));
             return new HtmlContentBuilder(s);
         }
-
         public static IHtmlContent RowImage<TModel>(
             this IHtmlHelper<TModel> _,
             string imageStr, int? height = null)
@@ -47,7 +40,6 @@ namespace MuscleCarRentProject.Core.Extensions
                     $"height={height ?? default}"));
             return new HtmlContentBuilder(s);
         }
-
         public static IHtmlContent TableHeader<TModel, TResult>(
             this IHtmlHelper<TModel> h,
             Expression<Func<TModel, TResult>> data)
@@ -55,14 +47,12 @@ namespace MuscleCarRentProject.Core.Extensions
             var s = HeaderData(h.DisplayNameFor(data));
             return new HtmlContentBuilder(s);
         }
-
         public static IHtmlContent TableSortHeader<TModel, TResult>(this IHtmlHelper<TModel> h,
             Expression<Func<TModel, TResult>> data, IBasePage p)
         {
             var s = h.SortHeaderData(data, p);
             return new HtmlContentBuilder(s);
         }
-
         public static List<object> SortHeaderData<TModel, TResult>(this IHtmlHelper<TModel> h,
             Expression<Func<TModel, TResult>> e, IBasePage p)
         {
@@ -86,7 +76,6 @@ namespace MuscleCarRentProject.Core.Extensions
                 new HtmlString("</th>"),
             };
         }
-
         public static List<object> HeaderData(params object[] data)
         {
             var l = new List<object> { new HtmlString("<th>") };
@@ -94,7 +83,6 @@ namespace MuscleCarRentProject.Core.Extensions
             l.Add(new HtmlString("</td>"));
             return l;
         }
-
         public static IHtmlContent RowButton(string itemId, string pageUrl, string action, string handler, string caption)
         {
             var uri = new Uri($"../{pageUrl}/{action}", UriKind.Relative);
@@ -107,7 +95,6 @@ namespace MuscleCarRentProject.Core.Extensions
                   $"{caption}</span></a>"
             );
         }
-
         public static List<object> TableData(params IHtmlContent[] data)
         {
             var l = new List<object> { new HtmlString("<td>") };
@@ -115,7 +102,6 @@ namespace MuscleCarRentProject.Core.Extensions
             l.Add(new HtmlString("</td>"));
             return l;
         }
-
         internal static string[] SetDefaultLabels(string[] handlers)
         {
             var l = new List<string>(handlers);

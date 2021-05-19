@@ -19,5 +19,14 @@ namespace Infra
         public List<Account> GetByAccessTypeID(string ID)
             => getRelated(x => x.AccessTypeID == ID);
 
+        protected internal override IQueryable<AccountData> applyFilters(IQueryable<AccountData> query)
+        {
+            if (SearchString is null) return query;
+            return query.Where(
+                x => x.FirstName.Contains(SearchString) ||
+                     x.LastName.Contains(SearchString) ||
+                     x.Username.Contains(SearchString)
+            );
+        }
     }
 }
