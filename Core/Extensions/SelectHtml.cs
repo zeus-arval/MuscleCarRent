@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MuscleCarRentProject.Aids;
 
-namespace Core.Extensions
+namespace MuscleCarRentProject.Core.Extensions
 {
     public static class SelectHtml
     {

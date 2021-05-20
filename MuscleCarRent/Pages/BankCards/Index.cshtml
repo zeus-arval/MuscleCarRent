@@ -1,60 +1,26 @@
 ﻿@page
-@model MuscleCarRent.Pages.BankCards.IndexModel
+@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.BankCardsPage
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Page"] = "Bank cards";
+    Layout = "Shared/_Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BankCard[0].CardNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BankCard[0].CardHolderFullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BankCard[0].ExpirationTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BankCard[0].CVV)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BankCard[0].Account)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        @Html.TableSortHeader(x => x.Item.CardHolderFullName, Model);
+        @Html.TableHeader(x => x.Item.ExpirationTime);
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.BankCard) {
+    @foreach (var item in Model.Items)
+    {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardHolderFullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpirationTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CVV)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Account.Email)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./DeleteAsync" asp-route-id="@item.ID">DeleteAsync</a>
-            </td>
+            @Html.RowData(x => item.CardHolderFullName)
+            @Html.RowData(x => item.ExpirationTime)
         </tr>
-}
+    }
     </tbody>
 </table>

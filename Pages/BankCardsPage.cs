@@ -23,6 +23,7 @@ namespace MuscleCarRentProject.Pages
         {
             if(IsNull(e)) return null;
             var v = Copy.Members(e.Data, new BankCardView());
+            v.CardHolderFullName = e.Account.FullName;
             return v;
         }
         protected internal override BankCard toEntity(BankCardView v)
