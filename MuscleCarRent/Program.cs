@@ -7,7 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using MuscleCarRent.Data;
+using MuscleCarRentProject.Domain.Common;
+using MuscleCarRentProject.Infra;
+using MuscleCarRentProject.Infra.Common;
 
 namespace MuscleCarRent
 {
@@ -16,28 +18,27 @@ namespace MuscleCarRent
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
-
             CreateDbIfNotExists(host);
-
+            GetRepo.SetProvider(host.Services);
             host.Run();
         }
 
         private static void CreateDbIfNotExists(IHost host)
         {
-            using (var scope = host.Services.CreateScope())
+            using var scope = host.Services.CreateScope();
+            var services = scope.ServiceProvider;
+            try
             {
-                var services = scope.ServiceProvider;
-                try
-                {
-                    var context = services.GetRequiredService<MuscleCarRentDBContext>();
-                    DbInitializer.Initialize(context);
-                }
-                catch (Exception ex)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred creating the DB.");
-                }
+                var context = services.GetRequiredService<MuscleCarRentDBContext>();
+                context?.Database?.EnsureCreated();
+                DbInitializer.Initialize(context);
             }
+            catch (Exception ex)
+            {
+                var logger = services.GetRequiredService<ILogger<Program>>();
+                logger?.LogError(ex, "An error occurred creating the DB.");
+            }
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

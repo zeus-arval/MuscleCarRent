@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MuscleCarRent.Data;
-using MuscleCarRentProject.Core;
+﻿using MuscleCarRentProject.Core;
 using MuscleCarRentProject.Domain.Repos;
+using MuscleCarRentProject.Infra;
 
 namespace MuscleCarRentProject.Pages.Common
 {
@@ -16,15 +11,15 @@ namespace MuscleCarRentProject.Pages.Common
         protected FilteredPage(IRepo<TEntity> r, MuscleCarRentDBContext c = null) : base(r, c){ }
 
         public override string CurrentFilter { 
-            get => repo.CurrentFilter;
-            set => repo.CurrentFilter = value;
+            get => repo.currentFilter;
+            set => repo.currentFilter = value;
 
         }
 
         public override string SearchString
         {
-            get => repo.SearchString; 
-            set => repo.SearchString = value;
+            get => repo.searchString; 
+            set => repo.searchString = value;
         }
     }
 }

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MuscleCarRent.Data;
-using MuscleCarRentProject.Core;
+﻿using MuscleCarRentProject.Core;
 using MuscleCarRentProject.Domain.Repos;
+using MuscleCarRentProject.Infra;
 
 namespace MuscleCarRentProject.Pages.Common
 {
@@ -17,10 +12,10 @@ namespace MuscleCarRentProject.Pages.Common
 
         public override string SortOrder
         {
-            get => repo.SortOrder;
-            set => repo.SortOrder = value;
+            get => repo.sortOrder;
+            set => repo.sortOrder = value;
         }
 
-        public override string CurrentSort => repo.CurrentSort;
+        public override string CurrentSort => repo.currentSort;
     }
 }

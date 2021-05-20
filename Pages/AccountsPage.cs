@@ -1,13 +1,12 @@
-﻿
-using System.IO;
+﻿using System.IO;
 using Domain.Repos;
 using Facade;
 using Infra;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using MuscleCarRent.Data;
 using MuscleCarRentProject.Aids;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Domain.Common;
+using MuscleCarRentProject.Infra;
 using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
@@ -38,8 +37,8 @@ namespace MuscleCarRentProject.Pages
         {
             get
             {
-                var l = new GetRepo().Instance<IAccessTypesRepo>().Get();
-                return new SelectList(l, "Id", "Name", Item?.AccessTypeID);
+                var l = new GetRepo().Instance<IAccessTypesRepo>().GetById();
+                return new SelectList(l, "ID", "Name", Item?.AccessTypeID);
             }
         }
     }

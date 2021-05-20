@@ -1,0 +1,19 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.CarsPage
+
+@Html.Show(model => model.Item.Brand)
+@Html.Show(model => model.Item.Model)
+@Html.Show(model => model.Item.Engine)
+@Html.Show(model => model.Item.Power.ToString("### kW"))
+@Html.Show(model => model.Item.LongDescription)
+@Html.Show(model => model.Item.BasePrice.ToString("C"))
+@Html.Show(model => model.Item.PricePerHour.ToString("####C per hour"))
+@Html.Show(model => model.Item.BodyType)
+@Html.Show(model => model.Item.CarTypeName)
+@Html.Show(model => model.Item.Color)
+@Html.Show(model => model.Item.DriverName)
+@Html.Show(model => model.Item.IsFavourite)
+@Html.Show(model => model.Item.IsPopular)
+@Html.Show(model => model.Item.Surcharge)
+@Html.Show(model => model.Item.ID)
+@Html.Show(model => model.Item.RowVersion)

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Domain;
 using Domain.Repos;
 using Infra.Common;
-using MuscleCarRent.Data;
 using MuscleCarRentProject.Data;
+using MuscleCarRentProject.Infra;
 
 namespace Infra
 {

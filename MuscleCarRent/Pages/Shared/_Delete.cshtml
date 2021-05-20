@@ -1,7 +1,7 @@
 ﻿@model MuscleCarRentProject.Pages.Common.BasePage
 @{
     Layout = "_Layout";
-    ViewData["Title"] = "DeleteAsync";
+    ViewData["Title"] = "Delete";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -18,7 +18,7 @@
         <input type="hidden" asp-for="Item.ID" />
         <input type="hidden" asp-for="Item.RowVersion" />
         <div class="form-group">
-            <input type="submit" value="DeleteAsync" class="btn btn-danger" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
             &nbsp;
             <a asp-page="./Index" asp-route-handler="Index">Back to List</a>
         </div>

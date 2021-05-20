@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Infra;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MuscleCarRent.Data;
 using MuscleCarRentProject.Aids;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Domain;
 using MuscleCarRentProject.Domain.Repos;
 using MuscleCarRentProject.Facade;
+using MuscleCarRentProject.Infra;
 using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages

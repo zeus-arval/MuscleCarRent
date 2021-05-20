@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain;
 using Domain.Repos;
 using Facade;
 using Infra;
-using MuscleCarRent.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MuscleCarRentProject.Aids;
 using MuscleCarRentProject.Data;
+using MuscleCarRentProject.Domain.Common;
+using MuscleCarRentProject.Domain.Repos;
+using MuscleCarRentProject.Infra;
 using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
@@ -39,6 +38,15 @@ namespace MuscleCarRentProject.Pages
             v.Photo?.CopyTo(stream);
             if (stream.Length < 2097152) d.Image = stream.ToArray();
             return new Image(d);
+        }
+
+        public SelectList Cars
+        {
+            get
+            {
+                var l = new GetRepo().Instance<ICarsRepo>().GetById();
+                return new SelectList(l, "ID", "Name");
+            }
         }
     }
 }

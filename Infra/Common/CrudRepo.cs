@@ -17,8 +17,8 @@ namespace Infra.Common
         public async Task<TEntity> GetAsync(string id) => toEntity(await getAsync(id));
         public async Task<List<TEntity>> GetAsync() => (await getAsync()).Select(toEntity).ToList();
 
-        public TEntity Get(string id) => toEntity(get(id));
-        public List<TEntity> Get() => get().Select(toEntity).ToList();
+        public TEntity Get(string id) => toEntity(GetById(id));
+        public List<TEntity> Get() => GetById().Select(toEntity).ToList();
 
         public virtual async Task<bool> DeleteAsync(TEntity e) => await delete(toData(e));
         public virtual async Task<bool> AddAsync(TEntity e) => await add(toData(e));

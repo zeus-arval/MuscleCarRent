@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MuscleCarRentProject.Data;
 
-namespace MuscleCarRent.Data
+namespace MuscleCarRentProject.Infra
 {
     public class MuscleCarRentDBContext : DbContext
     {
         public MuscleCarRentDBContext() 
             : this(new DbContextOptionsBuilder<MuscleCarRentDBContext>().Options) { }
-        public MuscleCarRentDBContext (DbContextOptions<MuscleCarRentDBContext> options)
+
+        public MuscleCarRentDBContext(DbContextOptions<MuscleCarRentDBContext> options)
             : base(options) { }
         
         public DbSet<AccessTypeData> AccessTypes { get; set; }
@@ -24,15 +25,15 @@ namespace MuscleCarRent.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<AccessTypeData>().ToTable("AccessType");
-            modelBuilder.Entity<AccountData>().ToTable("Account");
-            modelBuilder.Entity<BankCardData>().ToTable("BankCard");
-            modelBuilder.Entity<CarData>().ToTable("Car");
-            modelBuilder.Entity<CarTypeData>().ToTable("CarType");
-            modelBuilder.Entity<DriverData>().ToTable("Driver");
-            modelBuilder.Entity<ImageData>().ToTable("Image");
-            modelBuilder.Entity<OrderData>().ToTable("Order");
-            modelBuilder.Entity<PromotionData>().ToTable("Promotion");
+            modelBuilder.Entity<AccessTypeData>().ToTable("AccessTypes");
+            modelBuilder.Entity<AccountData>().ToTable("Accounts");
+            modelBuilder.Entity<BankCardData>().ToTable("BankCards");
+            modelBuilder.Entity<CarData>().ToTable("Cars");
+            modelBuilder.Entity<CarTypeData>().ToTable("CarTypes");
+            modelBuilder.Entity<DriverData>().ToTable("Drivers");
+            modelBuilder.Entity<ImageData>().ToTable("Images");
+            modelBuilder.Entity<OrderData>().ToTable("Orders");
+            modelBuilder.Entity<PromotionData>().ToTable("Promotions");
         }
     }
 }

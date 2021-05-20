@@ -1,11 +1,9 @@
-﻿using Data;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using MuscleCarRentProject.Data;
+using MuscleCarRentProject.Infra;
 
-namespace MuscleCarRent.Data
+namespace MuscleCarRentProject.Infra.Common
 {
     public class DbInitializer
     {
@@ -13,12 +11,12 @@ namespace MuscleCarRent.Data
         {
             if (context.Cars.Any())
                 return;
-
+            
             var drivers = new DriverData[]
-           {
+            {
                 new()
                 {
-                    FirstName = "Michael", LastName = "Vaggner", Birthday = new DateTime(1992, 02, 12),
+                    FirstName = "Michael", LastName = "Vaggner", Birthday = new DateTime(1992, 02, 12), 
                     IsAvailable = true
                 },
                 new()
@@ -26,7 +24,7 @@ namespace MuscleCarRent.Data
                     FirstName = "Rain", LastName = "Copper", Birthday = new DateTime(1994, 12, 03),
                      IsAvailable = true
                 }
-           };
+            };
 
             context.Drivers.AddRange(drivers);
             context.SaveChanges();
@@ -41,6 +39,14 @@ namespace MuscleCarRent.Data
             };
 
             context.CarTypes.AddRange(carTypes);
+            context.SaveChanges();
+
+            var accessTypes = new AccessTypeData[] {
+                new() {AccessLevel = AccessLevelEnum.Admin},
+                new() {AccessLevel = AccessLevelEnum.User}
+            };
+            
+            context.AccessTypes.AddRange(accessTypes);
             context.SaveChanges();
 
             var cars = new CarData[]
@@ -62,27 +68,40 @@ namespace MuscleCarRent.Data
             };
             context.Cars.AddRange(cars);
             context.SaveChanges();
-
-            string basePath = @"~\wwwroot\images\";
-            /*var images = new ImageData[]
+            
+            var images = new ImageData[]
             {
-                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie1" },
-                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie2" },
-                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie3" },
-                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie4" },
-                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie5" },
-                new ImageData { CarID = 1, ImagePath = basePath + "FordGalaxie6" },
-
-                new ImageData { CarID = 2, ImagePath = basePath + "GTX1" },
-                new ImageData { CarID = 2, ImagePath = basePath + "GTX2" },
-                new ImageData { CarID = 2, ImagePath = basePath + "GTX3" },
-                new ImageData { CarID = 2, ImagePath = basePath + "GTX4" },
-                new ImageData { CarID = 2, ImagePath = basePath + "GTX5" },
-                new ImageData { CarID = 2, ImagePath = basePath + "GTX6" }
+                new() {Image = null, CarID = null}
             };
+
             context.Images.AddRange(images);
             context.SaveChanges();
-            */
+
+            var bankCards = new BankCardData[] {
+                new() {
+                    CardHolderFullName = "Artur Valdna", CVV = 123, CardNumber = 1234567891011121,
+                    ExpirationTime = new DateTime(2021, 2, 10)
+                }
+            };
+
+            context.AddRange(bankCards);
+            context.SaveChanges();
+
+            var orders = new OrderData[] { new() };
+
+            context.AddRange(orders);
+            context.SaveChanges();
+
+            var orderedData = new OrderedDateData[] {new()};
+
+            context.AddRange(orderedData);
+            context.SaveChanges();
+
+            var promotions = new PromotionData[] {new()};
+
+            context.AddRange(promotions);
+            context.SaveChanges();
+
             var accounts = new AccountData[]
             {
                 new()
@@ -96,6 +115,7 @@ namespace MuscleCarRent.Data
             };
             context.Accounts.AddRange(accounts);
             context.SaveChanges();
+            
         }
     }
 }

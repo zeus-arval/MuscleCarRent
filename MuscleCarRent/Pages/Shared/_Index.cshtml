@@ -13,11 +13,11 @@
 </p>
 <form asp-page="./Index" method="get">
     <input type="hidden" name="Handler" value="Index" />
-    <input type="hidden" name="CurrentFilter" value="@Model.CurrentFilter" />
+    <input type="hidden" name="currentFilter" value="@Model.CurrentFilter" />
     <div class="form-group">
         <p>
             Find by name:
-            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="text" name="searchString" value="@Model.CurrentFilter" />
             <input type="submit" value="Search" class="btn-primary" />
             <a asp-page="./Index" asp-route-handler="Index">Back to full List</a>
         </p>

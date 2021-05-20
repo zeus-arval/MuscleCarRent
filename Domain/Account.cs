@@ -14,9 +14,9 @@ namespace Domain.Repos
 
         public Account(AccountData a) : base(a)
         {
-            bankCard = getLazy<BankCard, IBankCardsRepo>(b => b.Get(ID));
+            bankCard = getLazy<BankCard, IBankCardsRepo>(b => b.GetById(ID));
             orders = getLazy<Order, IOrdersRepo>(o => o?.GetByAccountID(ID));
-            accessType = getLazy<AccessType, IAccessTypesRepo>(a => a?.Get(ID));
+            accessType = getLazy<AccessType, IAccessTypesRepo>(a => a?.GetById(ID));
         }
         public string Username => Data?.Username ?? unspec;
         public string Password => Data?.Username ?? unspec;

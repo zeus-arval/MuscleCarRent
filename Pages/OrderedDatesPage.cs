@@ -7,10 +7,12 @@ using Domain;
 using Domain.Repos;
 using Facade;
 using Infra;
-using MuscleCarRent.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MuscleCarRentProject.Aids;
 using MuscleCarRentProject.Data;
+using MuscleCarRentProject.Domain.Common;
 using MuscleCarRentProject.Domain.Repos;
+using MuscleCarRentProject.Infra;
 using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
@@ -31,6 +33,15 @@ namespace MuscleCarRentProject.Pages
         {
             var d = Copy.Members(v, new OrderedDateData());
             return new OrderedDate(d);
+        }
+
+        public SelectList Cars
+        {
+            get
+            {
+                var l = new GetRepo().Instance<ICarsRepo>().GetById();
+                return new SelectList(l, "ID", "Name");
+            }
         }
     }
 }

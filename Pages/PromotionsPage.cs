@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Domain;
 using Facade;
 using Infra;
-using MuscleCarRent.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MuscleCarRentProject.Aids;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Domain.Repos;
+using MuscleCarRentProject.Infra;
 using MuscleCarRentProject.Pages.Common;
 
 namespace MuscleCarRentProject.Pages
@@ -33,5 +35,11 @@ namespace MuscleCarRentProject.Pages
             var v = Copy.Members(e.Data, new PromotionView());
             return v;
         }
+        public SelectList Accounts =>
+            new(context.Accounts.OrderBy(x => x.LastName).AsNoTracking(),
+                "ID", "LastName", Item?.AccountID);
+        public SelectList Cars =>
+            new(context.Cars.OrderBy(x => x.Brand).ThenBy(x => x.Model).AsNoTracking(),
+                "ID", "Brand", Item?.CarID);//THENBY Может вызвать ошибку
     }
 }

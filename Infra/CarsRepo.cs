@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+using MuscleCarRentProject.Infra;
 using Infra.Common;
-using MuscleCarRent.Data;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Domain;
 using MuscleCarRentProject.Domain.Repos;
@@ -29,7 +25,6 @@ namespace Infra
                 x.BodyType.ToString().Contains(SearchString) ||
                 x.Color.ToString().Contains(SearchString) ||
                 x.Engine.Contains(SearchString) ||
-                x.LongDescription.Contains(SearchString) ||
                 x.ShortDescription.Contains(SearchString) ||
                 x.Model.Contains(SearchString) ||
                 x.Power.ToString().Contains(SearchString) ||

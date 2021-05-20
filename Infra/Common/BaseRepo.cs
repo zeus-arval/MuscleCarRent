@@ -29,8 +29,8 @@ namespace Infra.Common
             db = c;
         }
         protected internal async Task<List<T>> getAsync() => await createSql().ToListAsync();
-        protected internal List<T> get() => createSql().ToList();
-        protected internal T get(string id)
+        protected internal List<T> GetById() => createSql().ToList();
+        protected internal T GetById(string id)
         {
             if (id is null) return null;
             var o = dbSet?.AsNoTracking().FirstOrDefault(m => m.ID == id);

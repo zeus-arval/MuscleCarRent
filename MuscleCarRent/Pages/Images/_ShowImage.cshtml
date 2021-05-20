@@ -1,0 +1,7 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.ImagesPage
+
+@Html.Show(model => model.Item.CarID)
+@Html.ShowImage(model => model.Item.PhotoAsString)
+@Html.Show(model => model.Item.ID)
+@Html.Show(model => model.Item.RowVersion)
