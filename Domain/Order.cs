@@ -11,18 +11,18 @@ namespace Domain.Repos
         public Order() : this(null){}
         public Order(OrderData o) : base(o)
         {
-            car = getLazy<Car, ICarsRepo>(c => c.GetById(ID));
-            account = getLazy<Account, IAccountsRepo>(a => a.GetById(ID));
+            car = getLazy<Car, ICarsRepo>(c => c.Get(CarId));
+            account = getLazy<Account, IAccountsRepo>(a => a.Get(AccountId));
         }
         public DateTime OrderDate => Data?.OrderDate ?? default;
         public DateTime RentDate => Data?.RentDate ?? default;
         public short TotalPrice => Data?.TotalPrice ?? default;
         public byte HourAmount => Data?.HourAmmount ?? default;
         public bool HasBankCard => Data?.HasBankCard ?? default;
-        public string CarID => Data?.CarID ?? unspec;
+        public string CarId => Data?.CarId ?? string.Empty;
         public Car Car => car.Value;
         public Lazy<Car> car { get; }
-        public string AccountID => Data?.AccountID ?? unspec;
+        public string AccountId => Data?.AccountId ?? string.Empty;
         public Account Account => account.Value;
         public Lazy<Account> account { get; }
     }

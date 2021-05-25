@@ -37,11 +37,11 @@ namespace Facade
         public string DrivingLicense { get; set; }
         [Display(Name = "Is DL valid")]
         public bool? IsDrivingLicenseValid { get; set; } = false;
-        [Display(Name = "BankCard ID")]
-        public string BankCardID { get; set; }
+        [Display(Name = "BankCard Id")]
+        public string BankCardId { get; set; }
         [Display(Name = "BankCard")]
         public string BankCardNumber { get; set; }
-        public string AccessTypeID { get; set; }
+        public string AccessTypeId { get; set; }
         public string AccessTypeName { get; set; }
     }
 }

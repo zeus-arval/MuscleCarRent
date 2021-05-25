@@ -13,7 +13,7 @@ namespace Domain
 
         public Driver(DriverData d) : base(d)
         {
-            cars = getLazy<Car, ICarsRepo>(x => x?.GetByDriverID(ID));
+            cars = getLazy<Car, ICarsRepo>(x => x?.GetByDriverId(Id));
         }
 
         public bool IsAvailable => Data?.IsAvailable ?? default;

@@ -21,7 +21,7 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("MuscleCarRentProject.Data.AccessTypeData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessLevel")
@@ -32,23 +32,23 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("AccessTypes");
                 });
 
             modelBuilder.Entity("MuscleCarRentProject.Data.AccountData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("AccessTypeDataID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AccessTypeID")
+                    b.Property<string>("AccessTypeId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BankCardID")
+                    b.Property<string>("BankCardId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Birthday")
@@ -94,7 +94,7 @@ namespace Infra.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("AccessTypeDataID");
 
@@ -103,10 +103,10 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("MuscleCarRentProject.Data.BankCardData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AccountID")
+                    b.Property<string>("AccountId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<short>("CVV")
@@ -126,14 +126,14 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("BankCards");
                 });
 
             modelBuilder.Entity("MuscleCarRentProject.Data.CarData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<short>("BasePrice")
@@ -148,13 +148,13 @@ namespace Infra.Migrations
                     b.Property<string>("CarTypeDataID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CarTypeID")
+                    b.Property<string>("CarTypeId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Color")
                         .HasColumnType("int");
 
-                    b.Property<string>("DriverID")
+                    b.Property<string>("DriverId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Engine")
@@ -198,7 +198,7 @@ namespace Infra.Migrations
                     b.Property<short?>("Surcharge")
                         .HasColumnType("smallint");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("CarTypeDataID");
 
@@ -207,7 +207,7 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("MuscleCarRentProject.Data.CarTypeData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("RentTypeEnum")
@@ -218,14 +218,14 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("CarTypes");
                 });
 
             modelBuilder.Entity("MuscleCarRentProject.Data.DriverData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Birthday")
@@ -250,17 +250,17 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Drivers");
                 });
 
             modelBuilder.Entity("MuscleCarRentProject.Data.ImageData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CarID")
+                    b.Property<string>("CarId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("Image")
@@ -271,20 +271,20 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Images");
                 });
 
             modelBuilder.Entity("MuscleCarRentProject.Data.OrderData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AccountID")
+                    b.Property<string>("AccountId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CarID")
+                    b.Property<string>("CarId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("HasBankCard")
@@ -307,17 +307,17 @@ namespace Infra.Migrations
                     b.Property<short>("TotalPrice")
                         .HasColumnType("smallint");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("MuscleCarRentProject.Data.OrderedDateData", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CarID")
+                    b.Property<string>("CarId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CarModel")
@@ -331,7 +331,7 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("OrderedDates");
                 });
@@ -373,7 +373,7 @@ namespace Infra.Migrations
                 {
                     b.HasOne("MuscleCarRentProject.Data.OrderData", null)
                         .WithOne()
-                        .HasForeignKey("MuscleCarRentProject.Data.PromotionData", "ID")
+                        .HasForeignKey("MuscleCarRentProject.Data.PromotionData", "Id")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });

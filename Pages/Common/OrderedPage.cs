@@ -12,10 +12,10 @@ namespace MuscleCarRentProject.Pages.Common
 
         public override string SortOrder
         {
-            get => repo.sortOrder;
-            set => repo.sortOrder = value;
+            get => repo.SortOrder;
+            set => repo.SortOrder = value;
         }
 
-        public override string CurrentSort => repo.currentSort;
+        public override string CurrentSort => repo.CurrentSort;
     }
 }

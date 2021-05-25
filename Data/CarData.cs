@@ -19,8 +19,8 @@ namespace MuscleCarRentProject.Data
         public string Engine { get; set; }
         public bool NeedDriver { get; set; }
         public short? Surcharge { get; set; }
-        public string DriverID { get; set; }
-        public string CarTypeID { get; set; }
+        public string DriverId { get; set; }
+        public string CarTypeId { get; set; }
         public BodyTypeEnum BodyType { get; set; }
     }
 }

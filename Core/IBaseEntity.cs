@@ -2,7 +2,7 @@
 {
     public interface IBaseEntity
     {
-        public string ID { get; }
+        public string Id { get; }
         public byte[] RowVersion { get; }
     }
 }

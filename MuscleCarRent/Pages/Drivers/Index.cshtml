@@ -10,7 +10,7 @@
 <table class="table">
     <thead>
         <tr>
-            @Html.TableHeader(x => x.Item.ID)
+            @Html.TableHeader(x => x.Item.Id)
             @Html.TableSortHeader(x => x.Item.FirstName, Model)
             @Html.TableSortHeader(x => x.Item.LastName, Model)
             @Html.TableHeader(x => x.Item.PhotoAsString)
@@ -21,12 +21,12 @@
     @foreach (var item in Model.Items)
     {
         <tr>
-            @Html.RowData(x => item.ID)
+            @Html.RowData(x => item.Id)
             @Html.RowData(x => item.FirstName)
             @Html.RowData(x => item.LastName)
             @Html.RowImage(item.PhotoAsString)
             @Html.RowData(x => item.RowVersion)
-            @Html.RowButtons(Model.PageUrl, $"{item.ID}")
+            @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
     }
     </tbody>

@@ -13,7 +13,7 @@ namespace Facade
     {
         [Display(Name = "Order date")] [Required] 
         public DateTime OrderDate { get; set; }
-        [Required] public string CarID { get; set; }
+        [Required] public string CarId { get; set; }
         [Display(Name = "Car Model")]
         public string CarModel { get; set; }
     }

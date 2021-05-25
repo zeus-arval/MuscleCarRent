@@ -20,7 +20,7 @@ namespace MuscleCarRentProject.Pages
         public ImagesPage(MuscleCarRentDBContext c) : this(new ImageRepo(c), c){}
         protected internal ImagesPage(IImagesRepo r , MuscleCarRentDBContext c = null) : base(r, c) {}
 
-        protected internal override ImageView ToViewModel(Image e)
+        protected internal override ImageView toViewModel(Image e)
         {
             if (IsNull(e)) return null;
             var v = Copy.Members(e.Data, new ImageView());
@@ -44,8 +44,8 @@ namespace MuscleCarRentProject.Pages
         {
             get
             {
-                var l = new GetRepo().Instance<ICarsRepo>().GetById();
-                return new SelectList(l, "ID", "Name");
+                var l = new GetRepo().Instance<ICarsRepo>().Get();
+                return new SelectList(l, "Id", "Name");
             }
         }
     }

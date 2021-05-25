@@ -13,10 +13,10 @@ namespace Infra
         public OrderRepo(MuscleCarRentDBContext c) : base(c, c?.Orders){}
         protected internal override Order toEntity(OrderData o) => new(o);
         protected internal override OrderData toData(Order e) => e?.Data ?? new OrderData();
-        public ICollection<Order> GetByCarID(string ID)
-            => getRelated(x => x.CarID == ID);
-        public ICollection<Order> GetByAccountID(string ID)
-            => getRelated(x => x.AccountID == ID);
+        public ICollection<Order> GetByCarId(string ID)
+            => getRelated(x => x.CarId == ID);
+        public ICollection<Order> GetByAccountId(string ID)
+            => getRelated(x => x.AccountId == ID);
 
         protected internal override IQueryable<OrderData> applyFilters(IQueryable<OrderData> query)
         {
@@ -24,7 +24,7 @@ namespace Infra
             return query.Where(
                 x => x.OrderDate.ToString().Contains(SearchString) ||
                      x.RentDate.ToString().Contains(SearchString) ||
-                     x.AccountID.Contains(SearchString)
+                     x.AccountId.Contains(SearchString)
             );
         }
     }

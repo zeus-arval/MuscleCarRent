@@ -32,7 +32,7 @@ namespace MuscleCarRentProject.Pages
             if (stream.Length < 2097152) d.Photo = stream.ToArray();
             return new Driver(d);
         }
-        protected internal override DriverView ToViewModel(Driver e)
+        protected internal override DriverView toViewModel(Driver e)
         {
             if (IsNull(e)) return null;
             var v = Copy.Members(e.Data, new DriverView());

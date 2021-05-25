@@ -71,7 +71,7 @@ namespace MuscleCarRentProject.Infra.Common
             
             var images = new ImageData[]
             {
-                new() {Image = null, CarID = null}
+                new() {Image = null, CarId = null}
             };
 
             context.Images.AddRange(images);

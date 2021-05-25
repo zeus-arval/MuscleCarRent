@@ -9,6 +9,6 @@ namespace Domain.Repos
 {
     public interface IOrderedDatesRepo : IRepo<OrderedDate>
     {
-        ICollection<OrderedDate> GetByCarID(string id);
+        ICollection<OrderedDate> GetByCarId(string id);
     }
 }

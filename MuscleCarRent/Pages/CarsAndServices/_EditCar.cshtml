@@ -10,13 +10,13 @@
 @Html.Editor(model => model.Item.BasePrice)
 @Html.Editor(model => model.Item.PricePerHour)
 @Html.Editor(model => model.Item.BodyType)
-@Html.Select(model => model.Item.CarTypeID,
+@Html.Select(model => model.Item.CarTypeId,
     Model.CarTypes, "--Select Type of Car--")
 @Html.Editor(model => model.Item.Color)
-@Html.Select(model => model.Item.DriverID,
+@Html.Select(model => model.Item.DriverId,
     Model.Drivers, "--Select Driver--")
 @Html.Editor(model => model.Item.IsFavourite)
 @Html.Editor(model => model.Item.IsPopular)
 @Html.Editor(model => model.Item.Surcharge)
-@Html.Editor(model => model.Item.ID)
+@Html.Editor(model => model.Item.Id)
 @Html.Editor(model => model.Item.RowVersion)

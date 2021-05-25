@@ -10,7 +10,7 @@ namespace MuscleCarRentProject.Data
         public short TotalPrice { get; set; }
         public byte HourAmmount { get; set; }
         public bool HasBankCard { get; set; }
-        public string CarID { get; set; }
-        public string AccountID { get; set; }
+        public string CarId { get; set; }
+        public string AccountId { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace MuscleCarRentProject.Pages
             return new Promotion(d);
         }
 
-        protected internal override PromotionView ToViewModel(Promotion e)
+        protected internal override PromotionView toViewModel(Promotion e)
         {
             if (IsNull(e)) return null;
             var v = Copy.Members(e.Data, new PromotionView());
@@ -37,9 +37,9 @@ namespace MuscleCarRentProject.Pages
         }
         public SelectList Accounts =>
             new(context.Accounts.OrderBy(x => x.LastName).AsNoTracking(),
-                "ID", "LastName", Item?.AccountID);
+                "Id", "LastName", Item?.AccountId);
         public SelectList Cars =>
             new(context.Cars.OrderBy(x => x.Brand).ThenBy(x => x.Model).AsNoTracking(),
-                "ID", "Brand", Item?.CarID);//THENBY Может вызвать ошибку
+                "Id", "Brand", Item?.CarId);//THENBY Может вызвать ошибку
     }
 }

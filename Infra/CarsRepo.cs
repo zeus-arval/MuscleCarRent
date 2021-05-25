@@ -14,10 +14,10 @@ namespace Infra
         public CarsRepo(MuscleCarRentDBContext c) : base(c, c?.Cars) {}
         protected internal override Car toEntity(CarData data) => new(data);
         protected internal override CarData toData(Car e) => e?.Data ?? new CarData();
-        public List<Car> GetByCarTypeID(string ID)
-            => getRelated(x => x.CarTypeID == ID);
-        public List<Car> GetByDriverID(string ID)
-            => getRelated(x => x.DriverID == ID);
+        public List<Car> GetByCarTypeId(string ID)
+            => getRelated(x => x.CarTypeId == ID);
+        public List<Car> GetByDriverId(string ID)
+            => getRelated(x => x.DriverId == ID);
         protected internal override IQueryable<CarData> applyFilters(IQueryable<CarData> query)
         {
             if (SearchString is null) return query;

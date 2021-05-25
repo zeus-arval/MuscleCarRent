@@ -22,7 +22,7 @@ namespace MuscleCarRentProject.Pages
         public CarsPage(MuscleCarRentDBContext c) : this(new CarsRepo(c), c){}
         protected internal CarsPage(ICarsRepo r, MuscleCarRentDBContext c) : base(r, c){}
 
-        protected internal override CarView ToViewModel(Car c)
+        protected internal override CarView toViewModel(Car c)
         {
             if (IsNull(c)) return null;
             var view = Copy.Members(c.Data, new CarView());
@@ -40,9 +40,9 @@ namespace MuscleCarRentProject.Pages
         }
         public SelectList Drivers
             => new(context.Drivers.OrderBy(x => x.FirstName).AsNoTracking(),
-                "id", "Name", Item?.DriverID);
+                "id", "Name", Item?.DriverId);
         public SelectList CarTypes
             => new(context.CarTypes.OrderBy(x => x.RentTypeEnum).AsNoTracking(),
-                "id", "Name", Item?.CarTypeID);
+                "id", "Name", Item?.CarTypeId);
     }
 }

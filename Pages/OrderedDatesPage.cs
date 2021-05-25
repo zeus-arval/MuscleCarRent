@@ -22,7 +22,7 @@ namespace MuscleCarRentProject.Pages
         public override string PageTitle => "Ordered dates";
         public OrderedDatesPage(MuscleCarRentDBContext c) : this(new OrderedDateRepo(c), c){}
         protected internal OrderedDatesPage(IOrderedDatesRepo r, MuscleCarRentDBContext c) : base(r, c) {}
-        protected internal override OrderedDateView ToViewModel(OrderedDate e)
+        protected internal override OrderedDateView toViewModel(OrderedDate e)
         {
             if (IsNull(e)) return null;
             var view = Copy.Members(e.Data, new OrderedDateView());
@@ -39,8 +39,8 @@ namespace MuscleCarRentProject.Pages
         {
             get
             {
-                var l = new GetRepo().Instance<ICarsRepo>().GetById();
-                return new SelectList(l, "ID", "Name");
+                var l = new GetRepo().Instance<ICarsRepo>().Get();
+                return new SelectList(l, "Id", "Name");
             }
         }
     }

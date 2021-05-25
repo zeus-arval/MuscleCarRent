@@ -9,6 +9,6 @@ namespace Domain.Repos
 {
     public interface IImagesRepo : IRepo<Image>
     {
-        List<Image> GetByCarID(string ID);
+        List<Image> GetByCarId(string ID);
     }
 }

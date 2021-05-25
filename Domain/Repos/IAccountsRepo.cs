@@ -9,6 +9,6 @@ namespace Domain.Repos
 {
     public interface IAccountsRepo : IRepo<Account>
     {
-        List<Account> GetByAccessTypeID(string ID);
+        List<Account> GetByAccessTypeId(string ID);
     }
 }

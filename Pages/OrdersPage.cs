@@ -16,7 +16,7 @@ namespace MuscleCarRentProject.Pages
         public override string PageTitle => "Orders";
         public OrdersPage(MuscleCarRentDBContext c) : this(new OrderRepo(c), c) {}
         protected internal OrdersPage(IOrdersRepo r, MuscleCarRentDBContext c = null) : base(r, c){}
-        protected internal override OrderView ToViewModel(Order o)
+        protected internal override OrderView toViewModel(Order o)
         {
             if (IsNull(o)) return null;
             var view = Copy.Members(o.Data, new OrderView());
@@ -31,10 +31,10 @@ namespace MuscleCarRentProject.Pages
         }
         public SelectList Accounts =>
             new(context.Accounts.OrderBy(x => x.LastName).AsNoTracking(),
-                "ID", "LastName", Item?.AccountID);
+                "Id", "LastName", Item?.AccountId);
         public SelectList Cars =>
             new(context.Cars.OrderBy(x => x.Brand).ThenBy(x => x.Model).AsNoTracking(),
-                "ID", "Brand", Item?.CarID);//THENBY Может вызвать ошибку
+                "Id", "Brand", Item?.CarId);//THENBY Может вызвать ошибку
 
     }
 }

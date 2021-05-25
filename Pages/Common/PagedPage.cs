@@ -9,13 +9,13 @@ namespace MuscleCarRentProject.Pages.Common
     where TView : class, IEntityData, new()
     {
         protected PagedPage(IRepo<TEntity> r, MuscleCarRentDBContext c = null) : base(r, c){}
-        public override bool HasNextPage => repo.hasNextPage;
-        public override bool HasPreviousPage => repo.hasPreviousPage;
+        public override bool HasNextPage => repo.HasNextPage;
+        public override bool HasPreviousPage => repo.HasPreviousPage;
 
         public override int? PageIndex
         {
-            get => repo.pageIndex;
-            set => repo.pageIndex = value;
+            get => repo.PageIndex;
+            set => repo.PageIndex = value;
         }
     }
 }

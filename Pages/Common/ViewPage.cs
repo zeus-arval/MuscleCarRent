@@ -11,13 +11,14 @@ namespace MuscleCarRentProject.Pages.Common
         where TEntity : class, IBaseEntity, new()
         where TView : class, IEntityData, new()
     {
-        protected ViewPage(IRepo<TEntity> r, MuscleCarRentDBContext context = null) : base(r, context){}
-
-        public virtual async Task<IActionResult> OnGetIndexAsync(string sortOrder,
-            string currentFilter, string searchString, int? pageIndex)
-        {
-            (PageIndex, SearchString, CurrentFilter, SortOrder) = (pageIndex, searchString, currentFilter, sortOrder);
-            Items = (await repo.GetById()).Select(ToViewModel).ToList();
+        protected ViewPage(IRepo<TEntity> r, MuscleCarRentDBContext c = null) : base(r, c) { }
+        public async virtual Task<IActionResult> OnGetIndexAsync(string sortOrder,
+            string currentFilter, string searchString, int? pageIndex) {
+            PageIndex = pageIndex;
+            SearchString = searchString;
+            CurrentFilter = currentFilter;
+            SortOrder = sortOrder;
+            Items = (await repo.GetAsync()).Select(toViewModel).ToList();
             return Page();
         }
     }

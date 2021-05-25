@@ -15,8 +15,8 @@ namespace Infra
 
         protected internal override OrderedDate toEntity(OrderedDateData d) => new(d);
         protected internal override OrderedDateData toData(OrderedDate e) => e?.Data ?? new OrderedDateData();
-        public ICollection<OrderedDate> GetByCarID(string ID)
-            => getRelated(x => x.CarID == ID);
+        public ICollection<OrderedDate> GetByCarId(string ID)
+            => getRelated(x => x.CarId == ID);
         protected internal override IQueryable<OrderedDateData> applyFilters(IQueryable<OrderedDateData> query)
         {
             if (SearchString is null) return query;

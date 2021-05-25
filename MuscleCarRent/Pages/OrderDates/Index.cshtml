@@ -12,7 +12,7 @@
         <tr>
             @Html.TableSortHeader(x => x.Item.CarModel, Model);
             @Html.TableHeader(x => x.Item.OrderDate);
-            @Html.TableHeader(x => x.Item.ID);
+            @Html.TableHeader(x => x.Item.Id);
             @Html.TableHeader(x => x.Item.RowVersion);
         </tr>
     </thead>
@@ -22,9 +22,9 @@
         <tr>
             @Html.RowData(x => item.CarModel)
             @Html.RowData(x => item.OrderDate)
-            @Html.RowData(x => item.ID)
+            @Html.RowData(x => item.Id)
             @Html.RowData(x => item.RowVersion)
-            @Html.RowButtons(Model.PageUrl, $"{item.ID}")
+            @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
     }
     </tbody>

@@ -2,7 +2,7 @@
 @model MuscleCarRentProject.Pages.ImagesPage
 
 @Html.Editor(model => model.Item.Photo)
-@Html.Select(model => model.Item.CarID,
+@Html.Select(model => model.Item.CarId,
     Model.Cars, "--Select Car")
-@Html.Show(model => model.Item.ID)
+@Html.Show(model => model.Item.Id)
 @Html.Show(model => model.Item.RowVersion)

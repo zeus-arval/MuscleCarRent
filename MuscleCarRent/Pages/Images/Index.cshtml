@@ -10,8 +10,8 @@
 <table class="table">
     <thead>
     <tr>
-        @Html.TableSortHeader(x => x.Item.CarID, Model);
-        @Html.TableHeader(x => x.Item.ID);
+        @Html.TableSortHeader(x => x.Item.CarId, Model);
+        @Html.TableHeader(x => x.Item.Id);
         @Html.TableHeader(x => x.Item.PhotoAsString);
         @Html.TableHeader(model => model.Item.RowVersion)
     </tr>
@@ -20,11 +20,11 @@
     @foreach (var item in Model.Items)
     {
         <tr>
-            @Html.RowData(x => item.CarID)
-            @Html.RowData(x => item.ID)
+            @Html.RowData(x => item.CarId)
+            @Html.RowData(x => item.Id)
             @Html.RowImage(item.PhotoAsString)
             @Html.RowData(x => item.RowVersion)
-            @Html.RowButtons(Model.PageUrl, $"{item.ID}")
+            @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
     }
     </tbody>

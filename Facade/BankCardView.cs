@@ -11,7 +11,7 @@ namespace Facade
 {
     public sealed class BankCardView : BaseView
     {
-        public string AccountID { get; set; }
+        public string AccountId { get; set; }
         [Display(Name = "Card number")] public long CardNumber { get; set; }
         [Display(Name = "Card holder full name")] public string CardHolderFullName { get; set; }
         [Display(Name = "Expiration time")] public DateTime ExpirationTime { get; set; }

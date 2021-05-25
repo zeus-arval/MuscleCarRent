@@ -9,7 +9,7 @@ namespace Domain.Repos
 {
     public interface IOrdersRepo : IRepo<Order>
     {
-        ICollection<Order> GetByCarID(string ID);
-        ICollection<Order> GetByAccountID(string ID);
+        ICollection<Order> GetByCarId(string ID);
+        ICollection<Order> GetByAccountId(string ID);
     }
 }

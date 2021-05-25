@@ -6,6 +6,6 @@ namespace MuscleCarRentProject.Data
     public sealed class ImageData : BaseData
     {
         public byte[] Image { get; set; }
-        public string CarID { get; set; }
+        public string CarId { get; set; }
     }
 }

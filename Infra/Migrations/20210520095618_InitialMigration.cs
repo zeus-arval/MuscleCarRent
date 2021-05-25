@@ -144,7 +144,7 @@ namespace Infra.Migrations
                         name: "FK_Accounts_AccessTypes_AccessTypeDataID",
                         column: x => x.AccessTypeDataID,
                         principalTable: "AccessTypes",
-                        principalColumn: "ID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -181,7 +181,7 @@ namespace Infra.Migrations
                         name: "FK_Cars_CarTypes_CarTypeDataID",
                         column: x => x.CarTypeDataID,
                         principalTable: "CarTypes",
-                        principalColumn: "ID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -202,7 +202,7 @@ namespace Infra.Migrations
                         name: "FK_Promotions_Orders_ID",
                         column: x => x.ID,
                         principalTable: "Orders",
-                        principalColumn: "ID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 

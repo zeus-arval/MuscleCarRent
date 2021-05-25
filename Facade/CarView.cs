@@ -38,11 +38,11 @@ namespace MuscleCarRentProject.Facade
         public short? Surcharge { get; set; }
         [Required]
         [Display(Name = "Driver")]
-        public int DriverID { get; set; }
+        public int DriverId { get; set; }
         [Display(Name = "Driver")]
         public string DriverName { get; set; }
         [Display(Name = "Car Type")]
-        public int CarTypeID { get; set; }
+        public int CarTypeId { get; set; }
         [Display(Name = "Car type")]
         public string CarTypeName { get; set; }
         [Required] [Display(Name = "Body type")]

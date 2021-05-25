@@ -8,6 +8,6 @@ namespace Facade
     {
         [Display(Name = "Photo")] public IFormFile Photo { get; set; }
         [Display(Name = "Current Photo")] public string PhotoAsString { get; set; }
-        [Required] public string CarID { get; set; }
+        [Required] public string CarId { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace MuscleCarRentProject.Pages
         public override string PageTitle => "Accounts";
         public AccountsPage(MuscleCarRentDBContext c) : this(new AccountRepo(c), c) { }
         protected internal AccountsPage(IAccountsRepo r, MuscleCarRentDBContext c = null) : base(r, c) { }
-        protected internal override AccountView ToViewModel(Account a)
+        protected internal override AccountView toViewModel(Account a)
         {
             if (IsNull(a)) return null;
             var view = Copy.Members(a.Data, new AccountView());
@@ -37,8 +37,8 @@ namespace MuscleCarRentProject.Pages
         {
             get
             {
-                var l = new GetRepo().Instance<IAccessTypesRepo>().GetById();
-                return new SelectList(l, "ID", "Name", Item?.AccessTypeID);
+                var l = new GetRepo().Instance<IAccessTypesRepo>().Get();
+                return new SelectList(l, "Id", "Name", Item?.AccessTypeId);
             }
         }
     }

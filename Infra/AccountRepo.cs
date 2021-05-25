@@ -13,8 +13,8 @@ namespace Infra
         public AccountRepo(MuscleCarRentDBContext c) : base(c, c?.Accounts){}
         protected internal override Account toEntity(AccountData d) => new(d);
         protected internal override AccountData toData(Account e) => e?.Data ?? new AccountData();
-        public List<Account> GetByAccessTypeID(string ID)
-            => getRelated(x => x.AccessTypeID == ID);
+        public List<Account> GetByAccessTypeId(string Id)
+            => getRelated(x => x.AccessTypeId == Id);
 
         protected internal override IQueryable<AccountData> applyFilters(IQueryable<AccountData> query)
         {

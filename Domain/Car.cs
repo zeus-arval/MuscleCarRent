@@ -14,17 +14,17 @@ namespace MuscleCarRentProject.Domain
 
         public Car(CarData d) : base(d)
         {
-            driver = getLazy<Driver, IDriversRepo>(x => x?.GetById(DriverID));
-            carType = getLazy<CarType, ICarTypesRepo>(x => x?.GetById(CarTypeID));
-            images = getLazy<Image, IImagesRepo>(i => i.GetByCarID(ID));
-            orderedDates = getLazy<OrderedDate, IOrderedDatesRepo>(o => o?.GetByCarID(ID));
-            orders = getLazy<Order, IOrdersRepo>(o => o?.GetByCarID(ID));
+            driver = getLazy<Driver, IDriversRepo>(x => x?.Get(DriverId));
+            carType = getLazy<CarType, ICarTypesRepo>(x => x?.Get(CarTypeId));
+            images = getLazy<Image, IImagesRepo>(i => i.GetByCarId(Id));
+            orderedDates = getLazy<OrderedDate, IOrderedDatesRepo>(o => o?.GetByCarId(Id));
+            orders = getLazy<Order, IOrdersRepo>(o => o?.GetByCarId(Id));
         }
 
         public BrandEnum Brand => Data?.Brand ?? BrandEnum.Other;
-        public string Model => Data?.Model ?? unspec;
-        public string ShortDescription => Data?.ShortDescription ?? unspec;
-        public string LongDescription => Data?.LongDescription ?? unspec;
+        public string Model => Data?.Model ?? string.Empty;
+        public string ShortDescription => Data?.ShortDescription ?? string.Empty;
+        public string LongDescription => Data?.LongDescription ?? string.Empty;
         public int ProductionYear => Data?.ProductionYear ?? default;
         public bool IsPopular => Data?.IsPopular ?? default;
         public bool IsFavoutire => Data?.IsFavourite ?? default;
@@ -33,13 +33,13 @@ namespace MuscleCarRentProject.Domain
         public short BasePrice => Data?.BasePrice ?? default;
         public byte PricePerHour => Data?.PricePerHour ?? default;
         public byte NumberOfSeats => Data?.NumberOfSeats ?? default;
-        public string Engine => Data?.Engine ?? unspec;
+        public string Engine => Data?.Engine ?? string.Empty;
         public bool NeedDriver => Data?.NeedDriver ?? default;
         public short? Surcharge => Data?.Surcharge ?? null;
-        public string DriverID => Data?.DriverID ?? unspec;
+        public string DriverId => Data?.DriverId ?? string.Empty;
         public Driver Driver => driver.Value;
         internal Lazy<Driver> driver { get; }
-        public string CarTypeID => Data?.CarTypeID ?? unspec;
+        public string CarTypeId => Data?.CarTypeId ?? string.Empty;
         public CarType CarType => carType.Value;
         internal Lazy<CarType> carType { get; }
         public ICollection<Image> Images => images.Value;

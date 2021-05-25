@@ -1,8 +1,8 @@
 ﻿@using MuscleCarRentProject.Core.Extensions
 @model MuscleCarRentProject.Pages.OrderedDatesPage
 
-@Html.Show(model => model.Item.ID)
+@Html.Show(model => model.Item.Id)
 @Html.Editor(model => model.Item.OrderDate)
-@Html.Select(model => model.Item.CarID,
+@Html.Select(model => model.Item.CarId,
     Model.Cars, "--Select Car--")
 @Html.Show(model => model.Item.RowVersion)

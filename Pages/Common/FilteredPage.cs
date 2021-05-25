@@ -11,15 +11,15 @@ namespace MuscleCarRentProject.Pages.Common
         protected FilteredPage(IRepo<TEntity> r, MuscleCarRentDBContext c = null) : base(r, c){ }
 
         public override string CurrentFilter { 
-            get => repo.currentFilter;
-            set => repo.currentFilter = value;
+            get => repo.CurrentFilter;
+            set => repo.CurrentFilter = value;
 
         }
 
         public override string SearchString
         {
-            get => repo.searchString; 
-            set => repo.searchString = value;
+            get => repo.SearchString; 
+            set => repo.SearchString = value;
         }
     }
 }

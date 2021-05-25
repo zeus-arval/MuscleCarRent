@@ -23,7 +23,7 @@ namespace Infra
             if (SearchString is null) return query;
             return query.Where(
                 x => x.CardHolderFullName.Contains(SearchString) ||
-                     x.AccountID.Contains(SearchString));
+                     x.AccountId.Contains(SearchString));
         }
     }
 }

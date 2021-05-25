@@ -23,8 +23,8 @@ namespace Infra
                 x => x.Discount.ToString().Contains(SearchString) ||
                      x.PromotionTypeEnum.ToString().Contains(SearchString) ||
                      x.TotalPrice.ToString().Contains(SearchString) ||
-                     x.AccountID.Contains(SearchString) ||
-                     x.CarID.Contains(SearchString));
+                     x.AccountId.Contains(SearchString) ||
+                     x.CarId.Contains(SearchString));
         }
     }
 }

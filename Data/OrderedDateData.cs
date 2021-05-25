@@ -7,6 +7,6 @@ namespace MuscleCarRentProject.Data
     {
         public DateTime OrderDate { get; set; }
         public string CarModel { get; set; }
-        public string CarID { get; set; }
+        public string CarId { get; set; }
     }
 }
