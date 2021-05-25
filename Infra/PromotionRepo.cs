@@ -4,6 +4,7 @@ using Domain.Repos;
 using Infra.Common;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Infra;
+using System.Collections.Generic;
 
 namespace Infra
 {
@@ -15,16 +16,17 @@ namespace Infra
             => new(d);
         protected internal override PromotionData toData(Promotion e)
             => e?.Data ?? new PromotionData();
-
+        public ICollection<Promotion> GetByAccountId(string Id)
+            => getRelated(x => x.AccountId == Id);
+        public ICollection<Promotion> GetByCarId(string Id) 
+            => getRelated(x => x.CarId == Id);
         protected internal override IQueryable<PromotionData> applyFilters(IQueryable<PromotionData> query)
         {
             if (SearchString is null) return query;
             return query.Where(
                 x => x.Discount.ToString().Contains(SearchString) ||
-                     x.PromotionTypeEnum.ToString().Contains(SearchString) ||
-                     x.TotalPrice.ToString().Contains(SearchString) ||
-                     x.AccountId.Contains(SearchString) ||
-                     x.CarId.Contains(SearchString));
+                     x.AccountFullName.Contains(SearchString) ||
+                     x.CarModel.Contains(SearchString));
         }
     }
 }

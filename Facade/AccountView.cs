@@ -41,7 +41,9 @@ namespace Facade
         public string BankCardId { get; set; }
         [Display(Name = "BankCard")]
         public string BankCardNumber { get; set; }
+        [Display(Name = "Access Type ID")]
         public string AccessTypeId { get; set; }
+        [Display(Name = "Access Type ID")]
         public string AccessTypeName { get; set; }
     }
 }

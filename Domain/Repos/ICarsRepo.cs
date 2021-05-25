@@ -10,7 +10,7 @@ namespace MuscleCarRentProject.Domain.Repos
 {
     public interface ICarsRepo : IRepo<Car>
     {
-        List<Car> GetByCarTypeId(string ID);
-        List<Car> GetByDriverId(string ID);
+        List<Car> GetByCarTypeId(string Id);
+        List<Car> GetByDriverId(string Id);
     }
 }

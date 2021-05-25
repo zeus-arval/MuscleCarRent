@@ -18,8 +18,9 @@ namespace Domain
         {
             car = getLazy<Car, ICarsRepo>(c => c.Get(CarId));
         }
-
         public DateTime OrderDate => Data?.OrderDate ?? default;
+
+        public string CarModel => Car?.Model ?? string.Empty;
         public string CarId => Data?.CarId ?? default;
         public Car Car => car.Value;
         public Lazy<Car> car { get; }

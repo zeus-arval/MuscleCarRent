@@ -1,5 +1,6 @@
 ﻿using System;
 using Data.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace MuscleCarRentProject.Data
 {
@@ -7,10 +8,18 @@ namespace MuscleCarRentProject.Data
     {
         public DateTime OrderDate { get; set; }
         public DateTime RentDate { get; set; }
-        public short TotalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
         public byte HourAmmount { get; set; }
         public bool HasBankCard { get; set; }
-        public string CarId { get; set; }
-        public string AccountId { get; set; }
+
+        [StringLength(50)] public string CarModel { get; set; }
+        [StringLength(50)] public string CarId { get; set; }
+        
+        [StringLength(50)] public string AccountFullName { get; set; }
+        [StringLength(50)] public string AccountId { get; set; }
+
+        [StringLength(50)] public string PromotionName { get; set; }
+        [StringLength(50)] public string PromotionId { get; set; }
+
     }
 }

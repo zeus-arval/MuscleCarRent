@@ -15,14 +15,15 @@ namespace Infra
         protected internal override AccountData toData(Account e) => e?.Data ?? new AccountData();
         public List<Account> GetByAccessTypeId(string Id)
             => getRelated(x => x.AccessTypeId == Id);
-
         protected internal override IQueryable<AccountData> applyFilters(IQueryable<AccountData> query)
         {
             if (SearchString is null) return query;
             return query.Where(
                 x => x.FirstName.Contains(SearchString) ||
                      x.LastName.Contains(SearchString) ||
-                     x.Username.Contains(SearchString)
+                     x.Username.Contains(SearchString) ||
+                     x.Email.Contains(SearchString) ||
+                     x.PhoneNumber.Contains(SearchString)
             );
         }
     }

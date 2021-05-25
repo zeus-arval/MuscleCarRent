@@ -20,7 +20,7 @@ namespace MuscleCarRentProject.Pages
         {
             if (IsNull(a)) return null;
             var view = Copy.Members(a.Data, new AccountView());
-            view.BankCardNumber = a.BankcCard?.CardNumber.ToString();
+            view.BankCardNumber = a.BankCard?.CardNumber.ToString();
             return view;
         }
         protected internal override Account toEntity(AccountView v)

@@ -8,15 +8,19 @@ namespace MuscleCarRentProject.Data
 {
     public sealed class AccountData : PersonInfoData
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        [StringLength(50)] public string Username { get; set; }
+        [StringLength(50)] public string Password { get; set; }
+        [StringLength(50)] public string Email { get; set; }
+        [StringLength(50)] public string PhoneNumber { get; set; }
+        [StringLength(50)] public string PersonalPhoto { get; set; }
+        [StringLength(50)] public string DrivingLicense { get; set; }
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
-        public string PersonalPhoto { get; set; }
-        public string DrivingLicense { get; set; }
         public bool? IsDrivingLicenseValid { get; set; } = false;
-        public string AccessTypeId { get; set; }
-        public string BankCardId { get; set; }
+
+        [StringLength(50)] public string AccessTypeId { get; set; }
+        [StringLength(50)] public string AccessTypeName { get; set; }
+
+        [StringLength(50)] public string BankCardId { get; set; }
+        [StringLength(50)] public string BankCardNumber { get; set; }
     }
 }

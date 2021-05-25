@@ -21,7 +21,6 @@ namespace MuscleCarRentProject.Pages
         public override string PageTitle => "Cars";
         public CarsPage(MuscleCarRentDBContext c) : this(new CarsRepo(c), c){}
         protected internal CarsPage(ICarsRepo r, MuscleCarRentDBContext c) : base(r, c){}
-
         protected internal override CarView toViewModel(Car c)
         {
             if (IsNull(c)) return null;
@@ -30,7 +29,7 @@ namespace MuscleCarRentProject.Pages
             view.BodyType = c.BodyType;
             view.Color = c.Color;
             view.CarTypeName = c.CarType?.RentType.ToString();
-            view.DriverName = c.Driver?.FullName;
+            view.DriverFullName = c.Driver?.FullName;
             return view;
         }
         protected internal override Car toEntity(CarView v)

@@ -18,9 +18,10 @@ namespace Domain
             account = getLazy<Account, IAccountsRepo>(a => a.Get(Id));
         }
         public long CardNumber => Data?.CardNumber ?? default;
-        public string CardHolderFullName => Data?.CardHolderFullName ?? string.Empty;
         public DateTime ExpirationTime => Data?.ExpirationTime ?? default;
         public short CVV => Data?.CVV ?? default;
+        
+        public string CardHolderFullName => Account?.FullName ?? string.Empty;
         public string AccountId => Data?.AccountId ?? string.Empty;
         public Account Account => account.Value;
         public Lazy<Account> account { get; }

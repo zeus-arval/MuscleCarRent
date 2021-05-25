@@ -14,21 +14,20 @@ namespace Infra
         public CarsRepo(MuscleCarRentDBContext c) : base(c, c?.Cars) {}
         protected internal override Car toEntity(CarData data) => new(data);
         protected internal override CarData toData(Car e) => e?.Data ?? new CarData();
-        public List<Car> GetByCarTypeId(string ID)
-            => getRelated(x => x.CarTypeId == ID);
-        public List<Car> GetByDriverId(string ID)
-            => getRelated(x => x.DriverId == ID);
+        public List<Car> GetByCarTypeId(string Id)
+            => getRelated(x => x.CarTypeId == Id);
+        public List<Car> GetByDriverId(string Id)
+            => getRelated(x => x.DriverId == Id);
         protected internal override IQueryable<CarData> applyFilters(IQueryable<CarData> query)
         {
             if (SearchString is null) return query;
-            return query.Where(x => x.Brand.ToString().Contains(SearchString) ||
-                x.BodyType.ToString().Contains(SearchString) ||
-                x.Color.ToString().Contains(SearchString) ||
-                x.Engine.Contains(SearchString) ||
-                x.ShortDescription.Contains(SearchString) ||
-                x.Model.Contains(SearchString) ||
-                x.Power.ToString().Contains(SearchString) ||
-                x.ProductionYear.ToString().Contains(SearchString)
+            return query.Where(
+                x => x.Engine.Contains(SearchString) ||
+                    x.ShortDescription.Contains(SearchString) ||
+                    x.LongDescription.Contains(SearchString) ||
+                    x.Model.Contains(SearchString) ||
+                    x.Power.ToString().Contains(SearchString) ||
+                    x.ProductionYear.ToString().Contains(SearchString)
             );
         }
     }

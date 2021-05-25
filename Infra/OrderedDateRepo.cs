@@ -12,7 +12,6 @@ namespace Infra
     {
         public OrderedDateRepo() : this(null) { }
         public OrderedDateRepo(MuscleCarRentDBContext c) : base(c, c?.OrderedDates){}
-
         protected internal override OrderedDate toEntity(OrderedDateData d) => new(d);
         protected internal override OrderedDateData toData(OrderedDate e) => e?.Data ?? new OrderedDateData();
         public ICollection<OrderedDate> GetByCarId(string ID)
@@ -20,7 +19,9 @@ namespace Infra
         protected internal override IQueryable<OrderedDateData> applyFilters(IQueryable<OrderedDateData> query)
         {
             if (SearchString is null) return query;
-            return query.Where(x => x.CarModel.Contains(SearchString));
+            return query.Where(
+                x => x.CarModel.Contains(SearchString) ||
+                     x.OrderDate.ToString().Contains(SearchString));
         }
     }
 }

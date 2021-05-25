@@ -25,9 +25,9 @@ namespace MuscleCarRentProject.Facade
         [Required]
         public ColorEnum Color { get; set; }
         [Required] [DataType(DataType.Currency)] [Display(Name = "Base price")]
-        public short BasePrice { get; set; }
+        public decimal BasePrice { get; set; }
         [Required] [DataType(DataType.Currency)] [Display(Name = "Price per hour")]
-        public byte PricePerHour { get; set; }
+        public decimal PricePerHour { get; set; }
         [Required] [Display(Name = "Number of seats")]
         public byte NumberOfSeats { get; set; }
         [Required] [StringLength(50)]
@@ -35,12 +35,12 @@ namespace MuscleCarRentProject.Facade
         [Display(Name = "Needs driver")] 
         public bool NeedDriver { get; set; }
         [DataType(DataType.Currency)]
-        public short? Surcharge { get; set; }
+        public decimal? Surcharge { get; set; }
         [Required]
         [Display(Name = "Driver")]
         public int DriverId { get; set; }
         [Display(Name = "Driver")]
-        public string DriverName { get; set; }
+        public string DriverFullName { get; set; }
         [Display(Name = "Car Type")]
         public int CarTypeId { get; set; }
         [Display(Name = "Car type")]
