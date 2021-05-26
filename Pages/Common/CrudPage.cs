@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MuscleCarRent.Data;
+﻿using System.Collections.Generic;
 using MuscleCarRentProject.Core;
 using MuscleCarRentProject.Domain.Repos;
+using MuscleCarRentProject.Infra;
 
 namespace MuscleCarRentProject.Pages.Common
 {
