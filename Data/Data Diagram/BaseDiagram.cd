@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MuscleCarRentProject.Data.DriverData">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>DriverData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.Common.PersonInfoData">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Common\PersonInfoData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.AccountData">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACACAAAAAEEQAARAAAAQAAAAACAAAAABEAAAA=</HashCode>
+      <FileName>AccountData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Common.BaseData">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\BaseData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.AccessTypeData">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>AccessTypeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.CarData">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABAAAAAQAgAQBAIAAAAAAATJAAAAAAJBAgAgAABAAA=</HashCode>
+      <FileName>CarData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.BankCardData">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAgAAAAAAAAAQAAAAIAACAAAAAAA=</HashCode>
+      <FileName>BankCardData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.CarTypeData">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CarTypeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.ImageData">
+    <Position X="12.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAgBAAAAAAAAAAAAA=</HashCode>
+      <FileName>ImageData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.OrderData">
+    <Position X="14.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAACAAAQAAAAAgAAAACQAAABwAAAAAEAAAAAQAA=</HashCode>
+      <FileName>OrderData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.OrderedDateData">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderedDateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.PromotionData">
+    <Position X="14.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAgAAAACACAAAgAAAAgAAAIAAQAA=</HashCode>
+      <FileName>PromotionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -8,8 +8,9 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace MuscleCarRentProject.Domain.Repos
 {
-    public interface ICarRepo : IRepo<Car>
+    public interface ICarsRepo : IRepo<Car>
     {
-        List<Car> GetByCarTypeID(string ID);
+        List<Car> GetByCarTypeId(string Id);
+        List<Car> GetByDriverId(string Id);
     }
 }

@@ -7,5 +7,5 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain.Repos
 {
-    public interface IAccessTypeRepo : IRepo<AccessType> { } 
+    public interface IAccessTypesRepo : IRepo<AccessType> { }
 }

@@ -31,7 +31,7 @@ namespace MuscleCarRentProject.Core.Extensions
         }
 
         private static List<object> HtmlStrings<TModel, TResult>(
-            IHtmlHelper<TModel> h, Expression<Func<TModel, TResult>> e, 
+            IHtmlHelper<TModel> h, Expression<Func<TModel, TResult>> e,
             string displayName)
         {
             return new List<object>

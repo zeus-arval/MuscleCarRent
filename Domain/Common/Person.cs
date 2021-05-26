@@ -16,14 +16,12 @@ namespace MuscleCarRentProject.Domain.Common
     public abstract class Person<TData> : BaseEntity<TData>, IPersonEntity
         where TData : PersonInfoData, new()
     {
-        protected Person() : this(null){}
-        protected Person(TData d) : base(d){}
+        protected Person() : this(null) { }
+        protected Person(TData d) : base(d) { }
+
         public string LastName => Data?.LastName ?? "Unspecified";
         public string FirstName => Data?.FirstName ?? "Unspecified";
-        public string FullName
-        {
-            get { return $"{LastName}, {FirstName}"; }
-        }
+        public string FullName => $"{LastName}, {FirstName}";
         public DateTime BirthDay => Data?.Birthday ?? default;
     }
 }

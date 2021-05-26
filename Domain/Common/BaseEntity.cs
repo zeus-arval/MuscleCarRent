@@ -12,15 +12,14 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace MuscleCarRentProject.Domain.Common
 {
-    public abstract class BaseEntity<TData> :IBaseEntity
+    public abstract class BaseEntity<TData> : IBaseEntity
     where TData : class, IEntityData, new()
     {
         protected readonly TData data;
-        protected string unspec = "Unspecified";
-        protected BaseEntity() :this(null){}
+        protected BaseEntity() : this(null) { }
         protected BaseEntity(TData d) => data = d;
         public TData Data => Copy.Members(data, new TData()) ?? new TData();
-        public string ID => Data?.ID ?? "Unspecified";
+        public string Id => Data?.Id ?? "Unspecified";
         public byte[] RowVersion => Data?.RowVersion ?? Array.Empty<byte>();
 
         internal static Lazy<ICollection<TEntity>> getLazy<TEntity, TRepo>(Func<TRepo, ICollection<TEntity>> func)

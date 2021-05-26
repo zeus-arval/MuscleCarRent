@@ -7,8 +7,8 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain.Repos
 {
-    public interface IAccountRepo : IRepo<Account>
+    public interface IAccountsRepo : IRepo<Account>
     {
-        ICollection<Account> GetByAccessTypeID(string ID);
+        List<Account> GetByAccessTypeId(string ID);
     }
 }

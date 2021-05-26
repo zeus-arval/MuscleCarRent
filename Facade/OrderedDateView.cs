@@ -11,8 +11,11 @@ namespace Facade
 {
     public sealed class OrderedDateView : BaseView
     {
-        [Display(Name = "Order date")] [Required] 
+        [Display(Name = "Order date")]
+        [Required]
         public DateTime OrderDate { get; set; }
-        [Required] public string CarID { get; set; }
+        [Required] public string CarId { get; set; }
+        [Display(Name = "Car Model")]
+        public string CarModel { get; set; }
     }
 }
