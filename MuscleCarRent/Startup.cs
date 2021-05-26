@@ -1,15 +1,13 @@
+using Domain.Repos;
+using Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MuscleCarRent.Data;
+using MuscleCarRentProject.Domain.Repos;
+using MuscleCarRentProject.Infra;
 
 namespace MuscleCarRent
 {
@@ -26,12 +24,18 @@ namespace MuscleCarRent
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
-            //Adding connection string
             services.AddDbContext<MuscleCarRentDBContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MuscleCarRentDBContext")));
-
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddTransient<IAccountsRepo, AccountRepo>();
+            services.AddTransient<IBankCardsRepo, BankCardRepo>();
+            services.AddTransient<ICarsRepo, CarsRepo>();
+            services.AddTransient<IDriversRepo, DriverRepo>();
+            services.AddTransient<IImagesRepo, ImageRepo>();
+            services.AddTransient<IOrderedDatesRepo, OrderedDateRepo>();
+            services.AddTransient<IOrderedRepo, OrderRepo>();
+            services.AddTransient<IPromotionRepo, PromotionRepo>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +44,7 @@ namespace MuscleCarRent
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseMigrationsEndPoint();
             }
             else
             {

@@ -20,6 +20,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade", "Facade\Facade.csproj", "{B88CB364-9A8F-4E36-AF05-37052882CB4A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra", "Infra\Infra.csproj", "{0582D859-562F-4F10-B4BE-D295F09089BE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77034137-B8CE-47D8-9AEF-5B86A63BD9D6} = {77034137-B8CE-47D8-9AEF-5B86A63BD9D6}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
