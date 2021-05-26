@@ -1,30 +1,8 @@
 ﻿@page
-@using MuscleCarRent.Pages.Extensions
-@model MuscleCarRent.Pages.CarsAndServices.DetailsModel
+@model MuscleCarRentProject.Pages.CarsPage
 
 @{
     Layout = "Shared/_Details";
-    ViewData["Title"] = "Details";
-    ViewData["Page"] = "Cars";
-    ViewData["ItemId"] = Model.Car.ID;
 }
 
-@Html.Show(model => model.Car.ID)
-@Html.Show(model => model.Car.Brand)
-@Html.Show(model => model.Car.Model)
-@Html.Show(model => model.Car.ShortDescription)
-@Html.Show(model => model.Car.LongDescription)
-@Html.Show(model => model.Car.ProductionYear)
-@Html.Show(model => model.Car.IsPopular)
-@Html.Show(model => model.Car.IsFavourite)
-@Html.Show(model => model.Car.Power)
-@Html.Show(model => model.Car.Color)
-@Html.Show(model => model.Car.BasePrice)
-@Html.Show(model => model.Car.PricePerHour)
-@Html.Show(model => model.Car.NumberOfSeats)
-@Html.Show(model => model.Car.Engine)
-@Html.Show(model => model.Car.NeedDriver)
-@Html.Show(model => model.Car.Surcharge)
-@Html.Show(model => model.Car.CarType, model => model.Car.CarType.RentType)
-@Html.Show(model => model.Car.BodyType)
-@Html.Show(model => model.Car.Driver, model => model.Car.Driver.FirstName)
+<partial name="_ShowCar" />

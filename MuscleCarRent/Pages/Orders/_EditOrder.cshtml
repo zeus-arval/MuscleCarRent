@@ -1,0 +1,14 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.OrdersPage
+
+@Html.Show(model => model.Item.Id)
+@Html.Select(model => model.Item.CarId,
+    Model.Cars, "--Select Car--")
+@Html.Select(model => model.Item.AccountId,
+    Model.Accounts, "--Select Account--")
+@Html.Editor(model => model.Item.HourAmmount)
+@Html.Show(model => model.Item.OrderDate)
+@Html.Editor(model => model.Item.RentDate)
+@Html.Editor(model => model.Item.TotalPrice)
+@Html.Show(model => model.Item.RowVersion)
+@Html.Show(model => model.Item.HasBankCard)

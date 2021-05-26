@@ -1,0 +1,7 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.BankCardsPage
+
+@Html.Editor(model => model.Item.CardNumber)
+@Html.Editor(model => model.Item.ExpirationTime)
+@Html.Editor(model => model.Item.CVV)
+@Html.Editor(model => model.Item.CardHolderFullName)
