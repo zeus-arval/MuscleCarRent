@@ -1,0 +1,7 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.OrderedDatesPage
+
+@Html.Show(model => model.Item.Id)
+@Html.Show(model => model.Item.OrderDate)
+@Html.Show(model => model.Item.CarModel)
+@Html.Show(model => model.Item.RowVersion)

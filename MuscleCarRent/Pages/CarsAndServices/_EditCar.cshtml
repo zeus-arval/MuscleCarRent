@@ -1,0 +1,22 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.CarsPage
+
+@Html.Editor(model => model.Item.Brand)
+@Html.Editor(model => model.Item.Model)
+@Html.Editor(model => model.Item.Engine)
+@Html.Editor(model => model.Item.Power)
+@Html.Editor(model => model.Item.LongDescription)
+@Html.Editor(model => model.Item.ShortDescription)
+@Html.Editor(model => model.Item.BasePrice)
+@Html.Editor(model => model.Item.PricePerHour)
+@Html.Editor(model => model.Item.BodyType)
+@Html.Select(model => model.Item.CarTypeId,
+    Model.CarTypes, "--Select Type of Car--")
+@Html.Editor(model => model.Item.Color)
+@Html.Select(model => model.Item.DriverId,
+    Model.Drivers, "--Select Driver--")
+@Html.Editor(model => model.Item.IsFavourite)
+@Html.Editor(model => model.Item.IsPopular)
+@Html.Editor(model => model.Item.Surcharge)
+@Html.Editor(model => model.Item.Id)
+@Html.Editor(model => model.Item.RowVersion)

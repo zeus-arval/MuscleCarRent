@@ -1,55 +1,6 @@
 ﻿@page
-@model MuscleCarRent.Pages.BankCards.EditModel
-
+@model MuscleCarRentProject.Pages.AccountsPage
 @{
-    ViewData["Title"] = "Edit";
+    Layout = "Shared/_Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>BankCard</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="BankCard.ID" />
-            <div class="form-group">
-                <label asp-for="BankCard.AccountID" class="control-label"></label>
-                <select asp-for="BankCard.AccountID" class="form-control" asp-items="ViewBag.AccountID"></select>
-                <span asp-validation-for="BankCard.AccountID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BankCard.CardNumber" class="control-label"></label>
-                <input asp-for="BankCard.CardNumber" class="form-control" />
-                <span asp-validation-for="BankCard.CardNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BankCard.CardHolderFullName" class="control-label"></label>
-                <input asp-for="BankCard.CardHolderFullName" class="form-control" />
-                <span asp-validation-for="BankCard.CardHolderFullName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BankCard.ExpirationTime" class="control-label"></label>
-                <input asp-for="BankCard.ExpirationTime" class="form-control" />
-                <span asp-validation-for="BankCard.ExpirationTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BankCard.CVV" class="control-label"></label>
-                <input asp-for="BankCard.CVV" class="form-control" />
-                <span asp-validation-for="BankCard.CVV" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<partial name="_EditBankCard" />

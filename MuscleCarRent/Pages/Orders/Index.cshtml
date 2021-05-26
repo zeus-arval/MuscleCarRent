@@ -1,72 +1,33 @@
 ﻿@page
-@model MuscleCarRent.Pages.Orders.IndexModel
+@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.OrdersPage
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Page"] = "Orders";
+    Layout = "Shared/_Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Order[0].OrderDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order[0].RentDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order[0].TotalPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order[0].HourAmmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order[0].HasBankCard)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order[0].Car)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order[0].Account)
-            </th>
-            <th></th>
+            @Html.TableSortHeader(x => x.Item.Id, Model);
+            @Html.TableSortHeader(x => x.Item.CarModel, Model);
+            @Html.TableSortHeader(x => x.Item.AccountName, Model);
+            @Html.TableSortHeader(x => x.Item.OrderDate, Model);
+            @Html.TableHeader(x => x.Item.TotalPrice);
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Order) {
+    @foreach (var item in Model.Items)
+    {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RentDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HourAmmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HasBankCard)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Car.Color)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Account.Email)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
+            @Html.RowData(x => item.Id)
+            @Html.RowData(x => item.CarModel)
+            @Html.RowData(x => item.AccountName)
+            @Html.RowData(x => item.OrderDate)
+            @Html.RowData(x => item.TotalPrice)
+            @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
-}
+    }
     </tbody>
 </table>
