@@ -18,12 +18,10 @@ namespace MuscleCarRentProject.Domain.Common
     {
         protected Person() : this(null){}
         protected Person(TData d) : base(d){}
+
         public string LastName => Data?.LastName ?? "Unspecified";
         public string FirstName => Data?.FirstName ?? "Unspecified";
-        public string FullName
-        {
-            get { return $"{LastName}, {FirstName}"; }
-        }
+        public string FullName => $"{LastName}, {FirstName}";
         public DateTime BirthDay => Data?.Birthday ?? default;
     }
 }

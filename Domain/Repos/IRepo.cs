@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace MuscleCarRentProject.Domain.Repos
 {
-    public interface IRepo<T> : IPagedRepo, IFilteredRepo, IOrderedRepo
-    {
+    public interface IRepo<T> :IPagedRepo, IFilteredRepo, IOrderedRepo {
         string ErrorMessage { get; }
         public T EntityInDb { get; }
         Task<List<T>> GetAsync();

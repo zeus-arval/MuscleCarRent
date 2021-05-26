@@ -7,8 +7,5 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain.Repos
 {
-    public interface IOrderedDateRepo : IRepo<OrderedDate>
-    {
-        ICollection<OrderedDate> GetByCarID(string id);
-    }
+    public interface IAccessTypesRepo : IRepo<AccessType> { } 
 }

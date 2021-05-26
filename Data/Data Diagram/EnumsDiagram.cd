@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MuscleCarRentProject.Data.CarData">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABAAAAAQAgAQBAIAAAAAAACJAAAAAAJBAgAgAABAAA=</HashCode>
+      <FileName>CarData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Color" />
+      <Property Name="Brand" />
+      <Property Name="BodyType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.AccessTypeData">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>AccessTypeData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AccessLevel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.CarTypeData">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CarTypeData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RentTypeEnum" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MuscleCarRentProject.Data.PromotionData">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAACAAAAAAAAgAAAIAAAAA=</HashCode>
+      <FileName>PromotionData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PromotionTypeEnum" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="MuscleCarRentProject.Data.ColorEnum">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAGAABAAAAAAgAAAAAAAAAABAAAAAAAAAAAADAAAAA=</HashCode>
+      <FileName>Enums\ColorEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MuscleCarRentProject.Data.BrandEnum">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAgAAAAA=</HashCode>
+      <FileName>Enums\BrandEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MuscleCarRentProject.Data.BodyTypeEnum">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgCAAAAAAAAAAAAAAAAAAAAAQAIAAAAACAAAAAAAA=</HashCode>
+      <FileName>Enums\BodyTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MuscleCarRentProject.Data.AccessLevelEnum">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\AccessLevelEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MuscleCarRentProject.Data.RentTypeEnum">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAICAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\RentTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MuscleCarRentProject.Data.PromotionTypeEnum">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\PromotionTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

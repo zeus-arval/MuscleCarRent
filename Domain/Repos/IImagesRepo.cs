@@ -7,5 +7,8 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain.Repos
 {
-    public interface IBankCardRepo : IRepo<BankCard> { }
+    public interface IImagesRepo : IRepo<Image>
+    {
+        List<Image> GetByCarId(string ID);
+    }
 }
