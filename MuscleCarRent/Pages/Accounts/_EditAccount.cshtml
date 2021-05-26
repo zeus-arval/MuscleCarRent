@@ -1,10 +1,11 @@
-﻿@using MuscleCarRentProject.Core.Extensions
+﻿@page
+@using MuscleCarRentProject.Core.Extensions
 @model MuscleCarRentProject.Pages.AccountsPage
 
 @Html.Editor(model => model.Item.Username)
 @Html.Editor(model => model.Item.FirstName)
 @Html.Editor(model => model.Item.LastName)
-@Html.Editor(model => model.Item.PersPhoto)
+@Html.Editor(model => model.Item.PersonPhoto)
 @Html.Editor(model => model.Item.Email)
 @Html.Editor(model => model.Item.PhoneNumber)
 @Html.Select(model => model.Item.BankCardId,

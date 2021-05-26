@@ -34,7 +34,7 @@ namespace Facade
         [Display(Name = "Driving license")]
         public IFormFile DLPhoto { get; set; }
         [Display(Name = "Driving license")]
-        public string DrivingLicensePhoto { get; set; }
+        public string DrivingLicensePhotoAsString { get; set; }
         [Display(Name = "Is DL valid")]
         public bool? IsDrivingLicenseValid { get; set; } = false;
         [Display(Name = "BankCard Id")]

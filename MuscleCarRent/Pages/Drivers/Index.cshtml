@@ -13,7 +13,7 @@
             @Html.TableHeader(x => x.Item.Id)
             @Html.TableSortHeader(x => x.Item.FirstName, Model)
             @Html.TableSortHeader(x => x.Item.LastName, Model)
-            @Html.TableHeader(x => x.Item.PhotoAsString)
+            @Html.TableHeader(x => x.Item.PersonPhotoAsString)
         </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@
             @Html.RowData(x => item.Id)
             @Html.RowData(x => item.FirstName)
             @Html.RowData(x => item.LastName)
-            @Html.RowImage(item.PhotoAsString)
+            @Html.RowImage(item.PersonPhotoAsString)
             @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
     }

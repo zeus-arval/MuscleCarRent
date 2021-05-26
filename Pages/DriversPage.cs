@@ -20,16 +20,15 @@ namespace MuscleCarRentProject.Pages
     {
         public override string PageTitle => "Drivers";
         public DriversPage(MuscleCarRentDBContext c) : this(new DriverRepo(c), c){}
-        public DriversPage(IRepo<Driver> r, MuscleCarRentDBContext c = null) : base(r, c) { }
-
+        protected internal DriversPage(IDriversRepo r, MuscleCarRentDBContext c = null) : base(r, c) { }
         protected internal override Driver toEntity(DriverView v)
         {
             if (IsNull(v)) return null;
             var d = Copy.Members(v, new DriverData());
-            if (string.IsNullOrEmpty(v.PersPhoto?.FileName)) return new Driver(d);
+            if (string.IsNullOrEmpty(v.PersonPhoto?.FileName)) return new Driver(d);
             var stream = new MemoryStream();
-            v.PersPhoto?.CopyTo(stream);
-            if (stream.Length < 2097152) d.Photo = stream.ToArray();
+            v.PersonPhoto?.CopyTo(stream);
+            if (stream.Length < 2097152) d.PersonPhoto = stream.ToArray();
             return new Driver(d);
         }
         protected internal override DriverView toViewModel(Driver e)

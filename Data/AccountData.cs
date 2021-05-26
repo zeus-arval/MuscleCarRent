@@ -12,8 +12,7 @@ namespace MuscleCarRentProject.Data
         [StringLength(50)] public string Password { get; set; }
         [StringLength(50)] public string Email { get; set; }
         [StringLength(50)] public string PhoneNumber { get; set; }
-        [StringLength(50)] public string PersonalPhoto { get; set; }
-        [StringLength(50)] public string DrivingLicensePhoto { get; set; }
+        public byte[] DrivingLicensePhoto { get; set; }
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
         public bool? IsDrivingLicenseValid { get; set; } = false;
 

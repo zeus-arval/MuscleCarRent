@@ -11,7 +11,8 @@ using MuscleCarRentProject.Infra;
 
 namespace MuscleCarRentProject.Pages.Common
 {
-    public abstract class BasePage :PageModel, IBasePage {
+    public abstract class BasePage : PageModel, IBasePage
+    {
         public string ErrorMessage { get; protected set; }
         public abstract string PageTitle { get; }
         public virtual string PageUrl => PageTitle;
@@ -24,17 +25,20 @@ namespace MuscleCarRentProject.Pages.Common
         public virtual bool HasNextPage { get; protected set; }
         public virtual int? PageIndex { get; set; }
     }
-    public abstract class BasePage<TEntity, TView> :BasePage
+    public abstract class BasePage<TEntity, TView> : BasePage
         where TEntity : class, IBaseEntity, new()
-        where TView : class, IEntityData, new() {
+        where TView : class, IEntityData, new()
+    {
         protected readonly MuscleCarRentDBContext context;
         protected readonly IRepo<TEntity> repo;
-        protected BasePage(IRepo<TEntity> r, MuscleCarRentDBContext c = null) {
+        protected BasePage(IRepo<TEntity> r, MuscleCarRentDBContext c = null)
+        {
             context = c;
             repo = r;
         }
         [BindProperty]
-        public new TView Item {
+        public new TView Item
+        {
             get => (TView)base.Item;
             set => base.Item = value;
         }
@@ -44,7 +48,8 @@ namespace MuscleCarRentProject.Pages.Common
         protected internal abstract TView toViewModel(TEntity e);
         protected internal abstract TEntity toEntity(TView e);
         protected internal virtual async Task getRelatedItems(TEntity item) { await Task.CompletedTask; }
-        internal async Task<TView> getItem(string id, bool concurrencyError = false) {
+        internal async Task<TView> getItem(string id, bool concurrencyError = false)
+        {
             var item = await repo.GetAsync(id);
             await getRelatedItems(item);
             ErrorMessage = setConcurrencyMsg(concurrencyError);
@@ -60,9 +65,11 @@ namespace MuscleCarRentProject.Pages.Common
         internal async Task<TEntity> find(string id)
             => IsNull(id) ? null : IsNull(repo) ? null : await repo.GetAsync(id);
 
-        internal async Task<bool> save(params Func<Task<bool>>[] actions) {
+        internal async Task<bool> save(params Func<Task<bool>>[] actions)
+        {
             var transaction = IsNull(context) ? null : await context.Database.BeginTransactionAsync();
-            foreach (var a in actions) {
+            foreach (var a in actions)
+            {
                 var b = await a();
                 if (b) continue;
                 ErrorMessage = repo?.ErrorMessage;
@@ -86,18 +93,21 @@ namespace MuscleCarRentProject.Pages.Common
         public async Task<IActionResult> OnGetEditAsync(string id)
             => IsNull(Item ??= await getItem(id)) ? NotFound() : Page();
 
-        public IActionResult OnGetCreate() {
+        public IActionResult OnGetCreate()
+        {
             doOnCreate();
             return Page();
         }
-        public async virtual Task<IActionResult> OnPostDeleteAsync(string id) {
+        public async virtual Task<IActionResult> OnPostDeleteAsync(string id)
+        {
             doBeforeDelete(Item);
             if (await save(remove)) return indexPage();
             if (repo?.EntityInDb is null) return indexPage();
             return RedirectToPage("./Delete",
                 new { id, concurrencyError = true, handler = "Delete" });
         }
-        public async virtual Task<IActionResult> OnPostEditAsync(string id, string[] selectedCourses = null) {
+        public async virtual Task<IActionResult> OnPostEditAsync(string id, string[] selectedCourses = null)
+        {
             if (!ModelState.IsValid) return Page();
             doBeforeEdit(Item, selectedCourses);
             if (await save(update)) return indexPage();
@@ -106,15 +116,18 @@ namespace MuscleCarRentProject.Pages.Common
             ModelState.Remove("Item.RowVersion");
             return Page();
         }
-        public async virtual Task<IActionResult> OnPostCreateAsync(string[] selectedCourses = null) {
+        public async virtual Task<IActionResult> OnPostCreateAsync(string[] selectedCourses = null)
+        {
             if (!ModelState.IsValid) return Page();
             doBeforeCreate(Item, selectedCourses);
             if (await save(add)) return indexPage();
             return Page();
         }
-        private void setPreviousValues(TView dbValues) {
+        private void setPreviousValues(TView dbValues)
+        {
             if (IsNull(dbValues)) return;
-            foreach (var p in dbValues.GetType().GetProperties()) {
+            foreach (var p in dbValues.GetType().GetProperties())
+            {
                 if (!p.CanRead) continue;
                 var dbValue = p.GetValue(dbValues);
                 var clientValue = p.GetValue(Item);
