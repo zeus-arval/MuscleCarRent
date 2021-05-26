@@ -1,13 +1,14 @@
 ﻿using Data.Common;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MuscleCarRentProject.Data
 {
 
     public sealed class PromotionData : BaseData
     {
-        public decimal Discount { get; set; }
+        [Column(TypeName = "decimal(18,4)")] public decimal Discount { get; set; }
         public DateTime ValidUntil { get; set; }
         public bool IsAvailable { get; set; }
         public PromotionTypeEnum PromotionTypeEnum { get; set; }

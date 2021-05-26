@@ -12,8 +12,8 @@
         <tr>
             @Html.TableSortHeader(x => x.Item.Brand, Model)
             @Html.TableSortHeader(x => x.Item.Model, Model)
-            @Html.TableSortHeader(x => x.Item.BodyType, Model)
-            @Html.TableSortHeader(x => x.Item.Color, Model)
+            @Html.TableHeader(x => x.Item.BodyType)
+            @Html.TableHeader(x => x.Item.Color)
             @Html.TableSortHeader(x => x.Item.Engine , Model)
             @Html.TableSortHeader(x => x.Item.Power , Model)
             @Html.TableSortHeader(x => x.Item.ProductionYear, Model)

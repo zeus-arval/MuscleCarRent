@@ -11,7 +11,7 @@
     <thead>
         <tr>
             @Html.TableSortHeader(x => x.Item.CarModel, Model);
-            @Html.TableHeader(x => x.Item.OrderDate);
+            @Html.TableSortHeader(x => x.Item.OrderDate, Model);
             @Html.TableHeader(x => x.Item.Id);
             @Html.TableHeader(x => x.Item.RowVersion);
         </tr>

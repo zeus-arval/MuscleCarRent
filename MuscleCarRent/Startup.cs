@@ -25,7 +25,7 @@ namespace MuscleCarRent
         {
             services.AddRazorPages();
             services.AddDbContext<MuscleCarRentDBContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("MuscleCarRentDBContext")));
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddTransient<IAccountsRepo, AccountRepo>();
             services.AddTransient<IBankCardsRepo, BankCardRepo>();

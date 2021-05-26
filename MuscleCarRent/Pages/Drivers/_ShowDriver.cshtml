@@ -1,8 +1,8 @@
 ﻿@using MuscleCarRentProject.Core.Extensions
 @model MuscleCarRentProject.Pages.DriversPage
 
-@Html.ShowImage(model => model.Item.PhotoAsString)
 @Html.Show(model => model.Item.FullName)
+@Html.ShowImage(model => model.Item.PhotoAsString)
 @Html.Show(model => model.Item.IsAvailable)
 @Html.Show(model => model.Item.Id)
 @Html.Show(model => model.Item.RowVersion)

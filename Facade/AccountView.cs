@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Facade.Common;
+using Microsoft.AspNetCore.Http;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Facade.Common;
 
@@ -30,11 +31,10 @@ namespace Facade
         [Display(Name = "Registration date")]
         public DateTime RegistrationDate { get; set; } = DateTime.Now;
 
-        [DataType(DataType.ImageUrl)]
-        [Display(Name = "Personal photo")]
-        public string PersonalPhoto { get; set; }
         [Display(Name = "Driving license")]
-        public string DrivingLicense { get; set; }
+        public IFormFile DLPhoto { get; set; }
+        [Display(Name = "Driving license")]
+        public string DrivingLicensePhoto { get; set; }
         [Display(Name = "Is DL valid")]
         public bool? IsDrivingLicenseValid { get; set; } = false;
         [Display(Name = "BankCard Id")]

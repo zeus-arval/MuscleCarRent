@@ -12,10 +12,9 @@
         <tr>
             @Html.TableSortHeader(x => x.Item.Id, Model);
             @Html.TableSortHeader(x => x.Item.CarModel, Model);
-            @Html.TableSortHeader(x => x.Item.AccountName, Model);
-            @Html.TableSortHeader(x => x.Item.OrderDate, Model);
+            @Html.TableSortHeader(x => x.Item.AccountFullName, Model);
             @Html.TableSortHeader(x => x.Item.PromotionTypeEnum, Model);
-            @Html.TableHeader(x => x.Item.TotalPrice);
+            @Html.TableSortHeader(x => x.Item.Discount, Model);
 
         </tr>
     </thead>
@@ -25,10 +24,9 @@
         <tr>
             @Html.RowData(x => item.Id)
             @Html.RowData(x => item.CarModel)
-            @Html.RowData(x => item.AccountName)
-            @Html.RowData(x => item.OrderDate)
+            @Html.RowData(x => item.AccountFullName)
             @Html.RowData(x => item.PromotionTypeEnum)
-            @Html.RowData(x => item.TotalPrice)
+            @Html.RowData(x => item.Discount)
             @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
     }

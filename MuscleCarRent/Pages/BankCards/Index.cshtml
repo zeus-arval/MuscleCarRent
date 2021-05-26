@@ -11,6 +11,7 @@
     <thead>
     <tr>
         @Html.TableSortHeader(x => x.Item.CardHolderFullName, Model);
+        @Html.TableSortHeader(x => x.Item.CardNumber, Model);
         @Html.TableHeader(x => x.Item.ExpirationTime);
     </tr>
     </thead>
@@ -19,6 +20,7 @@
     {
         <tr>
             @Html.RowData(x => item.CardHolderFullName)
+            @Html.RowData(x => x.Item.CardNumber)
             @Html.RowData(x => item.ExpirationTime)
         </tr>
     }

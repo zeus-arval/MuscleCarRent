@@ -41,5 +41,9 @@ namespace MuscleCarRentProject.Pages
         public SelectList Cars =>
             new(context.Cars.OrderBy(x => x.Brand).ThenBy(x => x.Model).AsNoTracking(),
                 "Id", "Brand", Item?.CarId);//THENBY Может вызвать ошибку
+        public SelectList Promotions
+        {
+            get => new SelectList(Enum.GetValues(typeof(PromotionTypeEnum)));
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace MuscleCarRentProject.Domain
         {
             cars = getLazy<Car, ICarsRepo>(c => c.GetByCarTypeId(Id));
         }
-        public RentTypeEnum RentType => Data?.RentTypeEnum ?? RentTypeEnum.Rent;
+        public RentTypeEnum RentType => Data?.RentType ?? RentTypeEnum.Rent;
 
         public ICollection<Car> Cars => cars.Value;
         internal Lazy<ICollection<Car>> cars { get; }

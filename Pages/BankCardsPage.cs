@@ -7,8 +7,10 @@ using Domain;
 using Domain.Repos;
 using Facade;
 using Infra;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MuscleCarRentProject.Aids;
 using MuscleCarRentProject.Data;
+using MuscleCarRentProject.Domain.Common;
 using MuscleCarRentProject.Infra;
 using MuscleCarRentProject.Pages.Common;
 
@@ -31,6 +33,14 @@ namespace MuscleCarRentProject.Pages
             if (IsNull(v)) return null;
             var d = Copy.Members(v, new BankCardData());
             return new BankCard(d);
+        }
+        public SelectList Accounts
+        {
+            get
+            {
+                var l = new GetRepo().Instance<IAccountsRepo>().Get();
+                return new SelectList(l, "Id", "FullName", Item?.AccountId);
+            }
         }
     }
 }

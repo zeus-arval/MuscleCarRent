@@ -40,7 +40,7 @@ namespace MuscleCarRentProject.Pages
             get
             {
                 var l = new GetRepo().Instance<ICarsRepo>().Get();
-                return new SelectList(l, "Id", "Name");
+                return new SelectList(l, "Id", "Name", Item?.CarId);
             }
         }
     }

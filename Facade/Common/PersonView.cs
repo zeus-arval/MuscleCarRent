@@ -22,7 +22,7 @@ namespace Facade.Common
         [RegularExpression(@"^[A-Z]+[a-zA-Z '-]*$")]
         public string LastName { get; set; }
         [Display(Name = "Full name")] public string FullName { get; set; }
-        [Display(Name = "New Photo")] public IFormFile Photo { get; set; }
+        [Display(Name = "New Photo")] public IFormFile PersPhoto { get; set; }
         [Display(Name = "Current photo")] public string PhotoAsString { get; set; }
     }
 }

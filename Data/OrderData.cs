@@ -1,6 +1,7 @@
 ﻿using System;
 using Data.Common;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MuscleCarRentProject.Data
 {
@@ -8,7 +9,7 @@ namespace MuscleCarRentProject.Data
     {
         public DateTime OrderDate { get; set; }
         public DateTime RentDate { get; set; }
-        public decimal TotalPrice { get; set; }
+        [Column(TypeName = "decimal(18,4)")] public decimal TotalPrice { get; set; }
         public byte HourAmmount { get; set; }
         public bool HasBankCard { get; set; }
 

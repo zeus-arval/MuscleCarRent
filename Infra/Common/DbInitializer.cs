@@ -32,10 +32,10 @@ namespace MuscleCarRentProject.Infra.Common
 
             var carTypes = new CarTypeData[]
             {
-                new CarTypeData{ RentTypeEnum = (RentTypeEnum)0},
-                new CarTypeData{ RentTypeEnum = (RentTypeEnum)1},
-                new CarTypeData{ RentTypeEnum = (RentTypeEnum)2},
-                new CarTypeData{ RentTypeEnum = (RentTypeEnum)3},
+                new CarTypeData{ RentType = (RentTypeEnum)0},
+                new CarTypeData{ RentType = (RentTypeEnum)1},
+                new CarTypeData{ RentType = (RentTypeEnum)2},
+                new CarTypeData{ RentType = (RentTypeEnum)3},
             };
 
             context.CarTypes.AddRange(carTypes);
@@ -59,7 +59,7 @@ namespace MuscleCarRentProject.Infra.Common
                     Color = ColorEnum.Blue, BasePrice = 110, PricePerHour = 23, NumberOfSeats = 4, Engine = "426ci V8 HEMI",
                     NeedDriver = false, Surcharge = 0, BodyType = BodyTypeEnum.PonyCar, 
                     DriverId = drivers.Single(x => x.FirstName == "Michael").Id, 
-                    CarTypeId = carTypes.Single(x => x.RentTypeEnum == RentTypeEnum.Rent).Id 
+                    CarTypeId = carTypes.Single(x => x.RentType == RentTypeEnum.Rent).Id 
                 },
                 new CarData
                 {
@@ -69,7 +69,7 @@ namespace MuscleCarRentProject.Infra.Common
                     Color = ColorEnum.Black, BasePrice = 100, PricePerHour = 20, NumberOfSeats = 4, Engine = "V8 6.4",
                     NeedDriver = false, Surcharge = 0, BodyType = BodyTypeEnum.FullSize, 
                     DriverId = drivers.Single(x => x.FirstName == "Rain").Id,
-                    CarTypeId = carTypes.Single(x => x.RentTypeEnum == RentTypeEnum.Rent).Id
+                    CarTypeId = carTypes.Single(x => x.RentType == RentTypeEnum.Rent).Id
                 },
             };
 

@@ -25,7 +25,7 @@ namespace MuscleCarRentProject.Pages
             if (IsNull(e)) return null;
             var v = Copy.Members(e.Data, new ImageView());
             var photo = Convert.ToBase64String(e.Data.Image ?? Array.Empty<byte>(), 0, e.Data.Image?.Length ?? 0);
-            v.PhotoAsString = "data:image/jpg;base64," + photo;
+            v.CarPhotoAsString = "data:image/jpg;base64," + photo;
             return v;
         }
 
@@ -45,7 +45,7 @@ namespace MuscleCarRentProject.Pages
             get
             {
                 var l = new GetRepo().Instance<ICarsRepo>().Get();
-                return new SelectList(l, "Id", "Name");
+                return new SelectList(l, "Id", "Model", Item?.CarId);
             }
         }
     }

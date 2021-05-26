@@ -14,7 +14,6 @@
             @Html.TableSortHeader(x => x.Item.FirstName, Model)
             @Html.TableSortHeader(x => x.Item.LastName, Model)
             @Html.TableHeader(x => x.Item.PhotoAsString)
-            @Html.TableHeader(x => x.Item.RowVersion)
         </tr>
     </thead>
     <tbody>
@@ -25,7 +24,6 @@
             @Html.RowData(x => item.FirstName)
             @Html.RowData(x => item.LastName)
             @Html.RowImage(item.PhotoAsString)
-            @Html.RowData(x => item.RowVersion)
             @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
     }

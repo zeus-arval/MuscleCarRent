@@ -6,12 +6,9 @@
     Model.Cars, "--Select Car--")
 @Html.Select(model => model.Item.AccountId,
     Model.Accounts, "--Select Account--")
-@Html.Editor(model => model.Item.HourAmmount)
-@Html.Editor(model => model.Item.OrderDate)
-@Html.Editor(model => model.Item.RentDate)
-@Html.Editor(model => model.Item.TotalPrice)
-@Html.Show(model => model.Item.RowVersion)
+@Html.Select(model => model.Item.PromotionTypeEnum,
+    Model.Promotions, "-- Select Promotion --")
 @Html.Editor(model => model.Item.Discount)
-@Html.Editor(model => model.Item.PromotionTypeEnum)
+@Html.Show(model => model.Item.RowVersion)
 @Html.Editor(model => model.Item.ValidUntil)
-@Html.Show(model => model.Item.HasBankCard)
+@Html.Editor(model => model.Item.IsAvailable)

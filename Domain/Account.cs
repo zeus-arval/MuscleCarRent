@@ -24,7 +24,7 @@ namespace Domain.Repos
         public string Email => Data?.Email ?? string.Empty;
         public string PhoneNumber => Data?.PhoneNumber ?? string.Empty;
         public string PersonalPhoto => Data?.PersonalPhoto ?? string.Empty;
-        public string DrivingLicense => Data?.DrivingLicense ?? string.Empty;
+        public string DrivingLicensePhoto => Data?.DrivingLicensePhoto ?? string.Empty;
         public DateTime RegistrationDate => Data?.RegistrationDate ?? default;
         public bool IsDrivingLicenseValid => Data?.IsDrivingLicenseValid ?? default;
 

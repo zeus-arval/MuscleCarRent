@@ -10,9 +10,9 @@
 <table class="table">
     <thead>
     <tr>
-        @Html.TableSortHeader(x => x.Item.CarId, Model);
+        @Html.TableSortHeader(x => x.Item.CarModel, Model);
+        @Html.TableHeader(x => x.Item.CarPhotoAsString);
         @Html.TableHeader(x => x.Item.Id);
-        @Html.TableHeader(x => x.Item.PhotoAsString);
         @Html.TableHeader(model => model.Item.RowVersion)
     </tr>
     </thead>
@@ -20,9 +20,9 @@
     @foreach (var item in Model.Items)
     {
         <tr>
-            @Html.RowData(x => item.CarId)
+            @Html.RowData(x => item.CarModel)
             @Html.RowData(x => item.Id)
-            @Html.RowImage(item.PhotoAsString)
+            @Html.RowImage(item.CarPhotoAsString)
             @Html.RowData(x => item.RowVersion)
             @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>

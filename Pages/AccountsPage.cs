@@ -26,9 +26,9 @@ namespace MuscleCarRentProject.Pages
         protected internal override Account toEntity(AccountView v)
         {
             var d = Copy.Members(v, new AccountData());
-            if (string.IsNullOrEmpty(v.Photo?.FileName)) return new Account(d);
+            if (string.IsNullOrEmpty(v.PersPhoto?.FileName)) return new Account(d);
             var stream = new MemoryStream();
-            v.Photo?.CopyTo(stream);
+            v.PersPhoto?.CopyTo(stream);
             if (stream.Length < 2097152) d.Photo = stream.ToArray();
             return new Account(d);
         }
@@ -38,7 +38,15 @@ namespace MuscleCarRentProject.Pages
             get
             {
                 var l = new GetRepo().Instance<IAccessTypesRepo>().Get();
-                return new SelectList(l, "Id", "Name", Item?.AccessTypeId);
+                return new SelectList(l, "Id", "AccessType", Item?.AccessTypeId);
+            }
+        }
+        public SelectList BankCards
+        {
+            get
+            {
+                var l = new GetRepo().Instance<IBankCardsRepo>().Get();
+                return new SelectList(l, "Id", "CardNumber", Item?.BankCardId);
             }
         }
     }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Repos;
 using Infra;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MuscleCarRentProject.Aids;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Domain;
+using MuscleCarRentProject.Domain.Common;
 using MuscleCarRentProject.Domain.Repos;
 using MuscleCarRentProject.Facade;
 using MuscleCarRentProject.Infra;
@@ -38,10 +40,32 @@ namespace MuscleCarRentProject.Pages
             return new Car(car);
         }
         public SelectList Drivers
-            => new(context.Drivers.OrderBy(x => x.FirstName).AsNoTracking(),
-                "id", "Name", Item?.DriverId);
+        {
+            get
+            {
+                var l = new GetRepo().Instance<IDriversRepo>().Get();
+                return new SelectList(l, "Id", "FullName", Item?.DriverId);
+            }
+        }
         public SelectList CarTypes
-            => new(context.CarTypes.OrderBy(x => x.RentTypeEnum).AsNoTracking(),
-                "id", "Name", Item?.CarTypeId);
+        {
+            get
+            {
+                var l = new GetRepo().Instance<ICarTypesRepo>().Get();
+                return new SelectList(l, "Id", "CarType", Item?.CarTypeId);
+            }
+        }
+        public SelectList Colors
+        {
+            get => new SelectList(Enum.GetValues(typeof(ColorEnum)));
+        }
+        public SelectList Brands
+        {
+            get => new SelectList(Enum.GetValues(typeof(BrandEnum)));
+        }
+        public SelectList BodyTypes
+        {
+            get => new SelectList(Enum.GetValues(typeof(BodyTypeEnum)));
+        }
     }
 }

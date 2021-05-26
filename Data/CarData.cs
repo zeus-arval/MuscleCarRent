@@ -1,5 +1,6 @@
 ﻿using Data.Common;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MuscleCarRentProject.Data
 {
@@ -14,9 +15,9 @@ namespace MuscleCarRentProject.Data
         public bool IsFavourite { get; set; }
         public bool NeedDriver { get; set; }
         public short Power { get; set; }
-        public decimal BasePrice { get; set; }
-        public decimal? Surcharge { get; set; }
-        public decimal PricePerHour { get; set; }
+        [Column(TypeName = "decimal(18,4)")] public decimal BasePrice { get; set; }
+        [Column(TypeName = "decimal(18,4)")] public decimal? Surcharge { get; set; }
+        [Column(TypeName = "decimal(18,4)")] public decimal PricePerHour { get; set; }
         public byte NumberOfSeats { get; set; }
         [StringLength(50)] public string CarTypeId { get; set; }
         [StringLength(50)] public string CarTypeName { get; set; }

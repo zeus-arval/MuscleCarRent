@@ -33,7 +33,7 @@ namespace Domain.Repos
 
         public string PromotionName => Data?.PromotionName ?? string.Empty;
         public string PromotionId => Data?.PromotionId ?? string.Empty;
-        public Promotion? Promotion => promotion.Value;
+        public Promotion? Promotion => promotion.Value ?? null;
         public Lazy<Promotion> promotion { get; }
     }
 }

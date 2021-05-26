@@ -26,9 +26,9 @@ namespace MuscleCarRentProject.Pages
         {
             if (IsNull(v)) return null;
             var d = Copy.Members(v, new DriverData());
-            if (string.IsNullOrEmpty(v.Photo?.FileName)) return new Driver(d);
+            if (string.IsNullOrEmpty(v.PersPhoto?.FileName)) return new Driver(d);
             var stream = new MemoryStream();
-            v.Photo?.CopyTo(stream);
+            v.PersPhoto?.CopyTo(stream);
             if (stream.Length < 2097152) d.Photo = stream.ToArray();
             return new Driver(d);
         }

@@ -9,7 +9,5 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain.Repos
 {
-    interface ICarTypesRepo : IRepo<CarType>
-    {
-    }
+    public interface ICarTypesRepo : IRepo<CarType>{}
 }

@@ -14,7 +14,7 @@
             @Html.TableSortHeader(x => x.Item.CarModel, Model);
             @Html.TableSortHeader(x => x.Item.AccountName, Model);
             @Html.TableSortHeader(x => x.Item.OrderDate, Model);
-            @Html.TableHeader(x => x.Item.TotalPrice);
+            @Html.TableSortHeader(x => x.Item.TotalPrice, Model);
         </tr>
     </thead>
     <tbody>
