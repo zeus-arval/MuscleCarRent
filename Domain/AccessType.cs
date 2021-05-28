@@ -9,7 +9,7 @@ using MuscleCarRentProject.Domain.Common;
 
 namespace Domain
 {
-    public class AccessType : BaseEntity<AccessTypeData>
+    public sealed class AccessType : BaseEntity<AccessTypeData>
     {
         public AccessType() : this(null){}
 

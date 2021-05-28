@@ -19,7 +19,7 @@ namespace MuscleCarRentProject.Pages
     public class BankCardsPage : ViewPage<BankCard, BankCardView>
     {
         public override string PageTitle => "BankCards";
-        public BankCardsPage(MuscleCarRentDBContext c) : this(new BankCardRepo(c), c){}
+        public BankCardsPage(MuscleCarRentDBContext c) : this(new BankCardsRepo(c), c){}
         protected internal BankCardsPage(IBankCardsRepo r, MuscleCarRentDBContext c = null) : base(r, c){}
         protected internal override BankCardView toViewModel(BankCard e)
         {

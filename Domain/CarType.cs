@@ -6,7 +6,7 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace MuscleCarRentProject.Domain
 {
-    public class CarType : BaseEntity<CarTypeData>
+    public sealed class CarType : BaseEntity<CarTypeData>
     {
         public CarType() : this(null){}
         public CarType(CarTypeData c) : base(c)

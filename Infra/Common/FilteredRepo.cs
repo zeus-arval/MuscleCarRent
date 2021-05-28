@@ -1,28 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Data.Common;
-using Microsoft.EntityFrameworkCore;
-using MuscleCarRentProject.Core;
+﻿using MuscleCarRentProject.Core;
+using MuscleCarRentProject.Data.Common;
 using MuscleCarRentProject.Domain.Repos;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using Data.Common;
 
-namespace Infra.Common
+namespace Contoso.Infra.Common
 {
     public abstract class FilteredRepo<TEntity, TData> : CrudRepo<TEntity, TData>, IFilteredRepo
-    where TData : BaseData, IEntityData, new()
+        where TData : BaseData, IEntityData, new()
     {
         private string currentFilter;
         private string searchString;
-        protected FilteredRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s){ }
+        protected FilteredRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s) { }
         protected internal override IQueryable<TData> createSql() => applyFilters(base.createSql());
         protected internal virtual IQueryable<TData> applyFilters(IQueryable<TData> query) => query;
+
         public virtual int? PageIndex { get; set; }
+
         public virtual string CurrentFilter
         {
             get => currentFilter;
-            set => setFilter(currentFilter, value);
+            set => setFilter(value, searchString);
         }
         public virtual string SearchString
         {

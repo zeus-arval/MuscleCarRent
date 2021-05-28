@@ -8,7 +8,7 @@ using MuscleCarRentProject.Domain.Common;
 
 namespace Domain.Repos
 {
-    public class Account : Person<AccountData>
+    public sealed class Account : Person<AccountData>
     {
         public Account() : this(null){}
 

@@ -6,7 +6,7 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain.Repos
 {
-    public class Order : BaseEntity<OrderData>
+    public sealed class Order : BaseEntity<OrderData>
     {
         public Order() : this(null){}
         public Order(OrderData o) : base(o)
@@ -33,7 +33,7 @@ namespace Domain.Repos
 
         public string PromotionName => Data?.PromotionName ?? string.Empty;
         public string PromotionId => Data?.PromotionId ?? string.Empty;
-        public Promotion? Promotion => promotion.Value ?? null;
+        public Promotion Promotion => promotion.Value ?? null;
         public Lazy<Promotion> promotion { get; }
     }
 }

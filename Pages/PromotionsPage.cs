@@ -20,7 +20,7 @@ namespace MuscleCarRentProject.Pages
     public class PromotionsPage : ViewPage<Promotion, PromotionView>
     {
         public override string PageTitle => "Promotions";
-        public PromotionsPage(MuscleCarRentDBContext c) : this(new PromotionRepo(c), c){}
+        public PromotionsPage(MuscleCarRentDBContext c) : this(new PromotionsRepo(c), c){}
         protected internal PromotionsPage(IPromotionRepo r, MuscleCarRentDBContext c) : base(r, c){}
 
         protected internal override Promotion toEntity(PromotionView v)

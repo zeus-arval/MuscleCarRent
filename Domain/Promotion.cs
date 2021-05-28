@@ -7,7 +7,7 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain
 {
-    public class Promotion : BaseEntity<PromotionData>
+    public sealed class Promotion : BaseEntity<PromotionData>
     {
         public Promotion() : this(null){}
         public Promotion(PromotionData p) : base(p)

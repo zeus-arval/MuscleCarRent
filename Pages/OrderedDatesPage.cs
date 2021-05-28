@@ -20,7 +20,7 @@ namespace MuscleCarRentProject.Pages
     public class OrderedDatesPage : ViewPage<OrderedDate, OrderedDateView>
     {
         public override string PageTitle => "Ordered dates";
-        public OrderedDatesPage(MuscleCarRentDBContext c) : this(new OrderedDateRepo(c), c){}
+        public OrderedDatesPage(MuscleCarRentDBContext c) : this(new OrderedDatesRepo(c), c){}
         protected internal OrderedDatesPage(IOrderedDatesRepo r, MuscleCarRentDBContext c) : base(r, c) {}
         protected internal override OrderedDateView toViewModel(OrderedDate e)
         {

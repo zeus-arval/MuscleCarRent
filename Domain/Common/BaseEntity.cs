@@ -16,8 +16,10 @@ namespace MuscleCarRentProject.Domain.Common
     where TData : class, IEntityData, new()
     {
         protected readonly TData data;
-        protected BaseEntity() :this(null){}
+
+        protected BaseEntity() : this(null) { }
         protected BaseEntity(TData d) => data = d;
+
         public TData Data => Copy.Members(data, new TData()) ?? new TData();
         public string Id => Data?.Id ?? "Unspecified";
         public byte[] RowVersion => Data?.RowVersion ?? Array.Empty<byte>();
@@ -27,9 +29,9 @@ namespace MuscleCarRentProject.Domain.Common
             => new(() => func(getRepo<TRepo>()));
 
         internal static Lazy<TEntity> getLazy<TEntity, TRepo>(Func<TRepo, TEntity> func)
-            where TEntity : IBaseEntity where TRepo : IRepo<TEntity>
-            => new(() => func(getRepo<TRepo>()));
+            where TEntity : IBaseEntity where TRepo : IRepo<TEntity> =>
+            new(() => func(getRepo<TRepo>()));
 
-        private static TRepo getRepo<TRepo>() => new GetRepo().Instance<TRepo>();
+        internal static TRepo getRepo<TRepo>() => new GetRepo().Instance<TRepo>();
     }
 }

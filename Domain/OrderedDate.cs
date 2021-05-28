@@ -10,7 +10,7 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain
 {
-    public class OrderedDate : BaseEntity<OrderedDateData>
+    public sealed class OrderedDate : BaseEntity<OrderedDateData>
     {
         public OrderedDate() : this(null){}
 

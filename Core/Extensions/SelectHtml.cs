@@ -19,7 +19,7 @@ namespace MuscleCarRentProject.Core.Extensions
 
         public static IHtmlContent Select<TModel, TResult1, TResult2>(
             this IHtmlHelper<TModel> h, Expression<Func<TModel, TResult1>> label,
-            Expression<Func<TModel, TResult2>> value, IEnumerable<SelectListItem> selectList, string optionLabel)
+             Expression<Func<TModel, TResult2>> value, IEnumerable<SelectListItem> selectList, string optionLabel)
         {
             var n = h.DisplayNameFor(label);
             return Select(h, value, selectList, optionLabel, n);

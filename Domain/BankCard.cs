@@ -9,7 +9,7 @@ using MuscleCarRentProject.Domain.Common;
 
 namespace Domain
 {
-    public class BankCard :BaseEntity<BankCardData>
+    public sealed class BankCard :BaseEntity<BankCardData>
     {
         public BankCard() : this(null) {}
 

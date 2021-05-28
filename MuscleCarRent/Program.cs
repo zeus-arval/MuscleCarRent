@@ -29,13 +29,13 @@ namespace MuscleCarRent
             var services = scope.ServiceProvider;
             try
             {
-                var context = services.GetRequiredService<MuscleCarRentDBContext>();
+                var context = services.GetService<MuscleCarRentDBContext>();
                 context?.Database?.EnsureCreated();
                 DbInitializer.Initialize(context);
             }
             catch (Exception ex)
             {
-                var logger = services.GetRequiredService<ILogger<Program>>();
+                var logger = services.GetService<ILogger<Program>>();
                 logger?.LogError(ex, "An error occurred creating the DB.");
             }
 

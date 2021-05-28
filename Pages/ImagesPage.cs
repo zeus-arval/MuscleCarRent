@@ -17,7 +17,7 @@ namespace MuscleCarRentProject.Pages
     public class ImagesPage : ViewPage<Image, ImageView>
     {
         public override string PageTitle => "Images";
-        public ImagesPage(MuscleCarRentDBContext c) : this(new ImageRepo(c), c){}
+        public ImagesPage(MuscleCarRentDBContext c) : this(new ImagesRepo(c), c){}
         protected internal ImagesPage(IImagesRepo r , MuscleCarRentDBContext c = null) : base(r, c) {}
 
         protected internal override ImageView toViewModel(Image e)

@@ -18,12 +18,10 @@ namespace MuscleCarRentProject.Aids
             MemberExpression member => name(member),
             MethodCallExpression method => name(method),
             UnaryExpression operand => name(operand),
-            _ => String.Empty
+            _ => string.Empty
         };
-
         private static string name(MemberExpression e) => e?.Member.Name ?? string.Empty;
         private static string name(MethodCallExpression e) => e?.Method.Name ?? string.Empty;
-
         private static string name(UnaryExpression e) => e?.Operand switch
         {
             MemberExpression member => name(member),

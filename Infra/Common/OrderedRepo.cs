@@ -1,29 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MuscleCarRentProject.Aids;
+using MuscleCarRentProject.Core;
+using MuscleCarRentProject.Data.Common;
+using MuscleCarRentProject.Domain.Repos;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Common;
-using Microsoft.EntityFrameworkCore;
-using MuscleCarRentProject.Aids;
-using MuscleCarRentProject.Core;
-using MuscleCarRentProject.Domain.Repos;
 
-namespace Infra.Common
+namespace Contoso.Infra.Common
 {
-    public abstract class OrderedRepo<TEntity, TData> : FilteredRepo<TEntity, TData>
-    where TData : BaseData, IEntityData, new()
+    public abstract class OrderedRepo<TEntity, TData> : FilteredRepo<TEntity, TData>, IOrderedRepo
+        where TData : BaseData, IEntityData, new()
     {
         private string sortOrder;
-        protected OrderedRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s){}
+        protected OrderedRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s) { }
         public virtual string SortOrder
         {
             get => getSortOrder();
             set => sortOrder = value;
         }
         public virtual string CurrentSort => sortOrder;
+
         protected internal virtual string getSortOrder()
             => sortOrder?.Contains("_desc") ?? true ? removeDesc(sortOrder) : addDesc(sortOrder);
         protected internal virtual string addDesc(string s) => $"{s}_desc";
@@ -48,7 +47,6 @@ namespace Infra.Common
             var body = Expression.Convert(property, typeof(object));
             return Expression.Lambda<Func<TData, object>>(body, param);
         }
-
         internal PropertyInfo findProperty()
         {
             var name = getName();
@@ -56,19 +54,19 @@ namespace Infra.Common
         }
         internal string getName()
         {
-            if(string.IsNullOrEmpty(SortOrder)) return String.Empty;
+            if (string.IsNullOrEmpty(sortOrder)) return string.Empty;
             var s = removeDesc(sortOrder);
             return s;
         }
         internal IQueryable<TData> addOrderBy(IQueryable<TData> query, Expression<Func<TData, object>> e)
         {
             if (query is null) return null;
-            if (e is null) return null;
-            return Safe.Run(() => isDescending() 
-                ? query.OrderByDescending(e) 
+            if (e is null) return query;
+            return Safe.Run(() => isDescending()
+                ? query.OrderByDescending(e)
                 : query.OrderBy(e), query);
         }
-        internal bool isDescending()
-            => !string.IsNullOrEmpty(sortOrder) && sortOrder.EndsWith("_desc");
+        internal bool isDescending() =>
+            !string.IsNullOrEmpty(sortOrder) && sortOrder.EndsWith("_desc");
     }
 }

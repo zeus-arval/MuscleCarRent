@@ -7,7 +7,6 @@ namespace MuscleCarRentProject.Data
 {
     public sealed class AccessTypeData : BaseData
     {
-        public ICollection<AccountData> Accounts { get; set; }
         public AccessLevelEnum AccessLevel { get; set; }
     }
 }

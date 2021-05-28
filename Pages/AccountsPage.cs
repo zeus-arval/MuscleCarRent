@@ -15,7 +15,7 @@ namespace MuscleCarRentProject.Pages
     public class AccountsPage : ViewPage<Account, AccountView>
     {
         public override string PageTitle => "Accounts";
-        public AccountsPage(MuscleCarRentDBContext c) : this(new AccountRepo(c), c) { }
+        public AccountsPage(MuscleCarRentDBContext c) : this(new AccountsRepo(c), c) { }
         protected internal AccountsPage(IAccountsRepo r, MuscleCarRentDBContext c = null) : base(r, c) { }
         protected internal override AccountView toViewModel(Account a)
         {
@@ -24,6 +24,8 @@ namespace MuscleCarRentProject.Pages
             var view = Copy.Members(a.Data, new AccountView());
             view.BankCardNumber = a.BankCard?.CardNumber.ToString() ?? string.Empty;
             view.PersonPhotoAsString = format + ConvertPhoto(a.Data?.PersonPhoto);
+            view.BankCardNumber = a.BankCard?.CardNumber.ToString();
+            view.AccessTypeName = a.AccessType?.AccessLevel.ToString();
             view.DrivingLicensePhotoAsString = format + ConvertPhoto(a.Data?.DrivingLicensePhoto);
             return view;
         }
@@ -41,7 +43,7 @@ namespace MuscleCarRentProject.Pages
             if (stream.Length < 2097152) d.DrivingLicensePhoto = stream.ToArray();
             return new Account(d);
         }
-        private string ConvertPhoto(byte[] photo)
+        private static string ConvertPhoto(byte[] photo)
             => System.Convert.ToBase64String(photo ?? Array.Empty<byte>(), 0, photo?.Length ?? 0);
 
         public SelectList AccessTypes

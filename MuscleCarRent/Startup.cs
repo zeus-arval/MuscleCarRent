@@ -25,16 +25,16 @@ namespace MuscleCarRent
         {
             services.AddRazorPages();
             services.AddDbContext<MuscleCarRentDBContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MuscleCarRentDBContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddTransient<IAccountsRepo, AccountRepo>();
-            services.AddTransient<IBankCardsRepo, BankCardRepo>();
+            services.AddTransient<IAccountsRepo, AccountsRepo>();
+            services.AddTransient<IBankCardsRepo, BankCardsRepo>();
             services.AddTransient<ICarsRepo, CarsRepo>();
-            services.AddTransient<IDriversRepo, DriverRepo>();
-            services.AddTransient<IImagesRepo, ImageRepo>();
-            services.AddTransient<IOrderedDatesRepo, OrderedDateRepo>();
-            services.AddTransient<IOrderedRepo, OrderRepo>();
-            services.AddTransient<IPromotionRepo, PromotionRepo>();
+            services.AddTransient<IDriversRepo, DriversRepo>();
+            services.AddTransient<IImagesRepo, ImagesRepo>();
+            services.AddTransient<IOrderedDatesRepo, OrderedDatesRepo>();
+            services.AddTransient<IOrderedRepo, OrdersRepo>();
+            services.AddTransient<IPromotionRepo, PromotionsRepo>();
 
         }
 
@@ -57,8 +57,6 @@ namespace MuscleCarRent
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

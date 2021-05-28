@@ -1,18 +1,18 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Muscle Car Rent";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome To Muscle Car Rent!</h1>
-    <a class="nav-link text-dark" asp-area="" asp-page="/CarsAndServices/Index">Cars&Services</a>
-    <a class="nav-link text-dark" asp-area="" asp-page="/Accounts/Index">Accounts</a>
-    <a class="nav-link text-dark" asp-area="" asp-page="/Orders/Index">Orders</a>
-    <a class="nav-link text-dark" asp-area="" asp-page="/Promotions/Index">Promotions</a>
-    <a class="nav-link text-dark" asp-area="" asp-page="/Images/Index">Images</a>
-    <a class="nav-link text-dark" asp-area="" asp-page="/BankCards/Index">Bank Cards</a>
-    <a class="nav-link text-dark" asp-area="" asp-page="/Drivers/Index">Drivers</a>
+    <a class="nav-link text-dark" asp-area="" asp-route-handler="Index" asp-page="/Cars/Index">Cars&Services</a>
+    <a class="nav-link text-dark" asp-area="" asp-route-handler="Index" asp-page="/Accounts/Index">Accounts</a>
+    <a class="nav-link text-dark" asp-area="" asp-route-handler="Index" asp-page="/Orders/Index">Orders</a>
+    <a class="nav-link text-dark" asp-area="" asp-route-handler="Index" asp-page="/Promotions/Index">Promotions</a>
+    <a class="nav-link text-dark" asp-area="" asp-route-handler="Index" asp-page="/Images/Index">Images</a>
+    <a class="nav-link text-dark" asp-area="" asp-route-handler="Index" asp-page="/BankCards/Index">Bank Cards</a>
+    <a class="nav-link text-dark" asp-area="" asp-route-handler="Index" asp-page="/Drivers/Index">Drivers</a>
 
 
 </div>

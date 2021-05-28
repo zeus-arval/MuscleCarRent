@@ -14,13 +14,13 @@ namespace MuscleCarRentProject.Core.Extensions
             this IHtmlHelper<TModel> _, string pageUrl, string itemId,
             params string[] labels)
         {
-            labels = SetDefaultLabels(labels);
+            labels = setDefaultLabels(labels);
             var s = TableData(
-                RowButton(itemId, pageUrl, "Index", "Index", labels[0]),
-                RowButton(itemId, pageUrl, "Edit", "Edit", labels[1]),
-                RowButton(itemId, pageUrl, "Details", "Details", labels[2]),
-                RowButton(itemId, pageUrl, "Delete", "Delete", labels[3])
-            );
+                   RowButton(itemId, pageUrl, "Index", "Index", labels[0]),
+                   RowButton(itemId, pageUrl, "Edit", "Edit", labels[1]),
+                   RowButton(itemId, pageUrl, "Details", "Details", labels[2]),
+                   RowButton(itemId, pageUrl, "Delete", "Delete", labels[3])
+                );
             return new HtmlContentBuilder(s);
         }
         public static IHtmlContent RowData<TModel, TResult>(
@@ -30,16 +30,6 @@ namespace MuscleCarRentProject.Core.Extensions
             var s = TableData(h.DisplayFor(data));
             return new HtmlContentBuilder(s);
         }
-        public static IHtmlContent RowImage<TModel>(
-            this IHtmlHelper<TModel> _,
-            string imageStr, int? height = null)
-        {
-            var s = TableData(
-                new HtmlString(
-                    $"<img src=\"{imageStr}\" alt=\"not upload\"" +
-                    $"height={height ?? default}"));
-            return new HtmlContentBuilder(s);
-        }
         public static IHtmlContent TableHeader<TModel, TResult>(
             this IHtmlHelper<TModel> h,
             Expression<Func<TModel, TResult>> data)
@@ -47,7 +37,8 @@ namespace MuscleCarRentProject.Core.Extensions
             var s = HeaderData(h.DisplayNameFor(data));
             return new HtmlContentBuilder(s);
         }
-        public static IHtmlContent TableSortHeader<TModel, TResult>(this IHtmlHelper<TModel> h,
+        public static IHtmlContent TableSortHeader<TModel, TResult>(
+            this IHtmlHelper<TModel> h,
             Expression<Func<TModel, TResult>> data, IBasePage p)
         {
             var s = h.SortHeaderData(data, p);
@@ -59,8 +50,7 @@ namespace MuscleCarRentProject.Core.Extensions
             var sortOrder = GetMember.Name(e);
             if (p.SortOrder.StartsWith(sortOrder)) sortOrder = p.SortOrder;
             var uri = new Uri($"../{p.PageUrl}/Index", UriKind.Relative);
-            return new List<object>
-            {
+            var l = new List<object> {
                 new HtmlString("<th>"),
                 new HtmlString($"<a href=\"{uri}?"),
                 new HtmlString("handler=Index&"),
@@ -68,31 +58,54 @@ namespace MuscleCarRentProject.Core.Extensions
                 new HtmlString($"currentFilter={p.CurrentFilter}&"),
                 new HtmlString($"searchString={p.SearchString}&"),
                 new HtmlString($"pageIndex={p.PageIndex}\""),
-                new HtmlString($">"),
-                new HtmlString($"<span style=\"font-weight:normal\">"),
+                new HtmlString(">"),
+                new HtmlString("<span style=\"font-weight:normal\">"),
                 h.DisplayNameFor(e),
                 new HtmlString("</span>"),
                 new HtmlString("</a>"),
-                new HtmlString("</th>"),
+                new HtmlString("</th>")
             };
-        }
-        public static List<object> HeaderData(params object[] data)
-        {
-            var l = new List<object> { new HtmlString("<th>") };
-            l.AddRange(data);
-            l.Add(new HtmlString("</td>"));
             return l;
         }
-        public static IHtmlContent RowButton(string itemId, string pageUrl, string action, string handler, string caption)
+        public static IHtmlContent RowData<TModel>(
+            this IHtmlHelper<TModel> h,
+            string data)
+        {
+            var s = TableData(h.Raw(data));
+            return new HtmlContentBuilder(s);
+        }
+        public static IHtmlContent RowImage<TModel>(
+            this IHtmlHelper<TModel> _,
+            string imageStr, int? height = null)
+        {
+            var s = TableData(
+                new HtmlString(
+                    $"<img src=\"{imageStr}\" alt=\"not uploaded\" " +
+                    $"height={height ?? defaultHeight} />"
+                    )
+                );
+            return new HtmlContentBuilder(s);
+        }
+
+        internal static string[] setDefaultLabels(string[] handlers)
+        {
+            var l = new List<string>(handlers);
+            if (l.Count == 0) l.Add(null);
+            if (l.Count == 1) l.AddRange(
+                new[] { "Edit", "Details", "Delete" });
+            return l.ToArray();
+        }
+        public static IHtmlContent RowButton(string itemId,
+            string pageUrl, string action, string handler, string caption)
         {
             var uri = new Uri($"../{pageUrl}/{action}", UriKind.Relative);
             return new HtmlString(
                 (caption is null)
-                ? string.Empty
-                : $"<a id=\"{action}Btn\" " +
-                  $"href=\"{uri}?handler={handler}&id={itemId}\">" +
-                  $"<span style=\"font-weight:normal\">" +
-                  $"{caption}</span></a>"
+                    ? string.Empty
+                    : $"<a id=\"{action}Btn\" " +
+                      $"href=\"{uri}?handler={handler}&id={itemId}\">" +
+                      "<span style=\"font-weight:normal\">" +
+                      $"{caption}</span></a> "
             );
         }
         public static List<object> TableData(params IHtmlContent[] data)
@@ -102,12 +115,12 @@ namespace MuscleCarRentProject.Core.Extensions
             l.Add(new HtmlString("</td>"));
             return l;
         }
-        internal static string[] SetDefaultLabels(string[] handlers)
+        public static List<object> HeaderData(params object[] data)
         {
-            var l = new List<string>(handlers);
-            if (l.Count == 0) l.Add(null);
-            if (l.Count == 1) l.AddRange(new[] { "Edit", "Details", "Delete" });
-            return l.ToArray();
+            var l = new List<object> { new HtmlString("<th>") };
+            l.AddRange(data);
+            l.Add(new HtmlString("</th>"));
+            return l;
         }
     }
 }

@@ -13,7 +13,8 @@ namespace MuscleCarRentProject.Pages.Common
     {
         protected ViewPage(IRepo<TEntity> r, MuscleCarRentDBContext c = null) : base(r, c) { }
         public async virtual Task<IActionResult> OnGetIndexAsync(string sortOrder,
-            string currentFilter, string searchString, int? pageIndex) {
+            string currentFilter, string searchString, int? pageIndex)
+        {
             PageIndex = pageIndex;
             SearchString = searchString;
             CurrentFilter = currentFilter;

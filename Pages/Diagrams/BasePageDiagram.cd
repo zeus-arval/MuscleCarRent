@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MuscleCarRentProject.Pages.Common.BasePage" Collapsed="true">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAABAAAAAAAAAAAAAAQkAAUAQAAgAAAAAAAACAAAAA=</HashCode>
+      <FileName>Common\BasePage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MuscleCarRentProject.Pages.Common.BasePage&lt;TEntity, TView&gt;">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAGAIgAUAKAEAAEAAEAQAAEAAKAAgAICAEEkAAGBAA=</HashCode>
+      <FileName>Common\BasePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Pages.Common.CrudPage&lt;TEntity, TView&gt;">
+    <Position X="3.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\CrudPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Pages.Common.FilteredPage&lt;TEntity, TView&gt;">
+    <Position X="5.75" Y="6" Width="1.5" />
+    <InheritanceLine Type="MuscleCarRentProject.Pages.Common.CrudPage&lt;TEntity, TView&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="5" Y="6.849" />
+        <Point X="5.75" Y="6.849" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Common\FilteredPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Pages.Common.OrderedPage&lt;TEntity, TView&gt;">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\OrderedPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Pages.Common.PagedPage&lt;TEntity, TView&gt;">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAUAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\PagedPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MuscleCarRentProject.Pages.Common.ViewPage&lt;TEntity, TView&gt;">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ViewPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

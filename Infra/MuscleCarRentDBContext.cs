@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MuscleCarRentProject.Data;
 
 namespace MuscleCarRentProject.Infra
 {
-    public class MuscleCarRentDBContext : DbContext
+    public class MuscleCarRentDBContext : IdentityDbContext
     {
         public MuscleCarRentDBContext() 
             : this(new DbContextOptionsBuilder<MuscleCarRentDBContext>().Options) { }

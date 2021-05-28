@@ -22,6 +22,6 @@ namespace MuscleCarRentProject.Domain.Common
         public string LastName => Data?.LastName ?? "Unspecified";
         public string FirstName => Data?.FirstName ?? "Unspecified";
         public string FullName => $"{LastName}, {FirstName}";
-        public DateTime BirthDay => Data?.Birthday ?? default;
+        public DateTime BirthDay => Data?.Birthday ?? DateTime.MinValue;
     }
 }

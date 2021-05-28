@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Data.Common;
-using Microsoft.EntityFrameworkCore;
 using MuscleCarRentProject.Core;
 
-namespace Infra.Common
+namespace Contoso.Infra.Common
 {
-    public abstract class CrudRepo<TEntity, TData> :BaseRepo<TData>
-        where TData : BaseData, IEntityData, new() {
+    public abstract class CrudRepo<TEntity, TData> : BaseRepo<TData>
+        where TData : BaseData, IEntityData, new()
+    {
         protected CrudRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s) { }
 
         public async Task<TEntity> GetAsync(string id) => toEntity(await getAsync(id));
@@ -34,5 +35,6 @@ namespace Infra.Common
 
         protected internal abstract TEntity toEntity(TData d);
         protected internal abstract TData toData(TEntity e);
+
     }
 }

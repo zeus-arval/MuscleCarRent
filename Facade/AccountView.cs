@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Facade.Common;
 using Microsoft.AspNetCore.Http;
-using MuscleCarRentProject.Data;
-using MuscleCarRentProject.Facade.Common;
 
 namespace Facade
 {

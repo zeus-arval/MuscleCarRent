@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Contoso.Infra.Common;
 using Domain;
 using Domain.Repos;
-using Infra.Common;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Infra;
 
 namespace Infra
 {
-    public sealed class OrderedDateRepo : PagedRepo<OrderedDate, OrderedDateData>, IOrderedDatesRepo
+    public sealed class OrderedDatesRepo : PagedRepo<OrderedDate, OrderedDateData>, IOrderedDatesRepo
     {
-        public OrderedDateRepo() : this(null) { }
-        public OrderedDateRepo(MuscleCarRentDBContext c) : base(c, c?.OrderedDates){}
+        public OrderedDatesRepo() : this(null) { }
+        public OrderedDatesRepo(MuscleCarRentDBContext c) : base(c, c?.OrderedDates){}
         protected internal override OrderedDate toEntity(OrderedDateData d) => new(d);
         protected internal override OrderedDateData toData(OrderedDate e) => e?.Data ?? new OrderedDateData();
         public ICollection<OrderedDate> GetByCarId(string ID)

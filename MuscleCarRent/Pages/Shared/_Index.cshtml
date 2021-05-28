@@ -1,7 +1,7 @@
 ﻿@model MuscleCarRentProject.Pages.Common.BasePage
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = Model.PageTitle;
+    Layout = "_Layout";
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
 }
@@ -13,19 +13,17 @@
 </p>
 <form asp-page="./Index" method="get">
     <input type="hidden" name="Handler" value="Index" />
-    <input type="hidden" name="currentFilter" value="@Model.CurrentFilter" />
+    <input type="hidden" name="CurrentFilter" value="@Model.CurrentFilter" />
     <div class="form-group">
         <p>
             Find by name:
-            <input type="text" name="searchString" value="@Model.CurrentFilter" />
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
             <input type="submit" value="Search" class="btn-primary" />
             <a asp-page="./Index" asp-route-handler="Index">Back to full List</a>
         </p>
     </div>
 </form>
-
 @RenderBody()
-
 <a asp-page="./Index"
    asp-route-handler="Index"
    asp-route-sortOrder="@Model.CurrentSort"

@@ -7,9 +7,9 @@ namespace MuscleCarRentProject.Data.Common
 {
     public abstract class PersonInfoData : BaseData, IPersonInfoEntityData
     {
-        [Display(Name = "First Name")] [StringLength(50)] public string FirstName { get; set; }
-        [Display(Name = "Last Name")] [StringLength(50)] public string LastName { get; set; }
+        [StringLength(50)] public string FirstName { get; set; }
+        [StringLength(50)] public string LastName { get; set; }
         public byte[] PersonPhoto { get; set; }
-        [DataType(DataType.Date)] public DateTime Birthday { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }

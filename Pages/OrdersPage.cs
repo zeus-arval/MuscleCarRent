@@ -14,7 +14,7 @@ namespace MuscleCarRentProject.Pages
     public class OrdersPage : ViewPage<Order, OrderView>
     {
         public override string PageTitle => "Orders";
-        public OrdersPage(MuscleCarRentDBContext c) : this(new OrderRepo(c), c) {}
+        public OrdersPage(MuscleCarRentDBContext c) : this(new OrdersRepo(c), c) {}
         protected internal OrdersPage(IOrdersRepo r, MuscleCarRentDBContext c = null) : base(r, c){}
         protected internal override OrderView toViewModel(Order o)
         {
@@ -33,7 +33,7 @@ namespace MuscleCarRentProject.Pages
             new(context.Accounts.OrderBy(x => x.LastName).AsNoTracking(),
                 "Id", "LastName", Item?.AccountId);
         public SelectList Cars =>
-            new(context.Cars.OrderBy(x => x.Brand).ThenBy(x => x.Model).AsNoTracking(),
+            new(context.Cars.OrderBy(x => x.Brand).AsNoTracking(),
                 "Id", "Brand", Item?.CarId);//THENBY Может вызвать ошибку
 
     }

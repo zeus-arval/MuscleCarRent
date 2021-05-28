@@ -4,18 +4,18 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Contoso.Infra.Common;
 using Domain;
 using Domain.Repos;
-using Infra.Common;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Infra;
 
 namespace Infra
 {
-    public sealed class DriverRepo : PagedRepo<Driver, DriverData>, IDriversRepo
+    public sealed class DriversRepo : PagedRepo<Driver, DriverData>, IDriversRepo
     {
-        public DriverRepo() : this(null){}
-        public DriverRepo(MuscleCarRentDBContext c) : base(c, c?.Drivers){}
+        public DriversRepo() : this(null){}
+        public DriversRepo(MuscleCarRentDBContext c) : base(c, c?.Drivers){}
         protected internal override Driver toEntity(DriverData d)
             => new(d);
         protected internal override DriverData toData(Driver e)

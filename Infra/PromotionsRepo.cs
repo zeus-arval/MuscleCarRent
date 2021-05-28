@@ -1,17 +1,17 @@
 ﻿using System.Linq;
 using Domain;
 using Domain.Repos;
-using Infra.Common;
 using MuscleCarRentProject.Data;
 using MuscleCarRentProject.Infra;
 using System.Collections.Generic;
+using Contoso.Infra.Common;
 
 namespace Infra
 {
-    public sealed class PromotionRepo : PagedRepo<Promotion, PromotionData>, IPromotionRepo
+    public sealed class PromotionsRepo : PagedRepo<Promotion, PromotionData>, IPromotionRepo
     {
-        public PromotionRepo() : this(null) { }
-        public PromotionRepo(MuscleCarRentDBContext c) : base(c, c?.Promotions) { }
+        public PromotionsRepo() : this(null) { }
+        public PromotionsRepo(MuscleCarRentDBContext c) : base(c, c?.Promotions) { }
         protected internal override Promotion toEntity(PromotionData d)
             => new(d);
         protected internal override PromotionData toData(Promotion e)

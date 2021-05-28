@@ -12,7 +12,7 @@ namespace MuscleCarRentProject.Domain.Common
     {
         internal readonly IServiceProvider provider;
         internal static IServiceProvider instance;
-        public GetRepo(): this(null){}
+        public GetRepo() : this(null) { }
         public GetRepo(IServiceProvider p) => provider = p ?? instance;
         public static void SetProvider(IServiceProvider p) => instance = p;
         public dynamic Instance(Type t)
@@ -23,6 +23,6 @@ namespace MuscleCarRentProject.Domain.Common
             var r = s?.GetService(t);
             return r;
         }
-        public TService Instance<TService>() => (TService) Instance(typeof(TService));
+        public TService Instance<TService>() => (TService)Instance(typeof(TService));
     }
 }
