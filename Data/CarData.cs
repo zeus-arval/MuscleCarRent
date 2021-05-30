@@ -20,9 +20,7 @@ namespace MuscleCarRentProject.Data
         [Column(TypeName = "decimal(18,4)")] public decimal PricePerHour { get; set; }
         public byte NumberOfSeats { get; set; }
         [StringLength(50)] public string CarTypeId { get; set; }
-        [StringLength(50)] public string CarTypeName { get; set; }
         [StringLength(50)] public string DriverId { get; set; }
-        [StringLength(50)] public string DriverFullName { get; set; }
         public BrandEnum Brand { get; set; }
         public ColorEnum Color { get; set; }
         public BodyTypeEnum BodyType { get; set; }

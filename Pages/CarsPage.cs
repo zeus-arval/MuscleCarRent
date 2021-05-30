@@ -52,7 +52,7 @@ namespace MuscleCarRentProject.Pages
             get
             {
                 var l = new GetRepo().Instance<ICarTypesRepo>().Get();
-                return new SelectList(l, "Id", "RentType", Item?.CarTypeId);
+                return new SelectList(l, "Id", "RentTypeName", Item?.CarTypeId);
             }
         }
         public SelectList Colors

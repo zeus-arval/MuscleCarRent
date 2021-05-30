@@ -4,7 +4,7 @@ using MuscleCarRentProject.Data;
 
 namespace MuscleCarRentProject.Infra
 {
-    public class MuscleCarRentDBContext : IdentityDbContext
+    public class MuscleCarRentDBContext : DbContext
     {
         public MuscleCarRentDBContext() 
             : this(new DbContextOptionsBuilder<MuscleCarRentDBContext>().Options) { }

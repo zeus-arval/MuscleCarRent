@@ -39,12 +39,10 @@ namespace MuscleCarRentProject.Domain
         public BodyTypeEnum BodyType => Data?.BodyType ?? BodyTypeEnum.Other;
 
         public string DriverId => Data?.DriverId ?? string.Empty;
-        public string DriverFullName => Driver?.FullName ?? string.Empty;
         public Driver Driver => driver.Value;
         internal Lazy<Driver> driver { get; }
 
         public string CarTypeId => Data?.CarTypeId ?? string.Empty;
-        public string CarTypeName => CarType.RentType.ToString() ?? string.Empty;
         public CarType CarType => carType.Value;
         internal Lazy<CarType> carType { get; }
 
