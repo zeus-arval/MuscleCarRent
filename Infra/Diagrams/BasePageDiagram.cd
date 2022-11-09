@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Infra.Common.BaseRepo&lt;T&gt;">
+    <Position X="1.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEAAAAQAAAAAACAQQAAAAARAAAACAAAAABGADA=</HashCode>
+      <FileName>Common\BaseRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Infra.Common.CrudRepo&lt;TEntity, TData&gt;">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAADAAAEAAAAAAAgEAAAAIAAABIA=</HashCode>
+      <FileName>Common\CrudRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Infra.Common.FilteredRepo&lt;TEntity, TData&gt;">
+    <Position X="6" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAAAAAAAAAAAAAAAAAkgEAAMAAAQAAAAAAACBAAAA=</HashCode>
+      <FileName>Common\FilteredRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infra.Common.OrderedRepo&lt;TEntity, TData&gt;">
+    <Position X="8.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAAAAQAQAAAAACQAAAAABAkAAAAAQAEBIBAAAA=</HashCode>
+      <FileName>Common\OrderedRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Infra.Common.PagedRepo&lt;TEntity, TData&gt;">
+    <Position X="10.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgACAACAAEAQAAAAEAAUABAAAAAAAAAAEgBAAAA=</HashCode>
+      <FileName>Common\PagedRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

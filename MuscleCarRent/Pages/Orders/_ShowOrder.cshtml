@@ -1,0 +1,12 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.OrdersPage
+
+@Html.Show(model => model.Item.Id)
+@Html.Show(model => model.Item.CarModel)
+@Html.Show(model => model.Item.AccountName)
+@Html.Show(model => model.Item.HourAmmount)
+@Html.Show(model => model.Item.OrderDate)
+@Html.Show(model => model.Item.RentDate)
+@Html.Show(model => model.Item.TotalPrice)
+@Html.Show(model => model.Item.RowVersion)
+@Html.Show(model => model.Item.HasBankCard)

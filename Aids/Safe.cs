@@ -12,7 +12,7 @@ namespace MuscleCarRentProject.Aids
             }
             catch (Exception e)
             {
-                LogException(e);
+                logException(e);
                 return valueOnException;
             }
         }
@@ -25,13 +25,13 @@ namespace MuscleCarRentProject.Aids
             }
             catch (Exception e)
             {
-                LogException(e);
+                logException(e);
             }
         }
 
-        private static void LogException(Exception exception)
+        private static void logException(Exception e)
         {
-            Console.WriteLine(exception);
+            Console.WriteLine(e.ToString());
         }
     }
 }

@@ -1,0 +1,38 @@
+﻿@page
+@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.CarsPage
+
+@{
+    Layout = "Shared/_Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            @Html.TableSortHeader(x => x.Item.Brand, Model)
+            @Html.TableSortHeader(x => x.Item.Model, Model)
+            @Html.TableHeader(x => x.Item.BodyType)
+            @Html.TableHeader(x => x.Item.Color)
+            @Html.TableSortHeader(x => x.Item.Engine , Model)
+            @Html.TableSortHeader(x => x.Item.Power , Model)
+            @Html.TableSortHeader(x => x.Item.ProductionYear, Model)
+            @Html.TableSortHeader(x => x.Item.ShortDescription, Model)
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            @Html.RowData(x => item.Brand)
+            @Html.RowData(x => item.Model)
+            @Html.RowData(x => item.BodyType)
+            @Html.RowData(x => item.Color)
+            @Html.RowData(x => item.Engine)
+            @Html.RowData(x => item.Power)
+            @Html.RowData(x => item.ProductionYear)
+            @Html.RowData(x => item.ShortDescription)
+            @Html.RowButtons(Model.PageUrl, $"{item.Id}")
+        </tr>
+    }
+    </Tbody>
+</table>

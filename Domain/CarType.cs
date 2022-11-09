@@ -6,14 +6,15 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace MuscleCarRentProject.Domain
 {
-    public class CarType : BaseEntity<CarTypeData>
+    public sealed class CarType : BaseEntity<CarTypeData>
     {
         public CarType() : this(null){}
         public CarType(CarTypeData c) : base(c)
         {
-            cars = getLazy<Car, ICarRepo>(c => c.GetByCarTypeID(ID));
+            cars = getLazy<Car, ICarsRepo>(c => c.GetByCarTypeId(Id));
         }
-        public RentTypeEnum RentType => Data?.RentTypeEnum ?? RentTypeEnum.Rent;
+        public RentTypeEnum RentType => Data?.RentType ?? RentTypeEnum.Rent;
+        public string RentTypeName => Data?.RentType.ToString();
         public ICollection<Car> Cars => cars.Value;
         internal Lazy<ICollection<Car>> cars { get; }
     }

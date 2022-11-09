@@ -1,85 +1,8 @@
 ﻿@page
-@model MuscleCarRent.Pages.Promotions.EditModel
+@model MuscleCarRentProject.Pages.OrderedDatesPage
 
 @{
-    ViewData["Title"] = "Edit";
+    Layout = "Shared/_Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Promotion</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Promotion.Discount" class="control-label"></label>
-                <input asp-for="Promotion.Discount" class="form-control" />
-                <span asp-validation-for="Promotion.Discount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Promotion.ValidUntil" class="control-label"></label>
-                <input asp-for="Promotion.ValidUntil" class="form-control" />
-                <span asp-validation-for="Promotion.ValidUntil" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Promotion.IsAvailable" /> @Html.DisplayNameFor(model => model.Promotion.IsAvailable)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Promotion.PromotionTypeEnum" class="control-label"></label>
-                <select asp-for="Promotion.PromotionTypeEnum" class="form-control"></select>
-                <span asp-validation-for="Promotion.PromotionTypeEnum" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="Promotion.ID" />
-            <div class="form-group">
-                <label asp-for="Promotion.OrderDate" class="control-label"></label>
-                <input asp-for="Promotion.OrderDate" class="form-control" />
-                <span asp-validation-for="Promotion.OrderDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Promotion.RentDate" class="control-label"></label>
-                <input asp-for="Promotion.RentDate" class="form-control" />
-                <span asp-validation-for="Promotion.RentDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Promotion.TotalPrice" class="control-label"></label>
-                <input asp-for="Promotion.TotalPrice" class="form-control" />
-                <span asp-validation-for="Promotion.TotalPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Promotion.HourAmmount" class="control-label"></label>
-                <input asp-for="Promotion.HourAmmount" class="form-control" />
-                <span asp-validation-for="Promotion.HourAmmount" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Promotion.HasBankCard" /> @Html.DisplayNameFor(model => model.Promotion.HasBankCard)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Promotion.CarID" class="control-label"></label>
-                <select asp-for="Promotion.CarID" class="form-control" asp-items="ViewBag.CarID"></select>
-                <span asp-validation-for="Promotion.CarID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Promotion.AccountID" class="control-label"></label>
-                <select asp-for="Promotion.AccountID" class="form-control" asp-items="ViewBag.AccountID"></select>
-                <span asp-validation-for="Promotion.AccountID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<partial name="_EditPromotion" />

@@ -10,17 +10,18 @@ using MuscleCarRentProject.Domain.Repos;
 
 namespace Domain
 {
-    public class OrderedDate : BaseEntity<OrderedDateData>
+    public sealed class OrderedDate : BaseEntity<OrderedDateData>
     {
         public OrderedDate() : this(null){}
 
         public OrderedDate(OrderedDateData o) : base(o)
         {
-            car = getLazy<Car, ICarRepo>(c => c?.Get(CarID));
+            car = getLazy<Car, ICarsRepo>(c => c.Get(CarId));
         }
-
         public DateTime OrderDate => Data?.OrderDate ?? default;
-        public string CarID => Data?.CarID ?? default;
+
+        public string CarModel => Car?.Model ?? string.Empty;
+        public string CarId => Data?.CarId ?? default;
         public Car Car => car.Value;
         public Lazy<Car> car { get; }
     }

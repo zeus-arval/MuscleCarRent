@@ -1,42 +1,30 @@
 ﻿@page
-@model MuscleCarRent.Pages.Images.IndexModel
+@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.ImagesPage
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "Shared/_Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Image[0].ImagePath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image[0].Car)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        @Html.TableSortHeader(x => x.Item.CarModel, Model);
+        @Html.TableHeader(x => x.Item.CarPhotoAsString);
+        @Html.TableHeader(x => x.Item.Id);
+        @Html.TableHeader(model => model.Item.RowVersion)
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Image) {
+    @foreach (var item in Model.Items)
+    {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagePath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Car.Color)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
+            @Html.RowData(x => item.CarModel)
+            @Html.RowData(x => item.Id)
+            @Html.RowImage(item.CarPhotoAsString)
+            @Html.RowData(x => item.RowVersion)
+            @Html.RowButtons(Model.PageUrl, $"{item.Id}")
         </tr>
-}
+    }
     </tbody>
 </table>

@@ -1,0 +1,14 @@
+﻿@using MuscleCarRentProject.Core.Extensions
+@model MuscleCarRentProject.Pages.PromotionsPage
+
+@Html.Show(model => model.Item.Id)
+@Html.Select(model => model.Item.CarId,
+    Model.Cars, "-- Select Car --")
+@Html.Select(model => model.Item.AccountId,
+    Model.Accounts, "-- Select Account --")
+@Html.Select(model => model.Item.PromotionTypeEnum,
+    Model.Promotions, "-- Select Promotion --")
+@Html.Editor(model => model.Item.Discount)
+@Html.Show(model => model.Item.RowVersion)
+@Html.Editor(model => model.Item.ValidUntil)
+@Html.Editor(model => model.Item.IsAvailable)

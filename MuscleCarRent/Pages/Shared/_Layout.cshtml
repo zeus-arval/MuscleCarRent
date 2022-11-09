@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Muscle Car Rent</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 
@@ -13,8 +14,8 @@
             background-color: #A9A9A9 ;
             color: #17252A;
             font-family: Verdana;
-            
         }
+
         p {
             color: #3D3D3D;
             font-family: Verdana;
@@ -67,7 +68,7 @@
 
                             <ul class=" nav navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link " asp-area="" asp-page="/Index">HOME</a><span></span>
+                                    <a class="nav-link " asp-area="" asp-page="/Index">HOME</a>
                                 </li>
                                 <li class="dropdown ">
                                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -97,13 +98,13 @@
                                 <li class="nav-item ">
                                     <a class="nav-link " asp-area="" asp-page="/Profile">PROFILE</a>
                                 </li>
-                                <div class="search-container">
+                            </ul>
+							<div class="search-container">
                                     <form action="/action_page.php">
                                         <input type="text" placeholder="" name="search">
                                         <button type="submit"><img src="~/images/Search.png" alt="LOGO" width="25" height="25"></button>
                                     </form>
                                 </div>
-                            </ul>
                         </div>
                 </nav>
                     
@@ -137,7 +138,7 @@
                         &copy; 2021 - MuscleCarRent
                     </li>
                 </ul>
-            </div
+            </div>
         </footer>
 
         <script src="~/lib/jquery/dist/jquery.min.js"></script>
